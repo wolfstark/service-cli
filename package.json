@@ -1,0 +1,13 @@
+{
+  "name": "service-cli",
+  "version": "0.0.1",
+  "description": "Service层渐进式增强工具链，用于自动生成Service层代码，管理Mock，提供强类型校验",
+  "main": "src/index.js",
+  "bin": {
+    "service": "bin/index.js"
+  },
+  "repository": "https://github.com/wolfstark/service-cli.git",
+  "author": "wolfstark <1038999405@qq.com>",
+  "license": "MIT",
+  "private": false
+}
