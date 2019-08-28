@@ -1,0 +1,11 @@
+{
+    "include": [
+        "src/**/*",
+        "bin/**/*"
+    ],
+    "exclude": ["node_modules"],
+    "compilerOptions": {
+        "checkJs": true,
+        "strict": true
+    }
+}
