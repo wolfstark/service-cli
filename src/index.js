@@ -7,10 +7,7 @@ const questions = [
         type: "list",
         name: "size",
         message: "What size do you need?",
-        choices: ["Large", "Medium", "Small"],
-        filter(val) {
-            return val.toLowerCase();
-        }
+        choices: ["Large", "Medium", "Small"]
     }
 ];
 
