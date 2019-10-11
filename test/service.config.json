@@ -1,6 +1,9 @@
 {
-    "urls":[
-
+    "docs": [
+        {
+            "url": "http://127.0.0.1:9099/api-docs.json",
+            "name": "api1"
+        }
     ],
-    "output":"services"
+    "output": "services"
 }
