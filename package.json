@@ -1,30 +1,31 @@
 {
-  "name": "service-cli",
-  "version": "0.0.1",
-  "description": "Service层渐进式增强工具链，用于自动生成Service层代码，管理Mock，提供强类型校验",
-  "main": "src/index.js",
-  "bin": {
-    "service": "bin/index.js"
-  },
-  "scripts": {
-    "dev": "node bin/index.js"
-  },
-  "repository": "https://github.com/wolfstark/service-cli.git",
-  "author": "wolfstark <1038999405@qq.com>",
-  "license": "MIT",
-  "private": false,
-  "dependencies": {
-    "inquirer": "^7.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^6.2.2",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-prettier": "^3.1.0",
-    "fs-extra": "^8.1.0",
-    "http-server": "^0.11.1",
-    "jest": "^24.9.0",
-    "prettier": "^1.18.2"
-  }
+    "name": "service-cli",
+    "version": "0.0.1",
+    "description": "Service层渐进式增强工具链，用于自动生成Service层代码，管理Mock，提供强类型校验",
+    "main": "src/index.js",
+    "bin": {
+        "service": "bin/index.js"
+    },
+    "scripts": {
+        "dev": "node bin/index.js",
+        "test": "jest"
+    },
+    "repository": "https://github.com/wolfstark/service-cli.git",
+    "author": "wolfstark <1038999405@qq.com>",
+    "license": "MIT",
+    "private": false,
+    "dependencies": {
+        "inquirer": "^7.0.0"
+    },
+    "devDependencies": {
+        "eslint": "^6.2.2",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-config-prettier": "^6.1.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-prettier": "^3.1.0",
+        "fs-extra": "^8.1.0",
+        "http-server": "^0.11.1",
+        "jest": "^24.9.0",
+        "prettier": "^1.18.2"
+    }
 }
