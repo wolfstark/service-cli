@@ -1,8 +1,10 @@
 /*
  * @Author: Wang Xiang
- * @LastEditTime: 2019-10-11 09:59:56
+ * @Date: 2019-10-11 10:09:23
+ * @LastEditTime: 2019-10-11 10:12:00
  * @LastEditors: Wang Xiang
  */
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require("path");
 const httpServer = require("http-server");
 const fs = require("fs-extra");
