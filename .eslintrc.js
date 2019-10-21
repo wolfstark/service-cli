@@ -1,7 +1,7 @@
 /*
  * @Author: Wang Xiang
  * @Date: 2019-10-11 10:09:23
- * @LastEditTime: 2019-10-11 10:09:23
+ * @LastEditTime: 2019-10-21 09:41:00
  * @LastEditors: Wang Xiang
  */
 module.exports = {
@@ -20,6 +20,7 @@ module.exports = {
         ecmaVersion: 2018
     },
     rules: {
-        "no-console": "off"
+        "no-console": "off",
+        "no-restricted-syntax": "off"
     }
 };
