@@ -1,7 +1,7 @@
 /*
  * @Author: Wang Xiang
  * @Date: 2019-10-11 10:09:23
- * @LastEditTime: 2019-10-21 09:41:00
+ * @LastEditTime: 2019-10-23 09:26:50
  * @LastEditors: Wang Xiang
  */
 module.exports = {
@@ -21,6 +21,7 @@ module.exports = {
     },
     rules: {
         "no-console": "off",
-        "no-restricted-syntax": "off"
+        "no-restricted-syntax": "off",
+        "no-underscore-dangle": "off"
     }
 };

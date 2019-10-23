@@ -10,7 +10,7 @@ const path = require("path");
 const CONFIG_FILE = "service.config.json";
 const PROJECT_ROOT = process.cwd();
 const Manager = require("./manager");
-const { Config } = require("./config");
+const { Config } = require("./Config");
 
 /**
  *
