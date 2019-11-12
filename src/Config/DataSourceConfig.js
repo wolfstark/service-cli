@@ -1,9 +1,9 @@
-import { OriginType } from "../DocParser";
+const { OriginType } = require("../DocParser");
 
 /*
  * @Author: Wang Xiang
  * @Date: 2019-10-23 09:53:45
- * @LastEditTime: 2019-10-23 09:56:03
+ * @LastEditTime: 2019-11-12 09:17:08
  * @LastEditors: Wang Xiang
  */
 class DataSourceConfig {

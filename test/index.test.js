@@ -1,7 +1,7 @@
 /*
  * @Author: Wang Xiang
  * @Date: 2019-10-11 10:09:23
- * @LastEditTime: 2019-10-22 09:45:07
+ * @LastEditTime: 2019-11-12 09:36:51
  * @LastEditors: Wang Xiang
  */
 /* eslint-disable import/no-extraneous-dependencies */
@@ -31,16 +31,22 @@ const server = httpServer.createServer({
 describe("service-cli功能测试", () => {
     beforeAll(done => {
         clearDir("services");
-        server.listen({ port: 9099 }, async () => {
+        server.listen({ port: 9097 }, async () => {
             console.log("http server start successfull");
-            await createManager("config-multiple-origins.json");
-
-            done();
+            // debugger;
+            try {
+                await createManager("service.config.json");
+            } catch (error) {
+                console.error(error);
+                done();
+                server.close();
+            }
         });
-    });
-    it("123", () => {
+    }, 15000);
+    it("123", done => {
         expect("123").toEqual("123");
-    });
+        done();
+    }, 15000);
     afterAll(() => {
         server.close();
     });

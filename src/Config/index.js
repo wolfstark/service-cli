@@ -1,7 +1,7 @@
 /*
  * @Author: Wang Xiang
  * @Date: 2019-10-21 10:09:19
- * @LastEditTime: 2019-10-23 09:56:31
+ * @LastEditTime: 2019-11-12 09:38:32
  * @LastEditors: Wang Xiang
  */
 const fs = require("fs-extra");
@@ -34,6 +34,7 @@ class Config {
 
             return new Config(configObj);
         } catch (e) {
+            console.error(e);
             throw new Error("service.config.json 解析异常");
         }
     }

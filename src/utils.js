@@ -1,7 +1,7 @@
 /*
  * @Author: Wang Xiang
  * @Date: 2019-10-11 09:51:17
- * @LastEditTime: 2019-10-21 10:21:43
+ * @LastEditTime: 2019-11-12 09:39:57
  * @LastEditors: Wang Xiang
  */
 const fs = require("fs-extra");
@@ -35,12 +35,13 @@ async function createManager(configFile = CONFIG_FILE) {
 
     const config = Config.createFromConfigPath(configPath);
     const manager = new Manager(config, path.dirname(configPath));
+    // debugger;
     await manager.ready();
 
     return manager;
 }
 
-exports = {
+module.exports = {
     lookForFiles,
     createManager
 };
