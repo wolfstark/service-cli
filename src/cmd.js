@@ -14,7 +14,7 @@ program.version(currentVersion).usage('[命令] [配置项]');
 
 program.description('powerful api code generator');
 
-function assert(expression: boolean, message: string) {
+function assert(expression, message) {
   if (!expression) {
     debugLog.error(message);
     process.exit(1);
@@ -33,7 +33,7 @@ function assert(expression: boolean, message: string) {
         const fileContent = await manager.readLockFile();
 
         try {
-          const localDatas = JSON.parse(fileContent) as StandardDataSource[];
+          const localDatas = JSON.parse(fileContent);
           if (localDatas.length > 1) {
             assert(localDatas.every(data => !!data.name), '多数据源每个数据源应该有 "name"');
           }
