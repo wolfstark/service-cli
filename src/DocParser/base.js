@@ -9,6 +9,15 @@ const { info } = require("../logger");
 // eslint-disable-next-line import/prefer-default-export
 export class OriginBaseReader {
     /**
+     *Creates an instance of OriginBaseReader.
+     * @param {import("../Config/DataSourceConfig").default} config
+     * @memberof OriginBaseReader
+     */
+    constructor(config) {
+        this.config = config;
+    }
+
+    /**
      *翻译中文类名等
      *
      * @param {string} jsonString

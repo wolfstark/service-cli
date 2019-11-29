@@ -1,14 +1,13 @@
 /*
  * @Author: Wang Xiang
  * @Date: 2019-11-25 16:33:48
- * @LastEditTime: 2019-11-25 17:07:13
+ * @LastEditTime: 2019-11-28 17:25:23
  * @LastEditors: Wang Xiang
  */
-import { PontDictManager } from "./LocalDictManager";
-
 const _ = require("lodash");
 const assert = require("assert");
 const { youdao, baidu, google } = require("translation.js");
+const { PontDictManager } = require("./LocalDictManager");
 const debugLog = require("../logger");
 
 export class Translate {

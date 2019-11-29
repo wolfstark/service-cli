@@ -1,7 +1,7 @@
 /*
  * @Author: Wang Xiang
  * @Date: 2019-10-21 10:09:19
- * @LastEditTime: 2019-11-12 09:38:32
+ * @LastEditTime: 2019-11-29 17:58:08
  * @LastEditors: Wang Xiang
  */
 const fs = require("fs-extra");
@@ -12,12 +12,12 @@ const DataSourceConfig = require("../Config/DataSourceConfig");
 class Config {
     constructor(config) {
         this.url = "";
-        this.originType = OriginType.SwaggerV2;
         this.taggedByName = true;
-        this.outDir = "service";
-        this.docs = [];
         this.usingMultipleOrigins = true;
         this.templatePath = "serviceTemplate";
+        this.originType = OriginType.SwaggerV2;
+        this.outDir = "service";
+        this.docs = [];
         Object.keys(config).forEach(key => {
             this[key] = config[key];
         });

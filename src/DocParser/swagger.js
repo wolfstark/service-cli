@@ -575,7 +575,8 @@ export function transformSwaggerData2Standard(
     });
 }
 
-export class SwaggerV2Reader extends OriginBaseReader {
+class SwaggerV2Reader extends OriginBaseReader {
+    // eslint-disable-next-line class-methods-use-this
     transform2Standard(data, usingOperationId, originName) {
         return transformSwaggerData2Standard(
             data,
@@ -584,3 +585,6 @@ export class SwaggerV2Reader extends OriginBaseReader {
         );
     }
 }
+module.exports = {
+    SwaggerV2Reader
+};
