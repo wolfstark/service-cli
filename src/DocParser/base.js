@@ -1,15 +1,16 @@
-import { Translator } from "../translate";
-import { hasChinese, Config } from "../utils";
-// import { StandardDataSource } from "../standard";
-
 const _ = require("lodash");
 const fetch = require("node-fetch");
+const { hasChinese } = require("../utils");
+const { Translator } = require("../translate");
+const { Config } = require("../Config");
+// import { StandardDataSource } from "../standard";
+
 const { info } = require("../logger");
 
 // eslint-disable-next-line import/prefer-default-export
 export class OriginBaseReader {
     /**
-     *Creates an instance of OriginBaseReader.
+     * Creates an instance of OriginBaseReader.
      * @param {import("../Config/DataSourceConfig").default} config
      * @memberof OriginBaseReader
      */
@@ -93,20 +94,22 @@ export class OriginBaseReader {
      * @returns {Promise<string>}
      * @memberof OriginBaseReader
      */
-    fetchMethod(url) {
-        if (this.config.fetchMethodPath) {
-            const fetchMethod = Config.getFetchMethodFromConfig(this.config);
-            return fetchMethod(url);
-        }
-
+    static fetchMethod(url) {
         return fetch(url).then(res => res.text());
     }
 
-    /** 获取远程数据源 */
+    /**
+     * 获取远程数据源=>全文翻译=>解析
+     *
+     * @returns
+     * @memberof OriginBaseReader
+     */
     async fetchData() {
         // 获取数据源
         info("获取远程数据中...");
-        let swaggerJsonStr = await this.fetchMethod(this.config.originUrl);
+        let swaggerJsonStr = await OriginBaseReader.fetchMethod(
+            this.config.originUrl
+        );
 
         // 翻译中文类名等
         info("自动翻译中文基类中...");
@@ -116,7 +119,7 @@ export class OriginBaseReader {
         info("自动翻译中文基类完成！");
 
         const data = await JSON.parse(swaggerJsonStr);
-        info("远程数据获取成功！");
+        info("远程数据解析成功！");
 
         return data;
     }
@@ -134,7 +137,6 @@ export class OriginBaseReader {
             // 将数据源转换为标准数据源格式
             let remoteDataSource = this.transform2Standard(
                 data,
-                this.config.usingOperationId,
                 this.config.name
             );
             info("远程数据解析完毕!");

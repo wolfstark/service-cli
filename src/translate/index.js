@@ -1,7 +1,7 @@
 /*
  * @Author: Wang Xiang
  * @Date: 2019-11-25 16:33:48
- * @LastEditTime: 2019-11-25 18:13:34
+ * @LastEditTime: 2019-12-02 17:40:14
  * @LastEditors: Wang Xiang
  */
 const _ = require("lodash");
@@ -10,7 +10,7 @@ const { youdao, baidu, google } = require("translation.js");
 const { PontDictManager } = require("./LocalDictManager");
 const debugLog = require("../logger");
 
-export class Translate {
+class Translate {
     constructor(dictName = "dict.json") {
         this.engines = [google, youdao, baidu];
         this.dict = {};
@@ -90,4 +90,8 @@ export class Translate {
     }
 }
 
-export const Translator = new Translate();
+const Translator = new Translate();
+module.exports = {
+    Translate,
+    Translator
+};

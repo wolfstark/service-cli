@@ -194,7 +194,7 @@ class Schema {
  * @param {string[]} enumStrs
  * @returns
  */
-export function parseSwaggerEnumType(enumStrs) {
+function parseSwaggerEnumType(enumStrs) {
     const enums = enumStrs; // as Array<string | number>;
 
     enumStrs.forEach(str => {
@@ -338,7 +338,7 @@ class SwaggerInterface {
     }
 }
 
-export class SwaggerDataSource {
+class SwaggerDataSource {
     constructor() {
         this.paths = undefined; // : { [key in string]: SwaggerPathItemObject };
         this.tags = undefined; // : { name: string; description: string }[];
@@ -362,7 +362,7 @@ export class SwaggerDataSource {
  * @param {string} [compileTempateKeyword]
  * @returns
  */
-export function parseSwaggerMods(
+function parseSwaggerMods(
     swagger,
     defNames,
     usingOperationId,
@@ -481,11 +481,7 @@ export function parseSwaggerMods(
     return mods;
 }
 
-export function transformSwaggerData2Standard(
-    swagger,
-    usingOperationId = true,
-    originName = ""
-) {
+function transformSwaggerData2Standard(swagger, originName = "") {
     const draftClasses = _.map(swagger.definitions, (def, defName) => {
         const defNameAst = compileTemplate(defName);
 
@@ -577,14 +573,14 @@ export function transformSwaggerData2Standard(
 
 class SwaggerV2Reader extends OriginBaseReader {
     // eslint-disable-next-line class-methods-use-this
-    transform2Standard(data, usingOperationId, originName) {
-        return transformSwaggerData2Standard(
-            data,
-            usingOperationId,
-            originName
-        );
+    transform2Standard(data, originName) {
+        return transformSwaggerData2Standard(data, originName);
     }
 }
 module.exports = {
-    SwaggerV2Reader
+    SwaggerV2Reader,
+    transformSwaggerData2Standard,
+    parseSwaggerEnumType,
+    parseSwaggerMods,
+    SwaggerDataSource
 };

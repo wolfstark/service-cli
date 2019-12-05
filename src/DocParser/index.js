@@ -1,7 +1,7 @@
 /*
  * @Author: Wang Xiang
  * @Date: 2019-10-22 09:30:09
- * @LastEditTime: 2019-11-28 17:28:02
+ * @LastEditTime: 2019-12-02 17:54:26
  * @LastEditors: Wang Xiang
  */
 const { SwaggerV2Reader } = require("./swagger");
@@ -12,7 +12,7 @@ const OriginType = {
     SwaggerV1: "SwaggerV1"
 };
 /**
- * 获取远端数据并解析
+ * 根据数据源对象 -> 获取远端数据并解析
  *
  * @param {import("../Config/DataSourceConfig").default} config
  * @returns

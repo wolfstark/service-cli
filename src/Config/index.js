@@ -1,7 +1,7 @@
 /*
  * @Author: Wang Xiang
  * @Date: 2019-10-21 10:09:19
- * @LastEditTime: 2019-11-29 17:58:08
+ * @LastEditTime: 2019-12-02 17:51:00
  * @LastEditors: Wang Xiang
  */
 const fs = require("fs-extra");
@@ -9,6 +9,9 @@ const path = require("path");
 const { OriginType } = require("../DocParser");
 const DataSourceConfig = require("../Config/DataSourceConfig");
 
+/**
+ * 配置文件实体
+ */
 class Config {
     constructor(config) {
         this.url = "";
