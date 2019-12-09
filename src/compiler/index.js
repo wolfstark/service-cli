@@ -1,7 +1,7 @@
 /*
  * @Author: Wang Xiang
  * @Date: 2019-12-05 17:47:22
- * @LastEditTime: 2019-12-05 18:25:55
+ * @LastEditTime: 2019-12-06 17:34:26
  * @LastEditors: Wang Xiang
  */
 const { StandardDataType } = require("../standard");
@@ -9,8 +9,10 @@ const Parser = require("./Parser");
 const Token = require("./Token");
 /**
  * ast 转换为标准类型
+ * 项目当中可能会扩展一些基础类型，需要转化为类似的JS类型
+ * 这里需要注意黑名单覆盖情况，如果没命中，可能会出现不能识别的类型
  *
- * @param {AstNode} ast
+ * @param {import("../../types/index").AstNode} ast defNameAst
  * @param {string[]} defNames
  * @param {StandardDataType[]} [classTemplateArgs=[]]
  * @returns {StandardDataType}
