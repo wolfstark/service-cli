@@ -9,7 +9,7 @@ const Parser = require("./Parser");
 const Token = require("./Token");
 /**
  * ast 转换为标准类型
- * 项目当中可能会扩展一些基础类型，需要转化为类似的JS类型
+ * 项目当中可能会扩展一些基础类型，需要转化为标准的JS类型
  * 这里需要注意黑名单覆盖情况，如果没命中，可能会出现不能识别的类型
  *
  * @param {import("../../types/index").AstNode} ast defNameAst
