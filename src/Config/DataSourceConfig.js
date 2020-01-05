@@ -1,4 +1,4 @@
-const { OriginType } = require("../DocParser");
+const DocParser = require("../DocParser");
 
 /*
  * @Author: Wang Xiang
@@ -14,14 +14,14 @@ const { OriginType } = require("../DocParser");
  */
 class DataSourceConfig {
     constructor(config) {
-        this.originType = OriginType.SwaggerV2;
-        // this.usingOperationId = false;
+        this.originType = DocParser.OriginType.SwaggerV2;
+        this.usingOperationId = false;
         this.usingMultipleOrigins = false;
         this.taggedByName = true;
-        // this.templatePath = "serviceTemplate";
+        this.templatePath = "serviceTemplate";
         this.outDir = "src/service";
-        // this.transformPath = "transformTemplate";
-        // this.fetchMethodPath = "fetchMethodTemplate";
+        this.transformPath = "transformTemplate";
+        this.fetchMethodPath = "fetchMethodTemplate";
         this.prettierConfig = {};
         Object.assign(this, config);
     }

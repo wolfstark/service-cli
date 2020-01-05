@@ -4,9 +4,12 @@
  * @LastEditTime: 2019-12-06 17:34:26
  * @LastEditors: Wang Xiang
  */
-const { StandardDataType } = require("../standard");
+// const { StandardDataType } = require("../standard");
 const Parser = require("./Parser");
 const Token = require("./Token");
+
+// const { StandardDataType } = standard;
+// console.log(JSON.stringify(standard), 99999);
 /**
  * ast 转换为标准类型
  * 项目当中可能会扩展一些基础类型，需要转化为标准的JS类型
@@ -41,7 +44,7 @@ function parseAst2StandardDataType(ast, defNames, classTemplateArgs = []) {
     const typeArgs = templateArgs.map(arg => {
         return parseAst2StandardDataType(arg, defNames, classTemplateArgs);
     });
-
+    const { StandardDataType } = require("../standard");
     const dataType = new StandardDataType(typeArgs, typeName, isDefsType);
     dataType.setTemplateIndex(classTemplateArgs);
 

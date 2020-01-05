@@ -5,12 +5,37 @@
  * @LastEditors  : Wang Xiang
  */
 const fs = require("fs-extra");
+const ts = require("typescript");
 const path = require("path");
+const prettier = require("prettier");
 
 const CONFIG_FILE = "service.config.json";
 const PROJECT_ROOT = process.cwd();
 const Manager = require("./manager");
 const { Config } = require("./Config");
+const { error } = require("./logger");
+
+const defaultTemplateCode = `
+const Pont = require('pont-engine');
+
+class FileStructures extends Pont.FileStructures {
+}
+
+class MyGenerator extends Pont.CodeGenerator {
+}
+module.exports = {
+    FileStructures,
+    MyGenerator
+}
+`;
+
+const defaultTransformCode = `
+import { StandardDataSource } from "pont-engine";
+
+export default function(dataSource: StandardDataSource): StandardDataSource {
+  return dataSource;
+}
+`;
 
 /**
  *
@@ -93,6 +118,7 @@ function transformModsName(mods) {
     mods.forEach(mod => {
         const currName = mod.name;
         const sameMods = mods.filter(
+            // eslint-disable-next-line no-shadow
             mod => mod.name.toLowerCase() === currName.toLowerCase()
         );
 
@@ -228,6 +254,98 @@ function getIdentifierFromUrl(url, requestType, samePath = "") {
             .join("")
     );
 }
+/**
+ *
+ *
+ * @export
+ * @param {string} templatePath
+ * @param {*} [defaultValue=defaultTemplateCode]
+ * @returns
+ */
+function getTemplate(templatePath, defaultValue = defaultTemplateCode) {
+    if (!fs.existsSync(`${templatePath}.js`)) {
+        fs.writeFileSync(`${templatePath}.js`, defaultValue);
+    }
+    // const jsResult = fs.readFileSync(`${templatePath}.js`, "utf8");
+    // const jsResult = ts.transpileModule(tsResult, {
+    //     compilerOptions: {
+    //         target: ts.ScriptTarget.ES2015,
+    //         module: ts.ModuleKind.CommonJS
+    //     }
+    // });
+
+    // const noCacheFix = `${Math.random()}`.slice(2, 5);
+    const jsName = `${templatePath}.js`;
+    let moduleResult;
+
+    try {
+        // 编译到js
+        // fs.writeFileSync(jsName, jsResult.outputText, "utf8");
+
+        // 用 node require 引用编译后的 js 代码
+        // eslint-disable-next-line import/no-dynamic-require,global-require
+        moduleResult = require(jsName);
+
+        // 删除该文件
+        fs.removeSync(jsName);
+    } catch (e) {
+        // 删除失败，则再删除
+        if (fs.existsSync(jsName)) {
+            fs.removeSync(jsName);
+        }
+
+        // 没有引用，报错
+        if (!moduleResult) {
+            throw new Error(e);
+        }
+    }
+
+    return moduleResult;
+}
+/**
+ *
+ *
+ * @param {string} fileContent
+ * @param {*} [prettierOpts={}]
+ * @returns
+ */
+function format(fileContent, prettierOpts = {}) {
+    try {
+        return prettier.format(fileContent, {
+            parser: "babel",
+            trailingComma: "all",
+            singleQuote: true,
+            ...prettierOpts
+        });
+    } catch (e) {
+        error(`代码格式化报错！${e.toString()}\n代码为：${fileContent}`);
+        return fileContent;
+    }
+}
+/**
+ *
+ *
+ * @template T
+ * @param {T[]} arr
+ * @param {string} [idKey='name']
+ * @returns {(null | T)}
+ */
+function getDuplicateById(arr, idKey = "name") {
+    if (!arr || !arr.length) {
+        return null;
+    }
+
+    let result;
+
+    arr.forEach((item, itemIndex) => {
+        if (arr.slice(0, itemIndex).find(o => o[idKey] === item[idKey])) {
+            result = item;
+        }
+    });
+
+    return result;
+}
+
 module.exports = {
     lookForFiles,
     createManager,
@@ -237,5 +355,23 @@ module.exports = {
     transformCamelCase,
     getMaxSamePath,
     getIdentifierFromUrl,
-    toUpperFirstLetter
+    toUpperFirstLetter,
+    getTemplate,
+    defaultTransformCode,
+    format,
+    getDuplicateById
 };
+
+exports.lookForFiles = lookForFiles;
+exports.createManager = createManager;
+exports.hasChinese = hasChinese;
+exports.toDashCase = toDashCase;
+exports.transformModsName = transformModsName;
+exports.transformCamelCase = transformCamelCase;
+exports.getMaxSamePath = getMaxSamePath;
+exports.getIdentifierFromUrl = getIdentifierFromUrl;
+exports.toUpperFirstLetter = toUpperFirstLetter;
+exports.getTemplate = getTemplate;
+exports.defaultTransformCode = defaultTransformCode;
+exports.format = format;
+exports.getDuplicateById = getDuplicateById;

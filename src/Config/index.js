@@ -6,9 +6,9 @@
  */
 const fs = require("fs-extra");
 const path = require("path");
-const { OriginType } = require("../DocParser");
+const DocParser = require("../DocParser");
 const DataSourceConfig = require("../Config/DataSourceConfig");
-
+const { getTemplate, defaultTransformCode } = require("../utils");
 /**
  * 配置文件实体
  */
@@ -18,12 +18,35 @@ class Config {
         this.taggedByName = true;
         this.usingMultipleOrigins = true;
         this.templatePath = "serviceTemplate";
-        this.originType = OriginType.SwaggerV2;
+        this.originType = DocParser.OriginType.SwaggerV2;
         this.outDir = "service";
         this.docs = [];
         Object.keys(config).forEach(key => {
             this[key] = config[key];
         });
+    }
+
+    /**
+     *
+     *
+     * @static
+     * @param {(Config | DataSourceConfig)} config
+     * @returns
+     * @memberof Config
+     */
+    static getTransformFromConfig(config) {
+        if (config.transformPath) {
+            const moduleResult = getTemplate(
+                config.transformPath,
+                defaultTransformCode
+            );
+
+            if (moduleResult) {
+                return moduleResult.default;
+            }
+        }
+
+        return id => id;
     }
 
     /**

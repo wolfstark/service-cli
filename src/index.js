@@ -1,17 +1,68 @@
-const inquirer = require("inquirer");
+const Manager = require("./manager");
+const {
+    BaseClass,
+    Interface,
+    Mod,
+    PrimitiveType,
+    Property,
+    StandardDataSource,
+    StandardDataType
+} = require("./standard");
+const {
+    createManager,
+    format,
+    // getDuplicateById,
+    // getIdentifierFromOperatorId,
+    getIdentifierFromUrl,
+    getMaxSamePath,
+    getTemplate,
+    hasChinese,
+    lookForFiles,
+    toDashCase,
+    // toDashDefaultCase,
+    toUpperFirstLetter,
+    transformCamelCase,
+    // transformDescription,
+    transformModsName
+} = require("./utils");
+const { Config } = require("./Config");
+const DataSourceConfig = require("./Config/DataSourceConfig");
+const {
+    CodeGenerator,
+    FileStructures,
+    FilesManager
+} = require("./generators/generate");
+// const { diff, Model, removeCtx } = require("./diff");
+const { PontDictManager } = require("./translate/LocalDictManager");
 
-console.log("Hi, welcome to Node Pizza");
-
-const questions = [
-    {
-        type: "list",
-        name: "size",
-        message: "What size do you need?",
-        choices: ["Large", "Medium", "Small"]
-    }
-];
-
-inquirer.prompt(questions).then(answers => {
-    console.log("\nOrder receipt:");
-    console.log(JSON.stringify(answers, null, "  "));
-});
+module.exports = {
+    Manager,
+    BaseClass,
+    Interface,
+    Mod,
+    PrimitiveType,
+    Property,
+    StandardDataSource,
+    StandardDataType,
+    DataSourceConfig,
+    createManager,
+    format,
+    // getDuplicateById,
+    // getIdentifierFromOperatorId,
+    getIdentifierFromUrl,
+    getMaxSamePath,
+    getTemplate,
+    hasChinese,
+    lookForFiles,
+    toDashCase,
+    // toDashDefaultCase,
+    toUpperFirstLetter,
+    transformCamelCase,
+    // transformDescription,
+    transformModsName,
+    Config,
+    CodeGenerator,
+    FileStructures,
+    FilesManager,
+    PontDictManager
+};

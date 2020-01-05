@@ -8,7 +8,7 @@ const { Config } = require("../Config");
 const { info } = require("../logger");
 
 // eslint-disable-next-line import/prefer-default-export
-export class OriginBaseReader {
+class OriginBaseReader {
     /**
      * Creates an instance of OriginBaseReader.
      * @param {import("../Config/DataSourceConfig").default} config
@@ -108,7 +108,7 @@ export class OriginBaseReader {
         // 获取数据源
         info("获取远程数据中...");
         let swaggerJsonStr = await OriginBaseReader.fetchMethod(
-            this.config.originUrl
+            this.config.url
         );
 
         // 翻译中文类名等
@@ -160,6 +160,7 @@ export class OriginBaseReader {
 
             return remoteDataSource;
         } catch (e) {
+            console.error(e);
             throw new Error(`读取远程接口数据失败！${e.toString()}`);
         }
     }
@@ -195,3 +196,6 @@ export class OriginBaseReader {
         }
     }
 }
+module.exports = {
+    OriginBaseReader
+};

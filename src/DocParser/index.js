@@ -26,8 +26,9 @@ async function readRemoteDataSource(config) {
             return new SwaggerV2Reader(config).fetchRemoteData();
     }
 }
-
-module.exports = {
-    OriginType,
-    readRemoteDataSource
-};
+exports.OriginType = OriginType;
+exports.readRemoteDataSource = readRemoteDataSource;
+// module.exports = {
+//     OriginType,
+//     readRemoteDataSource
+// };

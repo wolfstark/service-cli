@@ -9,6 +9,11 @@ const {
     Property,
     StandardDataType
 } = require("../standard");
+const utils = require("../utils");
+const { compileTemplate, parseAst2StandardDataType } = require("../compiler");
+
+const { OriginBaseReader } = require("./base");
+
 const {
     getMaxSamePath,
     getIdentifierFromUrl,
@@ -16,10 +21,7 @@ const {
     toDashCase,
     hasChinese,
     transformModsName
-} = require("../utils");
-const { compileTemplate, parseAst2StandardDataType } = require("../compiler");
-
-const { OriginBaseReader } = require("./base");
+} = utils;
 
 // const SwaggerType = {
 //     integer: "integer",
@@ -99,7 +101,7 @@ class Schema {
         const { items, $ref, type, additionalProperties } = schema;
         let typeName = type;
         // let primitiveType = schema.type as string;
-
+        // 转义基础类型
         if (typeName === "array") {
             // 基础类型或者是引用类型
             let itemsType = _.get(items, "type", "");
@@ -151,7 +153,7 @@ class Schema {
         if (typeName === "file") {
             typeName = "File";
         }
-
+        // 解析自定义类型
         if ($ref) {
             const ast = compileTemplate($ref, compileTemplateKeyword);
 
@@ -161,13 +163,13 @@ class Schema {
 
             return parseAst2StandardDataType(ast, defNames, classTemplateArgs);
         }
-
+        // 暂时没用
         if (schema.enum) {
             return StandardDataType.constructorWithEnum(
                 parseSwaggerEnumType(schema.enum)
             );
         }
-
+        // 特殊扩展类型 additionalProperties 作为value的map
         if (type === "object") {
             if (additionalProperties) {
                 const typeArgs = [
@@ -264,7 +266,7 @@ class SwaggerInterface {
         // const usingOperationId = false;
 
         // if (!usingOperationId || !inter.operationId) {
-        name = getIdentifierFromUrl(inter.path, inter.method, samePath);
+        name = utils.getIdentifierFromUrl(inter.path, inter.method, samePath);
         // } else {
         //     name = getIdentifierFromOperatorId(inter.operationId);
         // }
@@ -276,7 +278,7 @@ class SwaggerInterface {
             [],
             compileTempateKeyword
         );
-
+        // parameters通常长度为一
         const parameters = (inter.parameters || []).map(param => {
             let paramSchema; // : Schema;
             const {
@@ -312,7 +314,7 @@ class SwaggerInterface {
         });
 
         let interDesc = inter.summary;
-
+        // 完整描述
         if (inter.description) {
             if (interDesc) {
                 interDesc += `\n${inter.description}`;
@@ -360,6 +362,8 @@ class SwaggerDataSource {
  * @returns
  */
 function parseSwaggerMods(swagger, defNames, compileTempateKeyword) {
+    const { toDashCase, getMaxSamePath } = require("../utils");
+
     // 所有访问接口的描述对象
     const allSwaggerInterfaces = []; // as SwaggerInterface[];
     _.forEach(swagger.paths, (methodInters, path) => {
@@ -405,7 +409,7 @@ function parseSwaggerMods(swagger, defNames, compileTempateKeyword) {
     // swagger 2.0 中 tags属性是可选的
     const mods = swagger.tags
         .map(tag => {
-            // 过滤出符合当前controller的所有请求
+            // 过滤出使用当前 tag 的所有请求
             const modInterfaces = allSwaggerInterfaces.filter(inter => {
                 // swagger 3.0+ 中可能不存在 description 字段
                 if (tag.description === undefined || tag.description === null) {
@@ -434,25 +438,25 @@ function parseSwaggerMods(swagger, defNames, compileTempateKeyword) {
             });
 
             // 兼容某些项目把swagger tag的name和description弄反的情况
-            if (hasChinese(tag.name)) {
+            if (utils.hasChinese(tag.name)) {
                 // 当检测到name包含中文的时候，采用description
                 return new Mod({
                     description: tag.name,
                     interfaces: _.uniqBy(standardInterfaces, "name"),
-                    name: transformCamelCase(tag.description)
+                    name: utils.transformCamelCase(tag.description)
                 });
             }
             return new Mod({
                 description: tag.description,
                 interfaces: _.uniqBy(standardInterfaces, "name"),
-                name: transformCamelCase(tag.name)
+                name: utils.transformCamelCase(tag.name)
             });
         })
         .filter(mod => {
             return mod.interfaces.length;
         });
 
-    transformModsName(mods);
+    utils.transformModsName(mods);
 
     return mods;
 }
@@ -472,7 +476,7 @@ function transformSwaggerData2Standard(swagger, originName = "") {
         };
     });
     const defNames = draftClasses.map(clazz => clazz.name);
-
+    console.log(777);
     const baseClasses = draftClasses.map(clazz => {
         // 将defName转换为标准类型
         const dataType = parseAst2StandardDataType(
@@ -505,7 +509,7 @@ function transformSwaggerData2Standard(swagger, originName = "") {
                 defNames,
                 templateArgs
             );
-
+            // console.log(prop, propName);
             return new Property({
                 dataType,
                 name: propName,

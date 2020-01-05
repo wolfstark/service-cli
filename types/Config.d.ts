@@ -1,6 +1,6 @@
 import { OriginType } from "src/DocParser";
 import { ResolveConfigOptions } from "src/Config/node_modules/prettier";
-import DataSourceConfig from "./DataSourceConfig";
+import DataSourceConfig from "./types/DataSourceConfig";
 
 /*
  * @Author: Wang Xiang

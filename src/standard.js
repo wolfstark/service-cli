@@ -202,6 +202,7 @@ class StandardDataType extends Contextable {
 
     generateCodeWithTemplate() {}
 
+    // 查看是否定义过，定义过就添加依赖路径
     getDefName(originName) {
         let name = this.typeName;
 
@@ -299,12 +300,11 @@ class Property extends Contextable {
      */
     constructor(prop) {
         super(prop);
-
-        this.dataType = undefined; // : StandardDataType;
-        this.description = undefined; // ?: string;
-        this.name = undefined; // : string;
-        this.required = undefined; // : boolean;
-        this.in = undefined; // : 'query' | 'body' | 'path';
+        // this.dataType = undefined; // : StandardDataType;
+        // this.description = undefined; // ?: string;
+        // this.name = undefined; // : string;
+        // this.required = undefined; // : boolean;
+        // this.in = undefined; // : 'query' | 'body' | 'path';
 
         // FIXME: name 可能不合法，这里暂时只判断是否包含 . 。
         if (this.name.includes(".")) {
@@ -363,6 +363,7 @@ class Interface extends Contextable {
         return this.response.generateCode(this.getDsName());
     }
 
+    // 只处理非body内的参数
     getParamsCode(className = "Params") {
         return `
       class ${className} {
@@ -374,6 +375,7 @@ class Interface extends Contextable {
     `;
     }
 
+    // body 类型 Array||Defs.Coustom
     getBodyParamsCode() {
         const bodyParam = this.parameters.find(param => param.in === "body");
 
@@ -400,7 +402,7 @@ class Interface extends Contextable {
         this.consumes = undefined;
         this.parameters = undefined;
         this.description = undefined;
-        this.response = undefined;
+        this.response = undefined; // StandardDataType
         this.method = undefined;
         this.name = undefined;
         this.path = undefined;
@@ -715,3 +717,5 @@ module.exports = {
     BaseClass,
     StandardDataSource
 };
+
+exports.StandardDataType = StandardDataType;
