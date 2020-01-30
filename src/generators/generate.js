@@ -154,10 +154,10 @@ class FileStructures {
     }
 
     getFileStructures() {
-        if (this.usingMultipleOrigins || this.generators.length > 1) {
-            return this.getMultipleOriginsFileStructures();
-        }
-        return this.getOriginFileStructures(this.generators[0]);
+        // if (this.usingMultipleOrigins || this.generators.length > 1) {
+        return this.getMultipleOriginsFileStructures();
+        // }
+        // return this.getOriginFileStructures(this.generators[0]);
     }
 
     getDataSourcesTs() {

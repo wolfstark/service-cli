@@ -362,8 +362,6 @@ class SwaggerDataSource {
  * @returns
  */
 function parseSwaggerMods(swagger, defNames, compileTempateKeyword) {
-    const { toDashCase, getMaxSamePath } = require("../utils");
-
     // 所有访问接口的描述对象
     const allSwaggerInterfaces = []; // as SwaggerInterface[];
     _.forEach(swagger.paths, (methodInters, path) => {
@@ -476,7 +474,6 @@ function transformSwaggerData2Standard(swagger, originName = "") {
         };
     });
     const defNames = draftClasses.map(clazz => clazz.name);
-    console.log(777);
     const baseClasses = draftClasses.map(clazz => {
         // 将defName转换为标准类型
         const dataType = parseAst2StandardDataType(

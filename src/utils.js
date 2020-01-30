@@ -312,7 +312,7 @@ function getTemplate(templatePath, defaultValue = defaultTemplateCode) {
 function format(fileContent, prettierOpts = {}) {
     try {
         return prettier.format(fileContent, {
-            parser: "babel",
+            parser: "typescript",
             trailingComma: "all",
             singleQuote: true,
             ...prettierOpts
