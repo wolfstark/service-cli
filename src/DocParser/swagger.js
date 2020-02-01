@@ -418,11 +418,11 @@ function parseSwaggerMods(swagger, defNames, compileTempateKeyword) {
                     inter.tags.includes(tag.name) ||
                     inter.tags.includes(tag.name.toLowerCase()) ||
                     inter.tags.includes(tag.description.toLowerCase()) ||
-                    inter.tags.includes(toDashCase(tag.description))
+                    inter.tags.includes(utils.toDashCase(tag.description))
                 );
             });
 
-            const samePath = getMaxSamePath(
+            const samePath = utils.getMaxSamePath(
                 modInterfaces.map(inter => inter.path.slice(1))
             );
 

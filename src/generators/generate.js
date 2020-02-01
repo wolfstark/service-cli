@@ -4,7 +4,7 @@
  * @NOTE getd files structure is as below:
  * - library (contains class library code)
  * - interfaces (contains interfaces code)
- * - api.d.js (contains interfaces and library definitions)
+ * - api.d.ts (contains interfaces and library definitions)
  * - api.lock (contains local code state)
  */
 
@@ -17,7 +17,7 @@ const {
     Mod,
     BaseClass
 } = require("../standard");
-const { format } = require("../utils");
+const utils = require("../utils");
 const { info } = require("../logger");
 
 class FileStructures {
@@ -44,7 +44,7 @@ class FileStructures {
         return {
             ...files,
             "index.js": this.getDataSourcesTs.bind(this),
-            "api.d.js": this.getDataSourcesDeclarationTs.bind(this)
+            "api.d.ts": this.getDataSourcesDeclarationTs.bind(this)
             // "api-lock.json": this.getLockContent.bind(this)
         };
     }
@@ -143,7 +143,7 @@ class FileStructures {
             "baseClass.js": generator.getBaseClassesIndex.bind(generator),
             mods,
             "index.js": generator.getIndex.bind(generator),
-            "api.d.js": generator.getDeclaration.bind(generator)
+            "api.d.ts": generator.getDeclaration.bind(generator)
         };
 
         // if (!usingMultipleOrigins) {
@@ -171,10 +171,10 @@ class FileStructures {
           })
           .join("\n")}
 
-      (window as any).defs = {
+      window.defs = {
         ${dsNames.map(name => `${name}: ${name}Defs,`).join("\n")}
       };
-      (window as any).API = {
+      window.API = {
         ${dsNames.join(",\n")}
       };
     `;
@@ -186,7 +186,7 @@ class FileStructures {
         return `
     ${dsNames
         .map(name => {
-            return `/// <reference path="./${name}/api.d.js" />`;
+            return `/// <reference path="./${name}/api.d.ts" />`;
         })
         .join("\n")}
     `;
@@ -381,7 +381,7 @@ class CodeGenerator {
       import * as defs from './baseClass';
       import './mods/';
 
-      (window as any).defs = defs;
+      window.defs = defs;
     `;
 
         // dataSource name means multiple dataSource
@@ -525,17 +525,17 @@ class CodeGenerator {
     /** 获取所有模块的 index 入口文件 */
     getModsIndex() {
         let conclusion = `
-      const API: any = {};
+      const API = {};
       ${this.dataSource.mods
           .map(mod => this.getModInitStatement("API", mod.name))
           .join("\n")}
-      (window as any).API = API;
+      window.API = API;
     `;
 
         // dataSource name means multiple dataSource
         if (this.dataSource.name) {
             conclusion = `
-        export const ${this.dataSource.name}: any = {};
+        export const ${this.dataSource.name} = {};
         ${this.dataSource.mods
             .map(mod =>
                 this.getModInitStatement(this.dataSource.name, mod.name)
@@ -611,7 +611,7 @@ class FilesManager {
             if (typeof value === "function") {
                 // eslint-disable-next-line no-param-reassign
                 files[name] = content =>
-                    format(value(content), this.prettierConfig);
+                    utils.format(value(content), this.prettierConfig);
             }
 
             this.setFormat(value);

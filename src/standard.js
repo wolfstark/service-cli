@@ -399,13 +399,13 @@ class Interface extends Contextable {
      */
     constructor(inter) {
         super(inter);
-        this.consumes = undefined;
-        this.parameters = undefined;
-        this.description = undefined;
-        this.response = undefined; // StandardDataType
-        this.method = undefined;
-        this.name = undefined;
-        this.path = undefined;
+        // this.consumes = undefined;
+        // this.parameters = undefined;
+        // this.description = undefined;
+        // this.response = undefined; // StandardDataType
+        // this.method = undefined;
+        // this.name = undefined;
+        // this.path = undefined;
     }
 }
 
@@ -422,8 +422,8 @@ class Mod extends Contextable {
      */
     constructor(mod) {
         super(mod);
-        this.description = undefined;
-        this.name = undefined;
+        // this.description = undefined;
+        // this.name = undefined;
         this.interfaces = _.orderBy(this.interfaces, "path");
     }
 }
@@ -431,9 +431,9 @@ class Mod extends Contextable {
 class BaseClass extends Contextable {
     setContext(context) {
         super.setContext(context);
-        this.name = undefined;
-        this.description = undefined;
-        this.templateArgs = undefined;
+        // this.name = undefined;
+        // this.description = undefined;
+        // this.templateArgs = undefined;
         this.properties.forEach(prop => prop.setContext(context));
     }
 

@@ -1,6 +1,6 @@
 const _ = require("lodash");
 const fetch = require("node-fetch");
-const { hasChinese } = require("../utils");
+const utils = require("../utils");
 const { Translator } = require("../translate");
 const { Config } = require("../Config");
 // import { StandardDataSource } from "../standard";
@@ -172,13 +172,13 @@ class OriginBaseReader {
         const errorBaseNames = []; // as string[];
 
         mods.forEach(mod => {
-            if (hasChinese(mod.name)) {
+            if (utils.hasChinese(mod.name)) {
                 errorModNames.push(mod.name);
             }
         });
 
         baseClasses.forEach(base => {
-            if (hasChinese(base.name)) {
+            if (utils.hasChinese(base.name)) {
                 errorBaseNames.push(base.name);
             }
         });
