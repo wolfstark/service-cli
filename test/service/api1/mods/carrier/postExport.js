@@ -7,52 +7,52 @@ import request from 'src/utils/request';
 
 export class Params {
   /** address */
-  address?: string;
+  address: string;
   /** carrierName */
-  carrierName?: string;
+  carrierName: string;
   /** carrierNo */
-  carrierNo?: string;
+  carrierNo: string;
   /** city */
-  city?: string;
+  city: string;
   /** cityNo */
-  cityNo?: string;
+  cityNo: string;
   /** companyInfoId */
-  companyInfoId?: number;
+  companyInfoId: number;
   /** enableStatus */
-  enableStatus?: string;
+  enableStatus: string;
   /** identityNumber */
-  identityNumber?: string;
+  identityNumber: string;
   /** isDeleted */
-  isDeleted?: string;
+  isDeleted: string;
   /** keyWord */
-  keyWord?: string;
+  keyWord: string;
   /** linkMan */
-  linkMan?: string;
+  linkMan: string;
   /** pageSize */
-  pageSize?: number;
+  pageSize: number;
   /** partyId */
-  partyId?: number;
+  partyId: number;
   /** phone */
-  phone?: string;
+  phone: string;
   /** province */
-  province?: string;
+  province: string;
   /** provinceNo */
-  provinceNo?: string;
+  provinceNo: string;
   /** realName */
-  realName?: string;
+  realName: string;
   /** region */
-  region?: string;
+  region: string;
   /** regionNo */
-  regionNo?: string;
+  regionNo: string;
   /** start */
-  start?: number;
+  start: number;
   /** tel */
-  tel?: string;
+  tel: string;
 }
 
 export const init = undefined;
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/carrierInfo/export',
     params,

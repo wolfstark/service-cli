@@ -9,7 +9,7 @@ export class Params {}
 
 export const init = new defs.api1.CostItem();
 
-export async function request(params, bodyParams) {
+export async function fetch(params, bodyParams) {
   return request({
     url: '/orderCost/updateCostItem',
     params: bodyParams,

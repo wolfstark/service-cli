@@ -7,44 +7,44 @@ import request from 'src/utils/request';
 
 export class Params {
   /** affiliatedCompany */
-  affiliatedCompany?: string;
+  affiliatedCompany: string;
   /** bindingTimeEnd */
-  bindingTimeEnd?: string;
+  bindingTimeEnd: string;
   /** bindingTimeStart */
-  bindingTimeStart?: string;
+  bindingTimeStart: string;
   /** clientOrderNo */
-  clientOrderNo?: string;
+  clientOrderNo: string;
   /** comyIds */
-  comyIds?: Array<number>;
+  comyIds: Array<number>;
   /** isDeleted */
-  isDeleted?: string;
+  isDeleted: string;
   /** omsDeviceId */
-  omsDeviceId?: number;
+  omsDeviceId: number;
   /** omsRequestOrderId */
-  omsRequestOrderId?: number;
+  omsRequestOrderId: number;
   /** pageSize */
-  pageSize?: number;
+  pageSize: number;
   /** partyId */
-  partyId?: number;
+  partyId: number;
   /** requestOrderNo */
-  requestOrderNo?: string;
+  requestOrderNo: string;
   /** serialNo */
-  serialNo?: string;
+  serialNo: string;
   /** start */
-  start?: number;
+  start: number;
   /** trackName */
-  trackName?: string;
+  trackName: string;
   /** type */
-  type?: string;
+  type: string;
   /** unBindingTimeEnd */
-  unBindingTimeEnd?: string;
+  unBindingTimeEnd: string;
   /** unBindingTimeStart */
-  unBindingTimeStart?: string;
+  unBindingTimeStart: string;
 }
 
 export const init = new defs.api1.BaseRes();
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/orderDevices/queryBind',
     params,

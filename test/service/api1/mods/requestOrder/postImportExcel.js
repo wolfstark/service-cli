@@ -7,12 +7,12 @@ import request from 'src/utils/request';
 
 export class Params {
   /** file */
-  file?: File;
+  file: File;
 }
 
 export const init = undefined;
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/requestOrder/importExcel',
     params,

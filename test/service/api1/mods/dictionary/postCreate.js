@@ -7,34 +7,34 @@ import request from 'src/utils/request';
 
 export class Params {
   /** code */
-  code?: string;
+  code: string;
   /** createDate */
-  createDate?: string;
+  createDate: string;
   /** createMan */
-  createMan?: string;
+  createMan: string;
   /** description */
-  description?: string;
+  description: string;
   /** id */
-  id?: number;
+  id: number;
   /** inputDate */
-  inputDate?: string;
+  inputDate: string;
   /** inputMan */
-  inputMan?: string;
+  inputMan: string;
   /** isDeleted */
-  isDeleted?: string;
+  isDeleted: string;
   /** partyId */
-  partyId?: number;
+  partyId: number;
   /** realName */
-  realName?: string;
+  realName: string;
   /** type */
-  type?: string;
+  type: string;
   /** typeName */
-  typeName?: string;
+  typeName: string;
 }
 
 export const init = new defs.api1.BaseRes();
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/dictionary/create',
     params,

@@ -7,26 +7,26 @@ import request from 'src/utils/request';
 
 export class Params {
   /** 绑定状态 */
-  bindingStatus?: string;
+  bindingStatus: string;
   /** 所属企业 */
-  companyIds?: Array<number>;
+  companyIds: Array<number>;
   /** isDeleted */
-  isDeleted?: string;
+  isDeleted: string;
   /** 精确查询：1，模糊查询：0 */
-  isExact?: number;
+  isExact: number;
   /** pageSize */
-  pageSize?: number;
+  pageSize: number;
   /** 会员id */
-  partyId?: string;
+  partyId: string;
   /** 查询的号码 */
-  queryNo?: string;
+  queryNo: string;
   /** start */
-  start?: number;
+  start: number;
 }
 
 export const init = new defs.api1.BaseRes();
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/orderDevicesLocation/devicesDetails',
     params,

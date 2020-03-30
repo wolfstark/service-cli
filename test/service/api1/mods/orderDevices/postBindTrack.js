@@ -7,16 +7,16 @@ import request from 'src/utils/request';
 
 export class Params {
   /** remark */
-  remark?: string;
+  remark: string;
   /** serialNo */
-  serialNo?: string;
+  serialNo: string;
   /** trackName */
-  trackName?: string;
+  trackName: string;
 }
 
 export const init = new defs.api1.BaseRes();
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/orderDevices/bindTrack',
     params,

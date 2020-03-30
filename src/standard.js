@@ -313,11 +313,11 @@ class Property extends Contextable {
     }
 
     toPropertyCode(hasRequired = false, optional = false) {
-        let optionalSignal = hasRequired && optional ? "?" : "";
+        const optionalSignal = hasRequired && optional ? "?" : "";
 
-        if (hasRequired && !this.required) {
-            optionalSignal = "?";
-        }
+        // if (hasRequired && !this.required) {
+        //     optionalSignal = "?";
+        // }
 
         let { name } = this;
         if (!name.match(/^[a-zA-Z_$][a-zA-Z0-9_$]*$/)) {

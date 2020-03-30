@@ -9,7 +9,7 @@ export class Params {}
 
 export const init = undefined;
 
-export async function request(params, bodyParams) {
+export async function fetch(params, bodyParams) {
   return request({
     url: '/carrierInfo/create',
     params: bodyParams,

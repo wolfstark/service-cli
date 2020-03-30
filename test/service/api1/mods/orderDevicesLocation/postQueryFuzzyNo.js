@@ -7,12 +7,12 @@ import request from 'src/utils/request';
 
 export class Params {
   /** queryNo */
-  queryNo?: string;
+  queryNo: string;
 }
 
 export const init = new defs.api1.BaseRes();
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/orderDevicesLocation/queryFuzzyNo',
     params,

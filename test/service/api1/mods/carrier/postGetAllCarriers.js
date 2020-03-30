@@ -9,7 +9,7 @@ export class Params {}
 
 export const init = new defs.api1.CarrierInfo();
 
-export async function request(params, bodyParams) {
+export async function fetch(params, bodyParams) {
   return request({
     url: '/carrierInfo/getAllCarriers',
     params: bodyParams,

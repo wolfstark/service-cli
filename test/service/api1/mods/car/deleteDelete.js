@@ -7,12 +7,12 @@ import request from 'src/utils/request';
 
 export class Params {
   /** 车辆id */
-  carId?: number;
+  carId: number;
 }
 
 export const init = undefined;
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/car/delete',
     params,

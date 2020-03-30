@@ -9,7 +9,7 @@ export class Params {}
 
 export const init = new defs.api1.Car();
 
-export async function request(params, bodyParams) {
+export async function fetch(params, bodyParams) {
   return request({
     url: '/appletCar/update',
     params: bodyParams,

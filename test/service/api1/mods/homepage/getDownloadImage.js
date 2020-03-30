@@ -9,7 +9,7 @@ export class Params {}
 
 export const init = undefined;
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/homepage/downloadImage',
     params,

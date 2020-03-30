@@ -7,12 +7,12 @@ import request from 'src/utils/request';
 
 export class Params {
   /** 车牌号 */
-  plateNumber?: string;
+  plateNumber: string;
 }
 
 export const init = new defs.api1.IotGpsVO();
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/car/latestLocation',
     params,

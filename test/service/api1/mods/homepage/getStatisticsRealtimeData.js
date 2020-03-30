@@ -9,7 +9,7 @@ export class Params {}
 
 export const init = new defs.api1.RealtimeDataDTO();
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/homepage/statisticsRealtimeData',
     params,

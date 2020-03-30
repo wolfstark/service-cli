@@ -9,7 +9,7 @@ export class Params {}
 
 export const init = '';
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/user/projectName',
     params,

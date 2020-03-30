@@ -23,11 +23,11 @@
         "inquirer": "^7.0.0",
         "lodash": "^4.17.15",
         "node-fetch": "^2.6.0",
+        "prettier": "^1.18.2",
         "string.prototype.padstart": "^3.0.0",
         "translation.js": "^0.7.12",
         "typescript": "^3.7.4",
-        "v": "^0.3.0",
-        "prettier": "^1.18.2"
+        "v": "^0.3.0"
     },
     "devDependencies": {
         "eslint": "^6.5.1",

@@ -7,18 +7,18 @@ import request from 'src/utils/request';
 
 export class Params {
   /** endCreateDate */
-  endCreateDate?: string;
+  endCreateDate: string;
   /** gpsType */
-  gpsType?: string;
+  gpsType: string;
   /** orderNo */
-  orderNo?: string;
+  orderNo: string;
   /** startCreateDate */
-  startCreateDate?: string;
+  startCreateDate: string;
 }
 
 export const init = new defs.api1.BaseRes();
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/orderDevicesLocation/orderTrack',
     params,

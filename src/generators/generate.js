@@ -445,7 +445,7 @@ class CodeGenerator {
     export ${inter.getParamsCode()}
     export const init = ${inter.response.getInitialValue()};
 
-    export async function request(${requestParams}) {
+    export async function fetch(${requestParams}) {
       return request({
         url: '${inter.path}',
         ${bodyParams ? "params: bodyParams" : "params"},

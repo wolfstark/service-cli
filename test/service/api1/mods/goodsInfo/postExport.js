@@ -7,40 +7,40 @@ import request from 'src/utils/request';
 
 export class Params {
   /** goodsModelNo */
-  goodsModelNo?: string;
+  goodsModelNo: string;
   /** goodsName */
-  goodsName?: string;
+  goodsName: string;
   /** goodsNo */
-  goodsNo?: string;
+  goodsNo: string;
   /** goodsPackage */
-  goodsPackage?: string;
+  goodsPackage: string;
   /** goodsType */
-  goodsType?: string;
+  goodsType: string;
   /** goodsUnit */
-  goodsUnit?: string;
+  goodsUnit: string;
   /** id */
-  id?: number;
+  id: number;
   /** isDeleted */
-  isDeleted?: string;
+  isDeleted: string;
   /** keyWord */
-  keyWord?: string;
+  keyWord: string;
   /** packingType */
-  packingType?: string;
+  packingType: string;
   /** pageSize */
-  pageSize?: number;
+  pageSize: number;
   /** partyId */
-  partyId?: number;
+  partyId: number;
   /** realName */
-  realName?: string;
+  realName: string;
   /** remark */
-  remark?: string;
+  remark: string;
   /** start */
-  start?: number;
+  start: number;
 }
 
 export const init = undefined;
 
-export async function request(params) {
+export async function fetch(params) {
   return request({
     url: '/goodsInfo/export',
     params,
