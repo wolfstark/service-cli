@@ -13,6 +13,6 @@ export async function fetch(params, bodyParams) {
   return request({
     url: '/requestOrder/cancel',
     params: bodyParams,
-    method: 'post',
+    method: 'POST',
   });
 }

@@ -14,6 +14,6 @@ export async function fetch(params, bodyParams) {
   return request({
     url: '/device/enable',
     params: bodyParams,
-    method: 'post',
+    method: 'POST',
   });
 }

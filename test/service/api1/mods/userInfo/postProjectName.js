@@ -13,6 +13,6 @@ export async function fetch(params) {
   return request({
     url: '/user/projectName',
     params,
-    method: 'post',
+    method: 'POST',
   });
 }

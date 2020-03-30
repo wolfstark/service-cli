@@ -433,6 +433,7 @@ class CodeGenerator {
     getInterfaceContent(inter) {
         const bodyParams = inter.getBodyParamsCode();
         const requestParams = bodyParams ? `params, bodyParams` : `params`;
+        const method = inter.method.toUpperCase();
 
         return `
     /**
@@ -449,7 +450,7 @@ class CodeGenerator {
       return request({
         url: '${inter.path}',
         ${bodyParams ? "params: bodyParams" : "params"},
-        method: '${inter.method}',
+        method: '${method}',
       });
     }
    `;

@@ -13,6 +13,6 @@ export async function fetch(params, bodyParams) {
   return request({
     url: '/address/query',
     params: bodyParams,
-    method: 'get',
+    method: 'GET',
   });
 }

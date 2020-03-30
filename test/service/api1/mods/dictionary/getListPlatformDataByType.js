@@ -6,8 +6,11 @@ import * as defs from '../../baseClass';
 import request from 'src/utils/request';
 
 export class Params {
-  /** PLATFORM_CAR_LENGTH_TYPE=车型;PLATFORM_CAR_TYPE=车长 */
-  type: string;
+  /**
+   * PLATFORM_CAR_LENGTH_TYPE=车型;PLATFORM_CAR_TYPE=车长
+   * @type {string}
+   */
+  type;
 }
 
 export const init = '';
@@ -16,6 +19,6 @@ export async function fetch(params) {
   return request({
     url: '/dictionary/listPlatformDataByType',
     params,
-    method: 'get',
+    method: 'GET',
   });
 }

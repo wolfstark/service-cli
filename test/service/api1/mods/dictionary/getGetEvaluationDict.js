@@ -13,6 +13,6 @@ export async function fetch(params) {
   return request({
     url: '/dictionary/getEvaluationDict',
     params,
-    method: 'get',
+    method: 'GET',
   });
 }

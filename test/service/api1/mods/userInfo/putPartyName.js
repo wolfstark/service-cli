@@ -13,6 +13,6 @@ export async function fetch(params) {
   return request({
     url: '/user/partyName',
     params,
-    method: 'put',
+    method: 'PUT',
   });
 }

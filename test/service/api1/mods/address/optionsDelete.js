@@ -13,6 +13,6 @@ export async function fetch(params, bodyParams) {
   return request({
     url: '/address/delete',
     params: bodyParams,
-    method: 'options',
+    method: 'OPTIONS',
   });
 }

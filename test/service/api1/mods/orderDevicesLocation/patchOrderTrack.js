@@ -6,14 +6,26 @@ import * as defs from '../../baseClass';
 import request from 'src/utils/request';
 
 export class Params {
-  /** endCreateDate */
-  endCreateDate: string;
-  /** gpsType */
-  gpsType: string;
-  /** orderNo */
-  orderNo: string;
-  /** startCreateDate */
-  startCreateDate: string;
+  /**
+   * endCreateDate
+   * @type {string}
+   */
+  endCreateDate;
+  /**
+   * gpsType
+   * @type {string}
+   */
+  gpsType;
+  /**
+   * orderNo
+   * @type {string}
+   */
+  orderNo;
+  /**
+   * startCreateDate
+   * @type {string}
+   */
+  startCreateDate;
 }
 
 export const init = new defs.api1.BaseRes();
@@ -22,6 +34,6 @@ export async function fetch(params) {
   return request({
     url: '/orderDevicesLocation/orderTrack',
     params,
-    method: 'patch',
+    method: 'PATCH',
   });
 }

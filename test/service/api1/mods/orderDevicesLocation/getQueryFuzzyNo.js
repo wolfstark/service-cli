@@ -6,8 +6,11 @@ import * as defs from '../../baseClass';
 import request from 'src/utils/request';
 
 export class Params {
-  /** queryNo */
-  queryNo: string;
+  /**
+   * queryNo
+   * @type {string}
+   */
+  queryNo;
 }
 
 export const init = new defs.api1.BaseRes();
@@ -16,6 +19,6 @@ export async function fetch(params) {
   return request({
     url: '/orderDevicesLocation/queryFuzzyNo',
     params,
-    method: 'get',
+    method: 'GET',
   });
 }

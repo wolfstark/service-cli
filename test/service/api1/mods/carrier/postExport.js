@@ -6,48 +6,111 @@ import * as defs from '../../baseClass';
 import request from 'src/utils/request';
 
 export class Params {
-  /** address */
-  address: string;
-  /** carrierName */
-  carrierName: string;
-  /** carrierNo */
-  carrierNo: string;
-  /** city */
-  city: string;
-  /** cityNo */
-  cityNo: string;
-  /** companyInfoId */
-  companyInfoId: number;
-  /** enableStatus */
-  enableStatus: string;
-  /** identityNumber */
-  identityNumber: string;
-  /** isDeleted */
-  isDeleted: string;
-  /** keyWord */
-  keyWord: string;
-  /** linkMan */
-  linkMan: string;
-  /** pageSize */
-  pageSize: number;
-  /** partyId */
-  partyId: number;
-  /** phone */
-  phone: string;
-  /** province */
-  province: string;
-  /** provinceNo */
-  provinceNo: string;
-  /** realName */
-  realName: string;
-  /** region */
-  region: string;
-  /** regionNo */
-  regionNo: string;
-  /** start */
-  start: number;
-  /** tel */
-  tel: string;
+  /**
+   * address
+   * @type {string}
+   */
+  address;
+  /**
+   * carrierName
+   * @type {string}
+   */
+  carrierName;
+  /**
+   * carrierNo
+   * @type {string}
+   */
+  carrierNo;
+  /**
+   * city
+   * @type {string}
+   */
+  city;
+  /**
+   * cityNo
+   * @type {string}
+   */
+  cityNo;
+  /**
+   * companyInfoId
+   * @type {number}
+   */
+  companyInfoId;
+  /**
+   * enableStatus
+   * @type {string}
+   */
+  enableStatus;
+  /**
+   * identityNumber
+   * @type {string}
+   */
+  identityNumber;
+  /**
+   * isDeleted
+   * @type {string}
+   */
+  isDeleted;
+  /**
+   * keyWord
+   * @type {string}
+   */
+  keyWord;
+  /**
+   * linkMan
+   * @type {string}
+   */
+  linkMan;
+  /**
+   * pageSize
+   * @type {number}
+   */
+  pageSize;
+  /**
+   * partyId
+   * @type {number}
+   */
+  partyId;
+  /**
+   * phone
+   * @type {string}
+   */
+  phone;
+  /**
+   * province
+   * @type {string}
+   */
+  province;
+  /**
+   * provinceNo
+   * @type {string}
+   */
+  provinceNo;
+  /**
+   * realName
+   * @type {string}
+   */
+  realName;
+  /**
+   * region
+   * @type {string}
+   */
+  region;
+  /**
+   * regionNo
+   * @type {string}
+   */
+  regionNo;
+  /**
+   * start
+   * @type {number}
+   */
+  start;
+  /**
+   * tel
+   * @type {string}
+   */
+  tel;
 }
 
 export const init = undefined;
@@ -56,6 +119,6 @@ export async function fetch(params) {
   return request({
     url: '/carrierInfo/export',
     params,
-    method: 'post',
+    method: 'POST',
   });
 }

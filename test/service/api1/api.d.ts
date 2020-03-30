@@ -5,1481 +5,2903 @@ type ObjectMap<Key extends string | number | symbol = any, Value = any> = {
 declare namespace defs {
   export namespace api1 {
     export class AddressCreate {
-      /** addressCreate */
-      addressCreate: Array<defs.api1.AddressQueryParam>;
+      /**
+       * addressCreate
+       * @type {Array<defs.api1.AddressQueryParam>}
+       */
+      addressCreate;
 
-      /** consigneId */
-      consigneId: number;
+      /**
+       * consigneId
+       * @type {number}
+       */
+      consigneId;
 
-      /** consigneName */
-      consigneName: string;
+      /**
+       * consigneName
+       * @type {string}
+       */
+      consigneName;
     }
 
     export class AddressDO {
-      /** address */
-      address: string;
+      /**
+       * address
+       * @type {string}
+       */
+      address;
 
-      /** addressNo */
-      addressNo: string;
+      /**
+       * addressNo
+       * @type {string}
+       */
+      addressNo;
 
-      /** areaCode */
-      areaCode: string;
+      /**
+       * areaCode
+       * @type {string}
+       */
+      areaCode;
 
-      /** city */
-      city: string;
+      /**
+       * city
+       * @type {string}
+       */
+      city;
 
-      /** cityNo */
-      cityNo: string;
+      /**
+       * cityNo
+       * @type {string}
+       */
+      cityNo;
 
-      /** consigneId */
-      consigneId: number;
+      /**
+       * consigneId
+       * @type {number}
+       */
+      consigneId;
 
-      /** consigneName */
-      consigneName: string;
+      /**
+       * consigneName
+       * @type {string}
+       */
+      consigneName;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDefault */
-      isDefault: string;
+      /**
+       * isDefault
+       * @type {string}
+       */
+      isDefault;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** lat */
-      lat: string;
+      /**
+       * lat
+       * @type {string}
+       */
+      lat;
 
-      /** linkMan */
-      linkMan: string;
+      /**
+       * linkMan
+       * @type {string}
+       */
+      linkMan;
 
-      /** lon */
-      lon: string;
+      /**
+       * lon
+       * @type {string}
+       */
+      lon;
 
-      /** omsAddressId */
-      omsAddressId: number;
+      /**
+       * omsAddressId
+       * @type {number}
+       */
+      omsAddressId;
 
-      /** partyId */
-      partyId: number;
+      /**
+       * partyId
+       * @type {number}
+       */
+      partyId;
 
-      /** province */
-      province: string;
+      /**
+       * province
+       * @type {string}
+       */
+      province;
 
-      /** provinceNo */
-      provinceNo: string;
+      /**
+       * provinceNo
+       * @type {string}
+       */
+      provinceNo;
 
-      /** region */
-      region: string;
+      /**
+       * region
+       * @type {string}
+       */
+      region;
 
-      /** regionNo */
-      regionNo: string;
+      /**
+       * regionNo
+       * @type {string}
+       */
+      regionNo;
 
-      /** remark */
-      remark: string;
+      /**
+       * remark
+       * @type {string}
+       */
+      remark;
 
-      /** tel */
-      tel: string;
+      /**
+       * tel
+       * @type {string}
+       */
+      tel;
     }
 
     export class AddressQueryParam {
-      /** address */
-      address: string;
+      /**
+       * address
+       * @type {string}
+       */
+      address;
 
-      /** addressNo */
-      addressNo: string;
+      /**
+       * addressNo
+       * @type {string}
+       */
+      addressNo;
 
-      /** city */
-      city: string;
+      /**
+       * city
+       * @type {string}
+       */
+      city;
 
-      /** cityNo */
-      cityNo: string;
+      /**
+       * cityNo
+       * @type {string}
+       */
+      cityNo;
 
-      /** consigneId */
-      consigneId: number;
+      /**
+       * consigneId
+       * @type {number}
+       */
+      consigneId;
 
-      /** consigneName */
-      consigneName: string;
+      /**
+       * consigneName
+       * @type {string}
+       */
+      consigneName;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** isDefault */
-      isDefault: string;
+      /**
+       * isDefault
+       * @type {string}
+       */
+      isDefault;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** keyWord */
-      keyWord: string;
+      /**
+       * keyWord
+       * @type {string}
+       */
+      keyWord;
 
-      /** linkMan */
-      linkMan: string;
+      /**
+       * linkMan
+       * @type {string}
+       */
+      linkMan;
 
-      /** omsAddressId */
-      omsAddressId: number;
+      /**
+       * omsAddressId
+       * @type {number}
+       */
+      omsAddressId;
 
-      /** ordinarySearch */
-      ordinarySearch: string;
+      /**
+       * ordinarySearch
+       * @type {string}
+       */
+      ordinarySearch;
 
-      /** pageSize */
-      pageSize: number;
+      /**
+       * pageSize
+       * @type {number}
+       */
+      pageSize;
 
-      /** partyId */
-      partyId: number;
+      /**
+       * partyId
+       * @type {number}
+       */
+      partyId;
 
-      /** province */
-      province: string;
+      /**
+       * province
+       * @type {string}
+       */
+      province;
 
-      /** provinceNo */
-      provinceNo: string;
+      /**
+       * provinceNo
+       * @type {string}
+       */
+      provinceNo;
 
-      /** realName */
-      realName: string;
+      /**
+       * realName
+       * @type {string}
+       */
+      realName;
 
-      /** region */
-      region: string;
+      /**
+       * region
+       * @type {string}
+       */
+      region;
 
-      /** regionNo */
-      regionNo: string;
+      /**
+       * regionNo
+       * @type {string}
+       */
+      regionNo;
 
-      /** remark */
-      remark: string;
+      /**
+       * remark
+       * @type {string}
+       */
+      remark;
 
-      /** start */
-      start: number;
+      /**
+       * start
+       * @type {number}
+       */
+      start;
 
-      /** tel */
-      tel: string;
+      /**
+       * tel
+       * @type {string}
+       */
+      tel;
     }
 
     export class AddressVO {
-      /** address */
-      address: string;
+      /**
+       * address
+       * @type {string}
+       */
+      address;
 
-      /** addressNo */
-      addressNo: string;
+      /**
+       * addressNo
+       * @type {string}
+       */
+      addressNo;
 
-      /** areaCode */
-      areaCode: string;
+      /**
+       * areaCode
+       * @type {string}
+       */
+      areaCode;
 
-      /** city */
-      city: string;
+      /**
+       * city
+       * @type {string}
+       */
+      city;
 
-      /** cityNo */
-      cityNo: string;
+      /**
+       * cityNo
+       * @type {string}
+       */
+      cityNo;
 
-      /** consigneId */
-      consigneId: number;
+      /**
+       * consigneId
+       * @type {number}
+       */
+      consigneId;
 
-      /** consigneName */
-      consigneName: string;
+      /**
+       * consigneName
+       * @type {string}
+       */
+      consigneName;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDefault */
-      isDefault: string;
+      /**
+       * isDefault
+       * @type {string}
+       */
+      isDefault;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** lat */
-      lat: string;
+      /**
+       * lat
+       * @type {string}
+       */
+      lat;
 
-      /** linkMan */
-      linkMan: string;
+      /**
+       * linkMan
+       * @type {string}
+       */
+      linkMan;
 
-      /** lon */
-      lon: string;
+      /**
+       * lon
+       * @type {string}
+       */
+      lon;
 
-      /** omsAddressId */
-      omsAddressId: number;
+      /**
+       * omsAddressId
+       * @type {number}
+       */
+      omsAddressId;
 
-      /** partyId */
-      partyId: number;
+      /**
+       * partyId
+       * @type {number}
+       */
+      partyId;
 
-      /** province */
-      province: string;
+      /**
+       * province
+       * @type {string}
+       */
+      province;
 
-      /** provinceNo */
-      provinceNo: string;
+      /**
+       * provinceNo
+       * @type {string}
+       */
+      provinceNo;
 
-      /** region */
-      region: string;
+      /**
+       * region
+       * @type {string}
+       */
+      region;
 
-      /** regionNo */
-      regionNo: string;
+      /**
+       * regionNo
+       * @type {string}
+       */
+      regionNo;
 
-      /** remark */
-      remark: string;
+      /**
+       * remark
+       * @type {string}
+       */
+      remark;
 
-      /** statementUnit */
-      statementUnit: string;
+      /**
+       * statementUnit
+       * @type {string}
+       */
+      statementUnit;
 
-      /** tel */
-      tel: string;
+      /**
+       * tel
+       * @type {string}
+       */
+      tel;
     }
 
     export class BaseRes<T0 = any> {
-      /** code */
-      code: number;
+      /**
+       * code
+       * @type {number}
+       */
+      code;
 
-      /** data */
-      data: T0;
+      /**
+       * data
+       * @type {T0}
+       */
+      data;
 
-      /** message */
-      message: string;
+      /**
+       * message
+       * @type {string}
+       */
+      message;
     }
 
     export class BatchOperationParam {
-      /** 地址 */
-      address: string;
+      /**
+       * 地址
+       * @type {string}
+       */
+      address;
 
-      /** 车辆id */
-      carId: number;
+      /**
+       * 车辆id
+       * @type {number}
+       */
+      carId;
 
-      /** 承运商id */
-      carrierInfoId: number;
+      /**
+       * 承运商id
+       * @type {number}
+       */
+      carrierInfoId;
 
-      /** 承运商名称 */
-      carrierName: string;
+      /**
+       * 承运商名称
+       * @type {string}
+       */
+      carrierName;
 
-      /** 市 */
-      city: string;
+      /**
+       * 市
+       * @type {string}
+       */
+      city;
 
-      /** 司机名称 */
-      driverName: string;
+      /**
+       * 司机名称
+       * @type {string}
+       */
+      driverName;
 
-      /** 司机联系方式 */
-      driverPhone: string;
+      /**
+       * 司机联系方式
+       * @type {string}
+       */
+      driverPhone;
 
-      /** 订单id集合 */
-      ids: Array<number>;
+      /**
+       * 订单id集合
+       * @type {Array<number>}
+       */
+      ids;
 
-      /** 纬 */
-      loclat: string;
+      /**
+       * 纬
+       * @type {string}
+       */
+      loclat;
 
-      /** 经 */
-      loclng: string;
+      /**
+       * 经
+       * @type {string}
+       */
+      loclng;
 
-      /** 操作：派单，提货，送达，发运 */
-      operationType: string;
+      /**
+       * 操作：派单，提货，送达，发运
+       * @type {string}
+       */
+      operationType;
 
-      /** 车辆号 */
-      plateNumber: string;
+      /**
+       * 车辆号
+       * @type {string}
+       */
+      plateNumber;
 
-      /** 省 */
-      province: string;
+      /**
+       * 省
+       * @type {string}
+       */
+      province;
 
-      /** 区 */
-      region: string;
+      /**
+       * 区
+       * @type {string}
+       */
+      region;
 
-      /** 时间 */
-      time: string;
+      /**
+       * 时间
+       * @type {string}
+       */
+      time;
     }
 
     export class Car {
-      /**  额定载重 */
-      capacity: number;
+      /**
+       *  额定载重
+       * @type {number}
+       */
+      capacity;
 
-      /**  主键ID */
-      carId: number;
+      /**
+       *  主键ID
+       * @type {number}
+       */
+      carId;
 
-      /**  车长 */
-      carLength: number;
+      /**
+       *  车长
+       * @type {number}
+       */
+      carLength;
 
-      /**  车辆编号 */
-      carNo: string;
+      /**
+       *  车辆编号
+       * @type {string}
+       */
+      carNo;
 
-      /**  车辆类型 */
-      carType: string;
+      /**
+       *  车辆类型
+       * @type {string}
+       */
+      carType;
 
-      /**  承运商表CarrierInfo的ID,承运商车辆会存在 */
-      carrierInfoId: number;
+      /**
+       *  承运商表CarrierInfo的ID,承运商车辆会存在
+       * @type {number}
+       */
+      carrierInfoId;
 
-      /**  公司id */
-      companyInfoId: number;
+      /**
+       *  公司id
+       * @type {number}
+       */
+      companyInfoId;
 
-      /**  企业名称 */
-      companyName: string;
+      /**
+       *  企业名称
+       * @type {string}
+       */
+      companyName;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /**  绑定设备号 */
-      deviceNo: string;
+      /**
+       *  绑定设备号
+       * @type {string}
+       */
+      deviceNo;
 
-      /**  司机姓名 */
-      driverName: string;
+      /**
+       *  司机姓名
+       * @type {string}
+       */
+      driverName;
 
-      /**  司机手机号 */
-      driverPhone: string;
+      /**
+       *  司机手机号
+       * @type {string}
+       */
+      driverPhone;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /**  机动车辆类型 */
-      motorVehicleType: string;
+      /**
+       *  机动车辆类型
+       * @type {string}
+       */
+      motorVehicleType;
 
-      /**  组织名称 */
-      organizationName: string;
+      /**
+       *  组织名称
+       * @type {string}
+       */
+      organizationName;
 
-      /**  会员ID */
-      partyId: number;
+      /**
+       *  会员ID
+       * @type {number}
+       */
+      partyId;
 
-      /**  车牌号 */
-      plateNumber: string;
+      /**
+       *  车牌号
+       * @type {string}
+       */
+      plateNumber;
 
-      /**  备注 */
-      remark: string;
+      /**
+       *  备注
+       * @type {string}
+       */
+      remark;
 
-      /**  记录更新时间 */
-      stampDate: string;
+      /**
+       *  记录更新时间
+       * @type {string}
+       */
+      stampDate;
 
-      /**  额定体积 */
-      volume: number;
+      /**
+       *  额定体积
+       * @type {number}
+       */
+      volume;
     }
 
     export class CarBindDeviceParam {
-      /**  车辆id */
-      carId: number;
+      /**
+       *  车辆id
+       * @type {number}
+       */
+      carId;
 
-      /**  绑定设备号 */
-      deviceNo: string;
+      /**
+       *  绑定设备号
+       * @type {string}
+       */
+      deviceNo;
 
-      /** 设备类型 小黑卡，中交兴路 */
-      deviceType: string;
+      /**
+       * 设备类型 小黑卡，中交兴路
+       * @type {string}
+       */
+      deviceType;
 
-      /**  车牌号 */
-      plateNumber: string;
+      /**
+       *  车牌号
+       * @type {string}
+       */
+      plateNumber;
     }
 
     export class CarDTO {
-      /**  额定载重 */
-      capacity: number;
+      /**
+       *  额定载重
+       * @type {number}
+       */
+      capacity;
 
-      /**  主键ID */
-      carId: number;
+      /**
+       *  主键ID
+       * @type {number}
+       */
+      carId;
 
-      /**  车长 */
-      carLength: number;
+      /**
+       *  车长
+       * @type {number}
+       */
+      carLength;
 
-      /**  车辆编号 */
-      carNo: string;
+      /**
+       *  车辆编号
+       * @type {string}
+       */
+      carNo;
 
-      /**  车辆类型 */
-      carType: string;
+      /**
+       *  车辆类型
+       * @type {string}
+       */
+      carType;
 
-      /**  承运商表CarrierInfo的ID,承运商车辆会存在 */
-      carrierInfoId: number;
+      /**
+       *  承运商表CarrierInfo的ID,承运商车辆会存在
+       * @type {number}
+       */
+      carrierInfoId;
 
-      /**  承运商名称 */
-      carrierName: string;
+      /**
+       *  承运商名称
+       * @type {string}
+       */
+      carrierName;
 
-      /**  公司id */
-      companyInfoId: number;
+      /**
+       *  公司id
+       * @type {number}
+       */
+      companyInfoId;
 
-      /**  企业名称 */
-      companyName: string;
+      /**
+       *  企业名称
+       * @type {string}
+       */
+      companyName;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /**  绑定设备号 */
-      deviceNo: string;
+      /**
+       *  绑定设备号
+       * @type {string}
+       */
+      deviceNo;
 
-      /**  司机姓名 */
-      driverName: string;
+      /**
+       *  司机姓名
+       * @type {string}
+       */
+      driverName;
 
-      /**  司机手机号 */
-      driverPhone: string;
+      /**
+       *  司机手机号
+       * @type {string}
+       */
+      driverPhone;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** 地址信息 */
-      iotGpsVO: defs.api1.IotGpsVO;
+      /**
+       * 地址信息
+       * @type {defs.api1.IotGpsVO}
+       */
+      iotGpsVO;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /**  机动车辆类型 */
-      motorVehicleType: string;
+      /**
+       *  机动车辆类型
+       * @type {string}
+       */
+      motorVehicleType;
 
-      /**  组织名称 */
-      organizationName: string;
+      /**
+       *  组织名称
+       * @type {string}
+       */
+      organizationName;
 
-      /**  会员ID */
-      partyId: number;
+      /**
+       *  会员ID
+       * @type {number}
+       */
+      partyId;
 
-      /**  车牌号 */
-      plateNumber: string;
+      /**
+       *  车牌号
+       * @type {string}
+       */
+      plateNumber;
 
-      /**  备注 */
-      remark: string;
+      /**
+       *  备注
+       * @type {string}
+       */
+      remark;
 
-      /**  记录更新时间 */
-      stampDate: string;
+      /**
+       *  记录更新时间
+       * @type {string}
+       */
+      stampDate;
 
-      /**  额定体积 */
-      volume: number;
+      /**
+       *  额定体积
+       * @type {number}
+       */
+      volume;
     }
 
     export class CarQueryParam {
-      /**  车辆类型 */
-      carType: string;
+      /**
+       *  车辆类型
+       * @type {string}
+       */
+      carType;
 
-      /**  承运商表CarrierInfo的ID,承运商车辆会存在 */
-      carrierInfoId: number;
+      /**
+       *  承运商表CarrierInfo的ID,承运商车辆会存在
+       * @type {number}
+       */
+      carrierInfoId;
 
-      /** companyInfoId */
-      companyInfoId: number;
+      /**
+       * companyInfoId
+       * @type {number}
+       */
+      companyInfoId;
 
-      /** driverPhone */
-      driverPhone: string;
+      /**
+       * driverPhone
+       * @type {string}
+       */
+      driverPhone;
 
-      /** enableStatus */
-      enableStatus: string;
+      /**
+       * enableStatus
+       * @type {string}
+       */
+      enableStatus;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** 关键字：车牌，司机姓名，手机号的模糊查询 */
-      keyWord: string;
+      /**
+       * 关键字：车牌，司机姓名，手机号的模糊查询
+       * @type {string}
+       */
+      keyWord;
 
-      /** pageSize */
-      pageSize: number;
+      /**
+       * pageSize
+       * @type {number}
+       */
+      pageSize;
 
-      /** partyId */
-      partyId: number;
+      /**
+       * partyId
+       * @type {number}
+       */
+      partyId;
 
-      /** plateNumber */
-      plateNumber: string;
+      /**
+       * plateNumber
+       * @type {string}
+       */
+      plateNumber;
 
-      /** realName */
-      realName: string;
+      /**
+       * realName
+       * @type {string}
+       */
+      realName;
 
-      /** start */
-      start: number;
+      /**
+       * start
+       * @type {number}
+       */
+      start;
     }
 
     export class CarUpdateParam {
-      /**  额定载重 */
-      capacity: number;
+      /**
+       *  额定载重
+       * @type {number}
+       */
+      capacity;
 
-      /**  车辆Id */
-      carId: number;
+      /**
+       *  车辆Id
+       * @type {number}
+       */
+      carId;
 
-      /**  车长 */
-      carLength: number;
+      /**
+       *  车长
+       * @type {number}
+       */
+      carLength;
 
-      /**  车辆类型 */
-      carType: string;
+      /**
+       *  车辆类型
+       * @type {string}
+       */
+      carType;
 
-      /**  承运商表CarrierInfo的ID,承运商车辆会存在 */
-      carrierInfoId: number;
+      /**
+       *  承运商表CarrierInfo的ID,承运商车辆会存在
+       * @type {number}
+       */
+      carrierInfoId;
 
-      /**  承运商名称 */
-      carrierName: string;
+      /**
+       *  承运商名称
+       * @type {string}
+       */
+      carrierName;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /**  绑定设备号 */
-      deviceNo: string;
+      /**
+       *  绑定设备号
+       * @type {string}
+       */
+      deviceNo;
 
-      /**  司机姓名 */
-      driverName: string;
+      /**
+       *  司机姓名
+       * @type {string}
+       */
+      driverName;
 
-      /**  司机手机号 */
-      driverPhone: string;
+      /**
+       *  司机手机号
+       * @type {string}
+       */
+      driverPhone;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /**  机动车辆类型 */
-      motorVehicleType: string;
+      /**
+       *  机动车辆类型
+       * @type {string}
+       */
+      motorVehicleType;
 
-      /**  会员ID */
-      partyId: number;
+      /**
+       *  会员ID
+       * @type {number}
+       */
+      partyId;
 
-      /**  车牌号 */
-      plateNumber: string;
+      /**
+       *  车牌号
+       * @type {string}
+       */
+      plateNumber;
 
-      /**  备注 */
-      remark: string;
+      /**
+       *  备注
+       * @type {string}
+       */
+      remark;
 
-      /**  额定体积 */
-      volume: number;
+      /**
+       *  额定体积
+       * @type {number}
+       */
+      volume;
     }
 
     export class CarrierCreateParam {
-      /**  详细地址 */
-      address: string;
+      /**
+       *  详细地址
+       * @type {string}
+       */
+      address;
 
-      /**  承运商名称 */
-      carrierName: string;
+      /**
+       *  承运商名称
+       * @type {string}
+       */
+      carrierName;
 
-      /**  市 */
-      city: string;
+      /**
+       *  市
+       * @type {string}
+       */
+      city;
 
-      /**  市编号 */
-      cityNo: string;
+      /**
+       *  市编号
+       * @type {string}
+       */
+      cityNo;
 
-      /**  公司id */
-      companyInfoId: number;
+      /**
+       *  公司id
+       * @type {number}
+       */
+      companyInfoId;
 
-      /**  企业名称 */
-      companyName: string;
+      /**
+       *  企业名称
+       * @type {string}
+       */
+      companyName;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /**  邮箱 */
-      email: string;
+      /**
+       *  邮箱
+       * @type {string}
+       */
+      email;
 
-      /**  启用状态 */
-      enableStatus: string;
+      /**
+       *  启用状态
+       * @type {string}
+       */
+      enableStatus;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /**  身份证号码 */
-      identityNumber: string;
+      /**
+       *  身份证号码
+       * @type {string}
+       */
+      identityNumber;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /**  发票抬头 */
-      invoiceTitle: string;
+      /**
+       *  发票抬头
+       * @type {string}
+       */
+      invoiceTitle;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /**  联系人 */
-      linkMan: string;
+      /**
+       *  联系人
+       * @type {string}
+       */
+      linkMan;
 
-      /**  组织名称 */
-      organizationName: string;
+      /**
+       *  组织名称
+       * @type {string}
+       */
+      organizationName;
 
-      /**  会员ID */
-      partyId: number;
+      /**
+       *  会员ID
+       * @type {number}
+       */
+      partyId;
 
-      /**  承运商电话 */
-      phone: string;
+      /**
+       *  承运商电话
+       * @type {string}
+       */
+      phone;
 
-      /**  省 */
-      province: string;
+      /**
+       *  省
+       * @type {string}
+       */
+      province;
 
-      /**  省编号 */
-      provinceNo: string;
+      /**
+       *  省编号
+       * @type {string}
+       */
+      provinceNo;
 
-      /**  区 */
-      region: string;
+      /**
+       *  区
+       * @type {string}
+       */
+      region;
 
-      /**  区编号 */
-      regionNo: string;
+      /**
+       *  区编号
+       * @type {string}
+       */
+      regionNo;
 
-      /**  备注信息 */
-      remark: string;
+      /**
+       *  备注信息
+       * @type {string}
+       */
+      remark;
 
-      /**  税号 */
-      taxNo: string;
+      /**
+       *  税号
+       * @type {string}
+       */
+      taxNo;
 
-      /**  税率 */
-      taxRate: number;
+      /**
+       *  税率
+       * @type {number}
+       */
+      taxRate;
 
-      /**  联系人电话 */
-      tel: string;
+      /**
+       *  联系人电话
+       * @type {string}
+       */
+      tel;
     }
 
     export class CarrierInfo {
-      /**  详细地址 */
-      address: string;
+      /**
+       *  详细地址
+       * @type {string}
+       */
+      address;
 
-      /**  ID */
-      carrierInfoId: number;
+      /**
+       *  ID
+       * @type {number}
+       */
+      carrierInfoId;
 
-      /**  承运商名称 */
-      carrierName: string;
+      /**
+       *  承运商名称
+       * @type {string}
+       */
+      carrierName;
 
-      /**  承运商编码 */
-      carrierNo: string;
+      /**
+       *  承运商编码
+       * @type {string}
+       */
+      carrierNo;
 
-      /**  市 */
-      city: string;
+      /**
+       *  市
+       * @type {string}
+       */
+      city;
 
-      /**  市编号 */
-      cityNo: string;
+      /**
+       *  市编号
+       * @type {string}
+       */
+      cityNo;
 
-      /**  公司id */
-      companyInfoId: number;
+      /**
+       *  公司id
+       * @type {number}
+       */
+      companyInfoId;
 
-      /**  企业名称 */
-      companyName: string;
+      /**
+       *  企业名称
+       * @type {string}
+       */
+      companyName;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /**  邮箱 */
-      email: string;
+      /**
+       *  邮箱
+       * @type {string}
+       */
+      email;
 
-      /**  启用状态 */
-      enableStatus: string;
+      /**
+       *  启用状态
+       * @type {string}
+       */
+      enableStatus;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /**  身份证号码 */
-      identityNumber: string;
+      /**
+       *  身份证号码
+       * @type {string}
+       */
+      identityNumber;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /**  发票抬头 */
-      invoiceTitle: string;
+      /**
+       *  发票抬头
+       * @type {string}
+       */
+      invoiceTitle;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /**  联系人 */
-      linkMan: string;
+      /**
+       *  联系人
+       * @type {string}
+       */
+      linkMan;
 
-      /**  组织名称 */
-      organizationName: string;
+      /**
+       *  组织名称
+       * @type {string}
+       */
+      organizationName;
 
-      /**  会员ID */
-      partyId: number;
+      /**
+       *  会员ID
+       * @type {number}
+       */
+      partyId;
 
-      /**  承运商电话 */
-      phone: string;
+      /**
+       *  承运商电话
+       * @type {string}
+       */
+      phone;
 
-      /**  省 */
-      province: string;
+      /**
+       *  省
+       * @type {string}
+       */
+      province;
 
-      /**  省编号 */
-      provinceNo: string;
+      /**
+       *  省编号
+       * @type {string}
+       */
+      provinceNo;
 
-      /**  区 */
-      region: string;
+      /**
+       *  区
+       * @type {string}
+       */
+      region;
 
-      /**  区编号 */
-      regionNo: string;
+      /**
+       *  区编号
+       * @type {string}
+       */
+      regionNo;
 
-      /**  备注信息 */
-      remark: string;
+      /**
+       *  备注信息
+       * @type {string}
+       */
+      remark;
 
-      /** stampDate */
-      stampDate: string;
+      /**
+       * stampDate
+       * @type {string}
+       */
+      stampDate;
 
-      /**  税号 */
-      taxNo: string;
+      /**
+       *  税号
+       * @type {string}
+       */
+      taxNo;
 
-      /**  税率 */
-      taxRate: number;
+      /**
+       *  税率
+       * @type {number}
+       */
+      taxRate;
 
-      /**  联系人电话 */
-      tel: string;
+      /**
+       *  联系人电话
+       * @type {string}
+       */
+      tel;
     }
 
     export class CarrierQueryParam {
-      /** 详细地址 */
-      address: string;
+      /**
+       * 详细地址
+       * @type {string}
+       */
+      address;
 
-      /** 承运商名称 */
-      carrierName: string;
+      /**
+       * 承运商名称
+       * @type {string}
+       */
+      carrierName;
 
-      /** carrierNo */
-      carrierNo: string;
+      /**
+       * carrierNo
+       * @type {string}
+       */
+      carrierNo;
 
-      /** 市 */
-      city: string;
+      /**
+       * 市
+       * @type {string}
+       */
+      city;
 
-      /** 市编号 */
-      cityNo: string;
+      /**
+       * 市编号
+       * @type {string}
+       */
+      cityNo;
 
-      /** companyInfoId */
-      companyInfoId: number;
+      /**
+       * companyInfoId
+       * @type {number}
+       */
+      companyInfoId;
 
-      /** enableStatus */
-      enableStatus: string;
+      /**
+       * enableStatus
+       * @type {string}
+       */
+      enableStatus;
 
-      /** 身份证号码 */
-      identityNumber: string;
+      /**
+       * 身份证号码
+       * @type {string}
+       */
+      identityNumber;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** 关键字 */
-      keyWord: string;
+      /**
+       * 关键字
+       * @type {string}
+       */
+      keyWord;
 
-      /** 联系人 */
-      linkMan: string;
+      /**
+       * 联系人
+       * @type {string}
+       */
+      linkMan;
 
-      /** pageSize */
-      pageSize: number;
+      /**
+       * pageSize
+       * @type {number}
+       */
+      pageSize;
 
-      /** partyId */
-      partyId: number;
+      /**
+       * partyId
+       * @type {number}
+       */
+      partyId;
 
-      /** 承运商电话 */
-      phone: string;
+      /**
+       * 承运商电话
+       * @type {string}
+       */
+      phone;
 
-      /** 省 */
-      province: string;
+      /**
+       * 省
+       * @type {string}
+       */
+      province;
 
-      /** 省编号 */
-      provinceNo: string;
+      /**
+       * 省编号
+       * @type {string}
+       */
+      provinceNo;
 
-      /** realName */
-      realName: string;
+      /**
+       * realName
+       * @type {string}
+       */
+      realName;
 
-      /** 区 */
-      region: string;
+      /**
+       * 区
+       * @type {string}
+       */
+      region;
 
-      /** 区编号 */
-      regionNo: string;
+      /**
+       * 区编号
+       * @type {string}
+       */
+      regionNo;
 
-      /** start */
-      start: number;
+      /**
+       * start
+       * @type {number}
+       */
+      start;
 
-      /** 联系人电话 */
-      tel: string;
+      /**
+       * 联系人电话
+       * @type {string}
+       */
+      tel;
     }
 
     export class CarrierUpdateParam {
-      /**  详细地址 */
-      address: string;
+      /**
+       *  详细地址
+       * @type {string}
+       */
+      address;
 
-      /**  承运商名称 */
-      carrierName: string;
+      /**
+       *  承运商名称
+       * @type {string}
+       */
+      carrierName;
 
-      /**  市 */
-      city: string;
+      /**
+       *  市
+       * @type {string}
+       */
+      city;
 
-      /**  市编号 */
-      cityNo: string;
+      /**
+       *  市编号
+       * @type {string}
+       */
+      cityNo;
 
-      /**  公司id */
-      companyInfoId: number;
+      /**
+       *  公司id
+       * @type {number}
+       */
+      companyInfoId;
 
-      /**  企业名称 */
-      companyName: string;
+      /**
+       *  企业名称
+       * @type {string}
+       */
+      companyName;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /**  邮箱 */
-      email: string;
+      /**
+       *  邮箱
+       * @type {string}
+       */
+      email;
 
-      /**  启用状态 */
-      enableStatus: string;
+      /**
+       *  启用状态
+       * @type {string}
+       */
+      enableStatus;
 
-      /**  承运商名称 */
-      id: number;
+      /**
+       *  承运商名称
+       * @type {number}
+       */
+      id;
 
-      /**  身份证号码 */
-      identityNumber: string;
+      /**
+       *  身份证号码
+       * @type {string}
+       */
+      identityNumber;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /**  发票抬头 */
-      invoiceTitle: string;
+      /**
+       *  发票抬头
+       * @type {string}
+       */
+      invoiceTitle;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /**  联系人 */
-      linkMan: string;
+      /**
+       *  联系人
+       * @type {string}
+       */
+      linkMan;
 
-      /**  组织名称 */
-      organizationName: string;
+      /**
+       *  组织名称
+       * @type {string}
+       */
+      organizationName;
 
-      /**  会员ID */
-      partyId: number;
+      /**
+       *  会员ID
+       * @type {number}
+       */
+      partyId;
 
-      /**  承运商电话 */
-      phone: string;
+      /**
+       *  承运商电话
+       * @type {string}
+       */
+      phone;
 
-      /**  省 */
-      province: string;
+      /**
+       *  省
+       * @type {string}
+       */
+      province;
 
-      /**  省编号 */
-      provinceNo: string;
+      /**
+       *  省编号
+       * @type {string}
+       */
+      provinceNo;
 
-      /**  区 */
-      region: string;
+      /**
+       *  区
+       * @type {string}
+       */
+      region;
 
-      /**  区编号 */
-      regionNo: string;
+      /**
+       *  区编号
+       * @type {string}
+       */
+      regionNo;
 
-      /**  备注信息 */
-      remark: string;
+      /**
+       *  备注信息
+       * @type {string}
+       */
+      remark;
 
-      /**  税号 */
-      taxNo: string;
+      /**
+       *  税号
+       * @type {string}
+       */
+      taxNo;
 
-      /**  税率 */
-      taxRate: number;
+      /**
+       *  税率
+       * @type {number}
+       */
+      taxRate;
 
-      /**  联系人电话 */
-      tel: string;
+      /**
+       *  联系人电话
+       * @type {string}
+       */
+      tel;
     }
 
     export class ConsigneInfoDO {
-      /** address */
-      address: string;
+      /**
+       * address
+       * @type {string}
+       */
+      address;
 
-      /** city */
-      city: string;
+      /**
+       * city
+       * @type {string}
+       */
+      city;
 
-      /** cityNo */
-      cityNo: string;
+      /**
+       * cityNo
+       * @type {string}
+       */
+      cityNo;
 
-      /** consigneNo */
-      consigneNo: string;
+      /**
+       * consigneNo
+       * @type {string}
+       */
+      consigneNo;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** invoiceTitle */
-      invoiceTitle: string;
+      /**
+       * invoiceTitle
+       * @type {string}
+       */
+      invoiceTitle;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** linkMan */
-      linkMan: string;
+      /**
+       * linkMan
+       * @type {string}
+       */
+      linkMan;
 
-      /** name */
-      name: string;
+      /**
+       * name
+       * @type {string}
+       */
+      name;
 
-      /** omsConsigneInfoId */
-      omsConsigneInfoId: number;
+      /**
+       * omsConsigneInfoId
+       * @type {number}
+       */
+      omsConsigneInfoId;
 
-      /** partyId */
-      partyId: number;
+      /**
+       * partyId
+       * @type {number}
+       */
+      partyId;
 
-      /** province */
-      province: string;
+      /**
+       * province
+       * @type {string}
+       */
+      province;
 
-      /** provinceNo */
-      provinceNo: string;
+      /**
+       * provinceNo
+       * @type {string}
+       */
+      provinceNo;
 
-      /** region */
-      region: string;
+      /**
+       * region
+       * @type {string}
+       */
+      region;
 
-      /** regionNo */
-      regionNo: string;
+      /**
+       * regionNo
+       * @type {string}
+       */
+      regionNo;
 
-      /** remark */
-      remark: string;
+      /**
+       * remark
+       * @type {string}
+       */
+      remark;
 
-      /** statementUnit */
-      statementUnit: string;
+      /**
+       * statementUnit
+       * @type {string}
+       */
+      statementUnit;
 
-      /** taxNo */
-      taxNo: string;
+      /**
+       * taxNo
+       * @type {string}
+       */
+      taxNo;
 
-      /** tel */
-      tel: string;
+      /**
+       * tel
+       * @type {string}
+       */
+      tel;
 
-      /** type */
-      type: string;
+      /**
+       * type
+       * @type {string}
+       */
+      type;
     }
 
     export class ConsigneInfoVO {
-      /** address */
-      address: string;
+      /**
+       * address
+       * @type {string}
+       */
+      address;
 
-      /** city */
-      city: string;
+      /**
+       * city
+       * @type {string}
+       */
+      city;
 
-      /** cityNo */
-      cityNo: string;
+      /**
+       * cityNo
+       * @type {string}
+       */
+      cityNo;
 
-      /** consigneInfoIds */
-      consigneInfoIds: Array<number>;
+      /**
+       * consigneInfoIds
+       * @type {Array<number>}
+       */
+      consigneInfoIds;
 
-      /** consigneNo */
-      consigneNo: string;
+      /**
+       * consigneNo
+       * @type {string}
+       */
+      consigneNo;
 
-      /** inRegion */
-      inRegion: string;
+      /**
+       * inRegion
+       * @type {string}
+       */
+      inRegion;
 
-      /** invoiceTitle */
-      invoiceTitle: string;
+      /**
+       * invoiceTitle
+       * @type {string}
+       */
+      invoiceTitle;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** keyWord */
-      keyWord: string;
+      /**
+       * keyWord
+       * @type {string}
+       */
+      keyWord;
 
-      /** linkMan */
-      linkMan: string;
+      /**
+       * linkMan
+       * @type {string}
+       */
+      linkMan;
 
-      /** name */
-      name: string;
+      /**
+       * name
+       * @type {string}
+       */
+      name;
 
-      /** omsConsigneInfoId */
-      omsConsigneInfoId: number;
+      /**
+       * omsConsigneInfoId
+       * @type {number}
+       */
+      omsConsigneInfoId;
 
-      /** ordinarySearch */
-      ordinarySearch: string;
+      /**
+       * ordinarySearch
+       * @type {string}
+       */
+      ordinarySearch;
 
-      /** pageSize */
-      pageSize: number;
+      /**
+       * pageSize
+       * @type {number}
+       */
+      pageSize;
 
-      /** partyId */
-      partyId: number;
+      /**
+       * partyId
+       * @type {number}
+       */
+      partyId;
 
-      /** province */
-      province: string;
+      /**
+       * province
+       * @type {string}
+       */
+      province;
 
-      /** provinceNo */
-      provinceNo: string;
+      /**
+       * provinceNo
+       * @type {string}
+       */
+      provinceNo;
 
-      /** realName */
-      realName: string;
+      /**
+       * realName
+       * @type {string}
+       */
+      realName;
 
-      /** region */
-      region: string;
+      /**
+       * region
+       * @type {string}
+       */
+      region;
 
-      /** regionNo */
-      regionNo: string;
+      /**
+       * regionNo
+       * @type {string}
+       */
+      regionNo;
 
-      /** remark */
-      remark: string;
+      /**
+       * remark
+       * @type {string}
+       */
+      remark;
 
-      /** serialNum */
-      serialNum: number;
+      /**
+       * serialNum
+       * @type {number}
+       */
+      serialNum;
 
-      /** start */
-      start: number;
+      /**
+       * start
+       * @type {number}
+       */
+      start;
 
-      /** statementUnit */
-      statementUnit: string;
+      /**
+       * statementUnit
+       * @type {string}
+       */
+      statementUnit;
 
-      /** taxNo */
-      taxNo: string;
+      /**
+       * taxNo
+       * @type {string}
+       */
+      taxNo;
 
-      /** tel */
-      tel: string;
+      /**
+       * tel
+       * @type {string}
+       */
+      tel;
 
-      /** type */
-      type: string;
+      /**
+       * type
+       * @type {string}
+       */
+      type;
 
-      /** typeList */
-      typeList: Array<string>;
+      /**
+       * typeList
+       * @type {Array<string>}
+       */
+      typeList;
     }
 
     export class CostItem {
-      /**  签约企业IloopContractedCompany表的ID */
-      companyId: number;
+      /**
+       *  签约企业IloopContractedCompany表的ID
+       * @type {number}
+       */
+      companyId;
 
-      /**  主键ID */
-      costItemId: number;
+      /**
+       *  主键ID
+       * @type {number}
+       */
+      costItemId;
 
-      /**  费用项的顺序索引 */
-      costItemIndex: number;
+      /**
+       *  费用项的顺序索引
+       * @type {number}
+       */
+      costItemIndex;
 
-      /**  费用项说明 */
-      costItemInfo: string;
+      /**
+       *  费用项说明
+       * @type {string}
+       */
+      costItemInfo;
 
-      /**  费用项名称 */
-      costItemName: string;
+      /**
+       *  费用项名称
+       * @type {string}
+       */
+      costItemName;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /**  启用状态: 0 启用；1 停用 */
-      enableStatus: string;
+      /**
+       *  启用状态: 0 启用；1 停用
+       * @type {string}
+       */
+      enableStatus;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /**  费用项名称 + 增加；- 扣减 */
-      operationType: string;
+      /**
+       *  费用项名称 + 增加；- 扣减
+       * @type {string}
+       */
+      operationType;
 
-      /**  记录更新时间 */
-      stampDate: string;
+      /**
+       *  记录更新时间
+       * @type {string}
+       */
+      stampDate;
     }
 
     export class DeleteByIdsParam {
-      /** id列表 */
-      id: Array<number>;
+      /**
+       * id列表
+       * @type {Array<number>}
+       */
+      id;
     }
 
     export class DeviceDo {
-      /** 所属企业 */
-      affiliatedCompany: string;
+      /**
+       * 所属企业
+       * @type {string}
+       */
+      affiliatedCompany;
 
-      /** 所属企业id */
-      affiliatedCompanyId: number;
+      /**
+       * 所属企业id
+       * @type {number}
+       */
+      affiliatedCompanyId;
 
-      /** 所属运营商 */
-      affiliatedOperator: string;
+      /**
+       * 所属运营商
+       * @type {string}
+       */
+      affiliatedOperator;
 
-      /** 所属运营商id */
-      affiliatedOperatorId: number;
+      /**
+       * 所属运营商id
+       * @type {number}
+       */
+      affiliatedOperatorId;
 
-      /** 绑定状态 (0绑定 1未绑定) */
-      bindingStatus: string;
+      /**
+       * 绑定状态 (0绑定 1未绑定)
+       * @type {string}
+       */
+      bindingStatus;
 
-      /** 业务单号 */
-      clientOrderNo: string;
+      /**
+       * 业务单号
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** 设备编码(预留字段) */
-      deviceCode: string;
+      /**
+       * 设备编码(预留字段)
+       * @type {string}
+       */
+      deviceCode;
 
-      /** 设备名称 */
-      deviceName: string;
+      /**
+       * 设备名称
+       * @type {string}
+       */
+      deviceName;
 
-      /** 设备状态(0启用 1未启用 2停用) */
-      deviceStatus: string;
+      /**
+       * 设备状态(0启用 1未启用 2停用)
+       * @type {string}
+       */
+      deviceStatus;
 
-      /** 设备类型 */
-      deviceType: string;
+      /**
+       * 设备类型
+       * @type {string}
+       */
+      deviceType;
 
-      /** iccid(卡号) */
-      iccid: string;
+      /**
+       * iccid(卡号)
+       * @type {string}
+       */
+      iccid;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** 在线状态 (0在线 1离线) */
-      onlineStatus: string;
+      /**
+       * 在线状态 (0在线 1离线)
+       * @type {string}
+       */
+      onlineStatus;
 
-      /** 会员ID */
-      partyId: number;
+      /**
+       * 会员ID
+       * @type {number}
+       */
+      partyId;
 
-      /** 最近绑定时间 */
-      recentlyBoundTime: string;
+      /**
+       * 最近绑定时间
+       * @type {string}
+       */
+      recentlyBoundTime;
 
-      /** 最近上报时间 */
-      recentlyReportedTime: string;
+      /**
+       * 最近上报时间
+       * @type {string}
+       */
+      recentlyReportedTime;
 
-      /** 发展人 */
-      referencePerson: string;
+      /**
+       * 发展人
+       * @type {string}
+       */
+      referencePerson;
 
-      /** 设备序列号 */
-      serialNo: string;
+      /**
+       * 设备序列号
+       * @type {string}
+       */
+      serialNo;
 
-      /** 软件版本号 */
-      softwareVersionNum: string;
+      /**
+       * 软件版本号
+       * @type {string}
+       */
+      softwareVersionNum;
 
-      /** 跟踪对象名称 */
-      trackName: string;
+      /**
+       * 跟踪对象名称
+       * @type {string}
+       */
+      trackName;
     }
 
     export class DeviceParam {
-      /** 签约企业(新增或修改设备时,该参数必传) */
-      affiliatedCompany: string;
+      /**
+       * 签约企业(新增或修改设备时,该参数必传)
+       * @type {string}
+       */
+      affiliatedCompany;
 
-      /** 所属企业ID */
-      affiliatedCompanyId: number;
+      /**
+       * 所属企业ID
+       * @type {number}
+       */
+      affiliatedCompanyId;
 
-      /** affiliatedCompanyIds */
-      affiliatedCompanyIds: Array<number>;
+      /**
+       * affiliatedCompanyIds
+       * @type {Array<number>}
+       */
+      affiliatedCompanyIds;
 
-      /** 运营组织(新增或修改设备时,该参数必传) */
-      affiliatedOperator: string;
+      /**
+       * 运营组织(新增或修改设备时,该参数必传)
+       * @type {string}
+       */
+      affiliatedOperator;
 
-      /** 所属运营商ID */
-      affiliatedOperatorId: number;
+      /**
+       * 所属运营商ID
+       * @type {number}
+       */
+      affiliatedOperatorId;
 
-      /** 截止创建日期 */
-      createDateEnd: string;
+      /**
+       * 截止创建日期
+       * @type {string}
+       */
+      createDateEnd;
 
-      /** 起始创建日期 */
-      createDateStart: string;
+      /**
+       * 起始创建日期
+       * @type {string}
+       */
+      createDateStart;
 
-      /** 设备编码(预留字段) */
-      deviceCode: string;
+      /**
+       * 设备编码(预留字段)
+       * @type {string}
+       */
+      deviceCode;
 
-      /** 设备名称 */
-      deviceName: string;
+      /**
+       * 设备名称
+       * @type {string}
+       */
+      deviceName;
 
-      /** 设备状态(0启用 1未启用 2停用) */
-      deviceStatus: string;
+      /**
+       * 设备状态(0启用 1未启用 2停用)
+       * @type {string}
+       */
+      deviceStatus;
 
-      /** 设备类型 */
-      deviceType: string;
+      /**
+       * 设备类型
+       * @type {string}
+       */
+      deviceType;
 
-      /** 卡号 */
-      iccid: string;
+      /**
+       * 卡号
+       * @type {string}
+       */
+      iccid;
 
-      /** 设备id(修改或删除时该参数必传) */
-      id: number;
+      /**
+       * 设备id(修改或删除时该参数必传)
+       * @type {number}
+       */
+      id;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** 在线状态 (0在线 1离线) */
-      onlineStatus: string;
+      /**
+       * 在线状态 (0在线 1离线)
+       * @type {string}
+       */
+      onlineStatus;
 
-      /** pageSize */
-      pageSize: number;
+      /**
+       * pageSize
+       * @type {number}
+       */
+      pageSize;
 
-      /** 发展人 */
-      referencePerson: string;
+      /**
+       * 发展人
+       * @type {string}
+       */
+      referencePerson;
 
-      /** 设备序列号(新增或修改设备时,该参数必传) */
-      serialNo: string;
+      /**
+       * 设备序列号(新增或修改设备时,该参数必传)
+       * @type {string}
+       */
+      serialNo;
 
-      /** 来源    0 运营pc端调用  1货主pc端调用 */
-      source: string;
+      /**
+       * 来源    0 运营pc端调用  1货主pc端调用
+       * @type {string}
+       */
+      source;
 
-      /** start */
-      start: number;
+      /**
+       * start
+       * @type {number}
+       */
+      start;
 
-      /** 跟踪对象名称 */
-      trackName: string;
+      /**
+       * 跟踪对象名称
+       * @type {string}
+       */
+      trackName;
     }
 
     export class DevicesInfoVO {
-      /** 绑定设备总数 */
-      bindingTotal: number;
+      /**
+       * 绑定设备总数
+       * @type {number}
+       */
+      bindingTotal;
 
-      /** 离线设备总数 */
-      lineTotal: number;
+      /**
+       * 离线设备总数
+       * @type {number}
+       */
+      lineTotal;
 
-      /** 设备列表 */
-      page: defs.api1.Page<defs.api1.OrderDevicesInfoVO>;
+      /**
+       * 设备列表
+       * @type {defs.api1.Page<defs.api1.OrderDevicesInfoVO>}
+       */
+      page;
 
-      /** 待回收设备总数 */
-      recycleTotal: number;
+      /**
+       * 待回收设备总数
+       * @type {number}
+       */
+      recycleTotal;
 
-      /** 全部设备总数 */
-      total: number;
+      /**
+       * 全部设备总数
+       * @type {number}
+       */
+      total;
 
-      /** 未绑定设备总数 */
-      unBindingTotal: number;
+      /**
+       * 未绑定设备总数
+       * @type {number}
+       */
+      unBindingTotal;
     }
 
     export class DevicesTrackRequest {
-      /** devicesNo */
-      devicesNo: string;
+      /**
+       * devicesNo
+       * @type {string}
+       */
+      devicesNo;
 
-      /** endCreateDate */
-      endCreateDate: string;
+      /**
+       * endCreateDate
+       * @type {string}
+       */
+      endCreateDate;
 
-      /** startCreateDate */
-      startCreateDate: string;
+      /**
+       * startCreateDate
+       * @type {string}
+       */
+      startCreateDate;
     }
 
     export class DictionaryListParam {
-      /** clientOrderNo */
-      clientOrderNo: string;
+      /**
+       * clientOrderNo
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /** description */
-      description: string;
+      /**
+       * description
+       * @type {string}
+       */
+      description;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** pageSize */
-      pageSize: number;
+      /**
+       * pageSize
+       * @type {number}
+       */
+      pageSize;
 
-      /** partyId */
-      partyId: number;
+      /**
+       * partyId
+       * @type {number}
+       */
+      partyId;
 
-      /** realName */
-      realName: string;
+      /**
+       * realName
+       * @type {string}
+       */
+      realName;
 
-      /** start */
-      start: number;
+      /**
+       * start
+       * @type {number}
+       */
+      start;
 
-      /** type */
-      type: string;
+      /**
+       * type
+       * @type {string}
+       */
+      type;
 
-      /** typeName */
-      typeName: string;
+      /**
+       * typeName
+       * @type {string}
+       */
+      typeName;
     }
 
     export class EyeTrackVO {
-      /** 天眼跟单列表 */
-      page: defs.api1.Page<defs.api1.RequestOrderVO>;
+      /**
+       * 天眼跟单列表
+       * @type {defs.api1.Page<defs.api1.RequestOrderVO>}
+       */
+      page;
 
-      /** 历史签收总数 */
-      pastCount: number;
+      /**
+       * 历史签收总数
+       * @type {number}
+       */
+      pastCount;
 
-      /** 近期签收总数 */
-      recentCount: number;
+      /**
+       * 近期签收总数
+       * @type {number}
+       */
+      recentCount;
 
-      /** 执行中总数 */
-      runningCount: number;
+      /**
+       * 执行中总数
+       * @type {number}
+       */
+      runningCount;
     }
 
     export class GoodsInfoDO {
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** goodsModelNo */
-      goodsModelNo: string;
+      /**
+       * goodsModelNo
+       * @type {string}
+       */
+      goodsModelNo;
 
-      /** goodsName */
-      goodsName: string;
+      /**
+       * goodsName
+       * @type {string}
+       */
+      goodsName;
 
-      /** goodsNo */
-      goodsNo: string;
+      /**
+       * goodsNo
+       * @type {string}
+       */
+      goodsNo;
 
-      /** goodsPackage */
-      goodsPackage: string;
+      /**
+       * goodsPackage
+       * @type {string}
+       */
+      goodsPackage;
 
-      /** goodsType */
-      goodsType: string;
+      /**
+       * goodsType
+       * @type {string}
+       */
+      goodsType;
 
-      /** goodsUnit */
-      goodsUnit: string;
+      /**
+       * goodsUnit
+       * @type {string}
+       */
+      goodsUnit;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** packingType */
-      packingType: string;
+      /**
+       * packingType
+       * @type {string}
+       */
+      packingType;
 
-      /** partyId */
-      partyId: number;
+      /**
+       * partyId
+       * @type {number}
+       */
+      partyId;
 
-      /** remark */
-      remark: string;
+      /**
+       * remark
+       * @type {string}
+       */
+      remark;
     }
 
     export class GoodsInfoQueryParam {
-      /** goodsModelNo */
-      goodsModelNo: string;
+      /**
+       * goodsModelNo
+       * @type {string}
+       */
+      goodsModelNo;
 
-      /** goodsName */
-      goodsName: string;
+      /**
+       * goodsName
+       * @type {string}
+       */
+      goodsName;
 
-      /** goodsNo */
-      goodsNo: string;
+      /**
+       * goodsNo
+       * @type {string}
+       */
+      goodsNo;
 
-      /** goodsPackage */
-      goodsPackage: string;
+      /**
+       * goodsPackage
+       * @type {string}
+       */
+      goodsPackage;
 
-      /** goodsType */
-      goodsType: string;
+      /**
+       * goodsType
+       * @type {string}
+       */
+      goodsType;
 
-      /** goodsUnit */
-      goodsUnit: string;
+      /**
+       * goodsUnit
+       * @type {string}
+       */
+      goodsUnit;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** keyWord */
-      keyWord: string;
+      /**
+       * keyWord
+       * @type {string}
+       */
+      keyWord;
 
-      /** packingType */
-      packingType: string;
+      /**
+       * packingType
+       * @type {string}
+       */
+      packingType;
 
-      /** pageSize */
-      pageSize: number;
+      /**
+       * pageSize
+       * @type {number}
+       */
+      pageSize;
 
-      /** partyId */
-      partyId: number;
+      /**
+       * partyId
+       * @type {number}
+       */
+      partyId;
 
-      /** realName */
-      realName: string;
+      /**
+       * realName
+       * @type {string}
+       */
+      realName;
 
-      /** remark */
-      remark: string;
+      /**
+       * remark
+       * @type {string}
+       */
+      remark;
 
-      /** start */
-      start: number;
+      /**
+       * start
+       * @type {number}
+       */
+      start;
     }
 
     export class IotGpsVO {
-      /** 详细地址 */
-      address: string;
+      /**
+       * 详细地址
+       * @type {string}
+       */
+      address;
 
-      /** 中交兴路id */
-      carLocationId: number;
+      /**
+       * 中交兴路id
+       * @type {number}
+       */
+      carLocationId;
 
-      /** 承运商名称 */
-      carrierName: string;
+      /**
+       * 承运商名称
+       * @type {string}
+       */
+      carrierName;
 
-      /** city */
-      city: string;
+      /**
+       * city
+       * @type {string}
+       */
+      city;
 
-      /** 上报人 */
-      createMan: string;
+      /**
+       * 上报人
+       * @type {string}
+       */
+      createMan;
 
-      /** 数据来源 */
-      dataSource: string;
+      /**
+       * 数据来源
+       * @type {string}
+       */
+      dataSource;
 
-      /** deviceid */
-      deviceid: string;
+      /**
+       * deviceid
+       * @type {string}
+       */
+      deviceid;
 
-      /** 司机手机 */
-      driverPhone: string;
+      /**
+       * 司机手机
+       * @type {string}
+       */
+      driverPhone;
 
-      /** isout */
-      isout: string;
+      /**
+       * isout
+       * @type {string}
+       */
+      isout;
 
-      /** loclat */
-      loclat: string;
+      /**
+       * loclat
+       * @type {string}
+       */
+      loclat;
 
-      /** loclng */
-      loclng: string;
+      /**
+       * loclng
+       * @type {string}
+       */
+      loclng;
 
-      /** 物流状态日志 */
-      logisticsStatus: string;
+      /**
+       * 物流状态日志
+       * @type {string}
+       */
+      logisticsStatus;
 
-      /** omsOrderOperateRecordId */
-      omsOrderOperateRecordId: number;
+      /**
+       * omsOrderOperateRecordId
+       * @type {number}
+       */
+      omsOrderOperateRecordId;
 
-      /** 订单状态 */
-      orderStatus: string;
+      /**
+       * 订单状态
+       * @type {string}
+       */
+      orderStatus;
 
-      /** 车辆号 */
-      plateNumber: string;
+      /**
+       * 车辆号
+       * @type {string}
+       */
+      plateNumber;
 
-      /** province */
-      province: string;
+      /**
+       * province
+       * @type {string}
+       */
+      province;
 
-      /** region */
-      region: string;
+      /**
+       * region
+       * @type {string}
+       */
+      region;
 
-      /** 设备号 */
-      serialNo: string;
+      /**
+       * 设备号
+       * @type {string}
+       */
+      serialNo;
 
-      /** 显示时间 */
-      showTime: string;
+      /**
+       * 显示时间
+       * @type {string}
+       */
+      showTime;
 
-      /** time */
-      time: string;
+      /**
+       * time
+       * @type {string}
+       */
+      time;
     }
 
     export class JSONObject {}
@@ -1487,1264 +2909,2473 @@ declare namespace defs {
     export class Map<T0 = any, T1 = any> {}
 
     export class OmsDictionaryDO {
-      /** code */
-      code: string;
+      /**
+       * code
+       * @type {string}
+       */
+      code;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** description */
-      description: string;
+      /**
+       * description
+       * @type {string}
+       */
+      description;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** partyId */
-      partyId: number;
+      /**
+       * partyId
+       * @type {number}
+       */
+      partyId;
 
-      /** type */
-      type: string;
+      /**
+       * type
+       * @type {string}
+       */
+      type;
 
-      /** typeName */
-      typeName: string;
+      /**
+       * typeName
+       * @type {string}
+       */
+      typeName;
     }
 
     export class OrderBindParam {
-      /** 业务单号 */
-      clientOrderNo: string;
+      /**
+       * 业务单号
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /** 设备序列号 */
-      serialNo: string;
+      /**
+       * 设备序列号
+       * @type {string}
+       */
+      serialNo;
 
-      /** 绑定对象 */
-      trackName: string;
+      /**
+       * 绑定对象
+       * @type {string}
+       */
+      trackName;
 
-      /** 解绑原因 */
-      untieReason: string;
+      /**
+       * 解绑原因
+       * @type {string}
+       */
+      untieReason;
     }
 
     export class OrderCostDTO {
-      /** clientOrderNo */
-      clientOrderNo: string;
+      /**
+       * clientOrderNo
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /** 费用 */
-      cost: number;
+      /**
+       * 费用
+       * @type {number}
+       */
+      cost;
 
-      /** 费用项id */
-      costItemId: number;
+      /**
+       * 费用项id
+       * @type {number}
+       */
+      costItemId;
 
-      /** 费用项名称 */
-      costItemName: string;
+      /**
+       * 费用项名称
+       * @type {string}
+       */
+      costItemName;
 
-      /** operationType */
-      operationType: string;
+      /**
+       * operationType
+       * @type {string}
+       */
+      operationType;
     }
 
     export class OrderCostInfo {
-      /** 订单号 */
-      clientOrderNo: string;
+      /**
+       * 订单号
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /** 费用列表 */
-      orderCosts: Array<defs.api1.OrderCostDTO>;
+      /**
+       * 费用列表
+       * @type {Array<defs.api1.OrderCostDTO>}
+       */
+      orderCosts;
 
-      /** 费用总计 */
-      totalCost: number;
+      /**
+       * 费用总计
+       * @type {number}
+       */
+      totalCost;
     }
 
     export class OrderDevicesDO {
-      /** 绑定时间 */
-      bindingTime: string;
+      /**
+       * 绑定时间
+       * @type {string}
+       */
+      bindingTime;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** 设备id */
-      omsDeviceId: number;
+      /**
+       * 设备id
+       * @type {number}
+       */
+      omsDeviceId;
 
-      /** 订单id */
-      omsRequestOrderId: number;
+      /**
+       * 订单id
+       * @type {number}
+       */
+      omsRequestOrderId;
 
-      /** 备注 */
-      remark: string;
+      /**
+       * 备注
+       * @type {string}
+       */
+      remark;
 
-      /** 跟踪对象名称 */
-      trackName: string;
+      /**
+       * 跟踪对象名称
+       * @type {string}
+       */
+      trackName;
 
-      /** 类型 0=其他，1=车辆，2=订单 */
-      type: string;
+      /**
+       * 类型 0=其他，1=车辆，2=订单
+       * @type {string}
+       */
+      type;
 
-      /** 解绑时间 */
-      unBindingTime: string;
+      /**
+       * 解绑时间
+       * @type {string}
+       */
+      unBindingTime;
 
-      /** 解绑原因 */
-      untieReason: string;
+      /**
+       * 解绑原因
+       * @type {string}
+       */
+      untieReason;
     }
 
     export class OrderDevicesInfoVO {
-      /** 当前与订单绑定的设备绑定状态:BindingStatus：[绑定，未绑定，待回收，绑定离线，未绑定离线 ] */
-      bindingStatus: string;
+      /**
+       * 当前与订单绑定的设备绑定状态:BindingStatus：[绑定，未绑定，待回收，绑定离线，未绑定离线 ]
+       * @type {string}
+       */
+      bindingStatus;
 
-      /** bindingTime */
-      bindingTime: string;
+      /**
+       * bindingTime
+       * @type {string}
+       */
+      bindingTime;
 
-      /** 业务单号 */
-      clientOrderNo: string;
+      /**
+       * 业务单号
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /** 订单结束时间 */
-      endCreateDate: string;
+      /**
+       * 订单结束时间
+       * @type {string}
+       */
+      endCreateDate;
 
-      /** 当前设备所有的位置信息 */
-      gpsData: Array<defs.api1.IotGpsVO>;
+      /**
+       * 当前设备所有的位置信息
+       * @type {Array<defs.api1.IotGpsVO>}
+       */
+      gpsData;
 
-      /** 当前设备最后位置信息，纬度 */
-      loclat: string;
+      /**
+       * 当前设备最后位置信息，纬度
+       * @type {string}
+       */
+      loclat;
 
-      /** 当前设备最后位置信息，经度 */
-      loclng: string;
+      /**
+       * 当前设备最后位置信息，经度
+       * @type {string}
+       */
+      loclng;
 
-      /** 订单id */
-      omsRequestOrderId: number;
+      /**
+       * 订单id
+       * @type {number}
+       */
+      omsRequestOrderId;
 
-      /** 当前订单节点信息 */
-      orderOperateRecord: Array<defs.api1.OrderOperateRecordChangeVO>;
+      /**
+       * 当前订单节点信息
+       * @type {Array<defs.api1.OrderOperateRecordChangeVO>}
+       */
+      orderOperateRecord;
 
-      /** 跟踪对象备注 */
-      remark: string;
+      /**
+       * 跟踪对象备注
+       * @type {string}
+       */
+      remark;
 
-      /** 当前与订单绑定的设备序列号 */
-      serialNo: string;
+      /**
+       * 当前与订单绑定的设备序列号
+       * @type {string}
+       */
+      serialNo;
 
-      /** 发货人详细地址 */
-      shipmentAddress: string;
+      /**
+       * 发货人详细地址
+       * @type {string}
+       */
+      shipmentAddress;
 
-      /** 发货市 */
-      shipmentCity: string;
+      /**
+       * 发货市
+       * @type {string}
+       */
+      shipmentCity;
 
-      /** 发货省 */
-      shipmentProvince: string;
+      /**
+       * 发货省
+       * @type {string}
+       */
+      shipmentProvince;
 
-      /** 发货区 */
-      shipmentRegion: string;
+      /**
+       * 发货区
+       * @type {string}
+       */
+      shipmentRegion;
 
-      /** 当前设备最后位置信息:显示时间 */
-      showTime: string;
+      /**
+       * 当前设备最后位置信息:显示时间
+       * @type {string}
+       */
+      showTime;
 
-      /** 订单开始时间 */
-      startCreateDate: string;
+      /**
+       * 订单开始时间
+       * @type {string}
+       */
+      startCreateDate;
 
-      /** 订单状态 */
-      status: string;
+      /**
+       * 订单状态
+       * @type {string}
+       */
+      status;
 
-      /** 上报时间 */
-      time: string;
+      /**
+       * 上报时间
+       * @type {string}
+       */
+      time;
 
-      /** 跟踪对象名称 */
-      trackName: string;
+      /**
+       * 跟踪对象名称
+       * @type {string}
+       */
+      trackName;
 
-      /** 上报节点信息 */
-      transportList: Array<defs.api1.IotGpsVO>;
+      /**
+       * 上报节点信息
+       * @type {Array<defs.api1.IotGpsVO>}
+       */
+      transportList;
 
-      /** unBindingTime */
-      unBindingTime: string;
+      /**
+       * unBindingTime
+       * @type {string}
+       */
+      unBindingTime;
 
-      /** 收货人详细地址 */
-      unloadingAddress: string;
+      /**
+       * 收货人详细地址
+       * @type {string}
+       */
+      unloadingAddress;
 
-      /** 收货市 */
-      unloadingCity: string;
+      /**
+       * 收货市
+       * @type {string}
+       */
+      unloadingCity;
 
-      /** 收货省 */
-      unloadingProvince: string;
+      /**
+       * 收货省
+       * @type {string}
+       */
+      unloadingProvince;
 
-      /** 收货区 */
-      unloadingRegion: string;
+      /**
+       * 收货区
+       * @type {string}
+       */
+      unloadingRegion;
     }
 
     export class OrderDevicesVO {
-      /** 所属企业 */
-      affiliatedCompany: string;
+      /**
+       * 所属企业
+       * @type {string}
+       */
+      affiliatedCompany;
 
-      /** 所属运营商 */
-      affiliatedOperator: string;
+      /**
+       * 所属运营商
+       * @type {string}
+       */
+      affiliatedOperator;
 
-      /** 绑定人 */
-      bindingMan: string;
+      /**
+       * 绑定人
+       * @type {string}
+       */
+      bindingMan;
 
-      /** 绑定状态 (0绑定 1未绑定) */
-      bindingStatus: string;
+      /**
+       * 绑定状态 (0绑定 1未绑定)
+       * @type {string}
+       */
+      bindingStatus;
 
-      /** 绑定时间 */
-      bindingTime: string;
+      /**
+       * 绑定时间
+       * @type {string}
+       */
+      bindingTime;
 
-      /** 业务单号 */
-      clientOrderNo: string;
+      /**
+       * 业务单号
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** 设备编码(预留字段) */
-      deviceCode: string;
+      /**
+       * 设备编码(预留字段)
+       * @type {string}
+       */
+      deviceCode;
 
-      /** 设备状态(0启用 1未启用 2停用) */
-      deviceStatus: string;
+      /**
+       * 设备状态(0启用 1未启用 2停用)
+       * @type {string}
+       */
+      deviceStatus;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** 设备id */
-      omsDeviceId: number;
+      /**
+       * 设备id
+       * @type {number}
+       */
+      omsDeviceId;
 
-      /** 订单id */
-      omsRequestOrderId: number;
+      /**
+       * 订单id
+       * @type {number}
+       */
+      omsRequestOrderId;
 
-      /** 在线状态 (0在线 1离线) */
-      onlineStatus: string;
+      /**
+       * 在线状态 (0在线 1离线)
+       * @type {string}
+       */
+      onlineStatus;
 
-      /** 最近绑定时间 */
-      recentlyBoundTime: string;
+      /**
+       * 最近绑定时间
+       * @type {string}
+       */
+      recentlyBoundTime;
 
-      /** 最近上报时间 */
-      recentlyReportedTime: string;
+      /**
+       * 最近上报时间
+       * @type {string}
+       */
+      recentlyReportedTime;
 
-      /** 发展人 */
-      referencePerson: string;
+      /**
+       * 发展人
+       * @type {string}
+       */
+      referencePerson;
 
-      /** 备注 */
-      remark: string;
+      /**
+       * 备注
+       * @type {string}
+       */
+      remark;
 
-      /** 物流订单号 */
-      requestOrderNo: string;
+      /**
+       * 物流订单号
+       * @type {string}
+       */
+      requestOrderNo;
 
-      /** 设备序列号 */
-      serialNo: string;
+      /**
+       * 设备序列号
+       * @type {string}
+       */
+      serialNo;
 
-      /** 跟踪对象名称 */
-      trackName: string;
+      /**
+       * 跟踪对象名称
+       * @type {string}
+       */
+      trackName;
 
-      /** 类型 0=其他，1=车辆，2=订单 */
-      type: string;
+      /**
+       * 类型 0=其他，1=车辆，2=订单
+       * @type {string}
+       */
+      type;
 
-      /** 解绑人 */
-      unBindingMan: string;
+      /**
+       * 解绑人
+       * @type {string}
+       */
+      unBindingMan;
 
-      /** 解绑时间 */
-      unBindingTime: string;
+      /**
+       * 解绑时间
+       * @type {string}
+       */
+      unBindingTime;
 
-      /** 解绑原因 */
-      untieReason: string;
+      /**
+       * 解绑原因
+       * @type {string}
+       */
+      untieReason;
     }
 
     export class OrderEvaluate {
-      /**  订单表的单号 */
-      clientOrderNo: string;
+      /**
+       *  订单表的单号
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /**  评价的内容 */
-      content: string;
+      /**
+       *  评价的内容
+       * @type {string}
+       */
+      content;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /**  手机 */
-      mobile: string;
+      /**
+       *  手机
+       * @type {string}
+       */
+      mobile;
 
-      /**  订单表OmsRequestOrder的ID */
-      omsRequestOrderId: number;
+      /**
+       *  订单表OmsRequestOrder的ID
+       * @type {number}
+       */
+      omsRequestOrderId;
 
-      /**  主键ID */
-      orderEvaluateId: number;
+      /**
+       *  主键ID
+       * @type {number}
+       */
+      orderEvaluateId;
 
-      /**  评价的分数 */
-      score: number;
+      /**
+       *  评价的分数
+       * @type {number}
+       */
+      score;
 
-      /**  记录更新时间 */
-      stampDate: string;
+      /**
+       *  记录更新时间
+       * @type {string}
+       */
+      stampDate;
 
-      /**  用户表Id */
-      userId: number;
+      /**
+       *  用户表Id
+       * @type {number}
+       */
+      userId;
     }
 
     export class OrderEvaluateParam {
-      /** 订单号 */
-      clientOrderNo: string;
+      /**
+       * 订单号
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /** 评价内容,多个用逗号隔开(如AAA,BBB) */
-      content: string;
+      /**
+       * 评价内容,多个用逗号隔开(如AAA,BBB)
+       * @type {string}
+       */
+      content;
 
-      /** 订单id */
-      omsRequestOrderId: number;
+      /**
+       * 订单id
+       * @type {number}
+       */
+      omsRequestOrderId;
 
-      /** 评价的分数 */
-      score: number;
+      /**
+       * 评价的分数
+       * @type {number}
+       */
+      score;
     }
 
     export class OrderOperateRecordChangeVO {
-      /** address */
-      address: string;
+      /**
+       * address
+       * @type {string}
+       */
+      address;
 
-      /** city */
-      city: string;
+      /**
+       * city
+       * @type {string}
+       */
+      city;
 
-      /** clientOrderNo */
-      clientOrderNo: string;
+      /**
+       * clientOrderNo
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /** lat */
-      lat: string;
+      /**
+       * lat
+       * @type {string}
+       */
+      lat;
 
-      /** lng */
-      lng: string;
+      /**
+       * lng
+       * @type {string}
+       */
+      lng;
 
-      /** logisticsStatus */
-      logisticsStatus: string;
+      /**
+       * logisticsStatus
+       * @type {string}
+       */
+      logisticsStatus;
 
-      /** omsRequestOrderNo */
-      omsRequestOrderNo: string;
+      /**
+       * omsRequestOrderNo
+       * @type {string}
+       */
+      omsRequestOrderNo;
 
-      /** plateNumber */
-      plateNumber: string;
+      /**
+       * plateNumber
+       * @type {string}
+       */
+      plateNumber;
 
-      /** predictArriveTime */
-      predictArriveTime: string;
+      /**
+       * predictArriveTime
+       * @type {string}
+       */
+      predictArriveTime;
 
-      /** province */
-      province: string;
+      /**
+       * province
+       * @type {string}
+       */
+      province;
 
-      /** region */
-      region: string;
+      /**
+       * region
+       * @type {string}
+       */
+      region;
 
-      /** remark */
-      remark: Array<defs.api1.RemarkDateVO>;
+      /**
+       * remark
+       * @type {Array<defs.api1.RemarkDateVO>}
+       */
+      remark;
 
-      /** shippingOrderNo */
-      shippingOrderNo: string;
+      /**
+       * shippingOrderNo
+       * @type {string}
+       */
+      shippingOrderNo;
 
-      /** shippingWorkOrderNo */
-      shippingWorkOrderNo: string;
+      /**
+       * shippingWorkOrderNo
+       * @type {string}
+       */
+      shippingWorkOrderNo;
 
-      /** transportStatus */
-      transportStatus: Array<defs.api1.TransportStatusVO>;
+      /**
+       * transportStatus
+       * @type {Array<defs.api1.TransportStatusVO>}
+       */
+      transportStatus;
     }
 
     export class OrderOperateRecordVO {
-      /** 当前位置 */
-      address: string;
+      /**
+       * 当前位置
+       * @type {string}
+       */
+      address;
 
-      /** 辅助确认收货状态 */
-      assistStatus: string;
+      /**
+       * 辅助确认收货状态
+       * @type {string}
+       */
+      assistStatus;
 
-      /** 附件记录 */
-      attachmentList: Array<string>;
+      /**
+       * 附件记录
+       * @type {Array<string>}
+       */
+      attachmentList;
 
-      /** 承运商 */
-      carrierName: string;
+      /**
+       * 承运商
+       * @type {string}
+       */
+      carrierName;
 
-      /** 客户状态 */
-      clientStatus: string;
+      /**
+       * 客户状态
+       * @type {string}
+       */
+      clientStatus;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** 数据来源 */
-      dataSource: string;
+      /**
+       * 数据来源
+       * @type {string}
+       */
+      dataSource;
 
-      /** 司机姓名 */
-      driverName: string;
+      /**
+       * 司机姓名
+       * @type {string}
+       */
+      driverName;
 
-      /** 司机手机 */
-      driverPhone: string;
+      /**
+       * 司机手机
+       * @type {string}
+       */
+      driverPhone;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** 纬度 */
-      lat: string;
+      /**
+       * 纬度
+       * @type {string}
+       */
+      lat;
 
-      /** 经度 */
-      lng: string;
+      /**
+       * 经度
+       * @type {string}
+       */
+      lng;
 
-      /** 物流日志 */
-      logisticsStatus: string;
+      /**
+       * 物流日志
+       * @type {string}
+       */
+      logisticsStatus;
 
-      /** omsOrderOperateRecordId */
-      omsOrderOperateRecordId: number;
+      /**
+       * omsOrderOperateRecordId
+       * @type {number}
+       */
+      omsOrderOperateRecordId;
 
-      /** 订单id */
-      omsRequestOrderId: number;
+      /**
+       * 订单id
+       * @type {number}
+       */
+      omsRequestOrderId;
 
-      /** 订单状态 */
-      orderStatus: string;
+      /**
+       * 订单状态
+       * @type {string}
+       */
+      orderStatus;
 
-      /** 车牌号 */
-      plateNumber: string;
+      /**
+       * 车牌号
+       * @type {string}
+       */
+      plateNumber;
 
-      /** 备注 */
-      remark: string;
+      /**
+       * 备注
+       * @type {string}
+       */
+      remark;
     }
 
     export class OrderReceiptVO {
-      /** 当前位置 */
-      address: string;
+      /**
+       * 当前位置
+       * @type {string}
+       */
+      address;
 
-      /** 附件类型  1,电子回单(小黑卡用) 2.业务单据 3.过程图片 4.跟踪管理 */
-      attachmentType: string;
+      /**
+       * 附件类型  1,电子回单(小黑卡用) 2.业务单据 3.过程图片 4.跟踪管理
+       * @type {string}
+       */
+      attachmentType;
 
-      /** 附件url */
-      attachmentUrls: Array<string>;
+      /**
+       * 附件url
+       * @type {Array<string>}
+       */
+      attachmentUrls;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** 是否异常，1：是；0：否 */
-      isAbnormity: string;
+      /**
+       * 是否异常，1：是；0：否
+       * @type {string}
+       */
+      isAbnormity;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** 经度 */
-      lat: string;
+      /**
+       * 经度
+       * @type {string}
+       */
+      lat;
 
-      /** 经度 */
-      lng: string;
+      /**
+       * 经度
+       * @type {string}
+       */
+      lng;
 
-      /** 订单id */
-      omsRequestOrderId: number;
+      /**
+       * 订单id
+       * @type {number}
+       */
+      omsRequestOrderId;
 
-      /** 操作类型 1.接收 2.转出 3.发运 4.送达 5.当前位置上报 */
-      operateType: string;
+      /**
+       * 操作类型 1.接收 2.转出 3.发运 4.送达 5.当前位置上报
+       * @type {string}
+       */
+      operateType;
 
-      /** 回单id */
-      receiptOrderId: string;
+      /**
+       * 回单id
+       * @type {string}
+       */
+      receiptOrderId;
 
-      /** 回单状态 */
-      receiptStatus: string;
+      /**
+       * 回单状态
+       * @type {string}
+       */
+      receiptStatus;
 
-      /** 回单类型。正常签收，异常签收 */
-      receiptType: string;
+      /**
+       * 回单类型。正常签收，异常签收
+       * @type {string}
+       */
+      receiptType;
 
-      /** 备注 */
-      remark: string;
+      /**
+       * 备注
+       * @type {string}
+       */
+      remark;
     }
 
     export class OrderVO {
-      /** 当前设备所有的位置信息 */
-      gpsData: Array<defs.api1.IotGpsVO>;
+      /**
+       * 当前设备所有的位置信息
+       * @type {Array<defs.api1.IotGpsVO>}
+       */
+      gpsData;
 
-      /** 订单费用信息 */
-      orderCostInfo: defs.api1.OrderCostInfo;
+      /**
+       * 订单费用信息
+       * @type {defs.api1.OrderCostInfo}
+       */
+      orderCostInfo;
 
-      /** 操作日志 */
-      orderOperateRecordVOs: Array<defs.api1.OrderOperateRecordVO>;
+      /**
+       * 操作日志
+       * @type {Array<defs.api1.OrderOperateRecordVO>}
+       */
+      orderOperateRecordVOs;
 
-      /** 上报:上报事件和上报位置 */
-      reportList: Array<string>;
+      /**
+       * 上报:上报事件和上报位置
+       * @type {Array<string>}
+       */
+      reportList;
 
-      /** 设置上报节点 */
-      reportNodeList: Array<string>;
+      /**
+       * 设置上报节点
+       * @type {Array<string>}
+       */
+      reportNodeList;
 
-      /** 匿名上报0：允许，1：不允许 */
-      reportStatus: string;
+      /**
+       * 匿名上报0：允许，1：不允许
+       * @type {string}
+       */
+      reportStatus;
 
-      /** 订单主体 */
-      requestOrderVO: defs.api1.RequestOrderVO;
+      /**
+       * 订单主体
+       * @type {defs.api1.RequestOrderVO}
+       */
+      requestOrderVO;
     }
 
     export class Page<T0 = any> {
-      /** other */
-      other: object;
+      /**
+       * other
+       * @type {object}
+       */
+      other;
 
-      /** pageCount */
-      pageCount: number;
+      /**
+       * pageCount
+       * @type {number}
+       */
+      pageCount;
 
-      /** pageIndex */
-      pageIndex: number;
+      /**
+       * pageIndex
+       * @type {number}
+       */
+      pageIndex;
 
-      /** pageSize */
-      pageSize: number;
+      /**
+       * pageSize
+       * @type {number}
+       */
+      pageSize;
 
-      /** rows */
-      rows: Array<T0>;
+      /**
+       * rows
+       * @type {Array<T0>}
+       */
+      rows;
 
-      /** start */
-      start: number;
+      /**
+       * start
+       * @type {number}
+       */
+      start;
 
-      /** total */
-      total: number;
+      /**
+       * total
+       * @type {number}
+       */
+      total;
     }
 
     export class RealtimeDataDTO {
-      /** 当日运量-件数 */
-      dayGoodsNum: number;
+      /**
+       * 当日运量-件数
+       * @type {number}
+       */
+      dayGoodsNum;
 
-      /** 当日运量-体积(立方) */
-      dayGoodsVolume: number;
+      /**
+       * 当日运量-体积(立方)
+       * @type {number}
+       */
+      dayGoodsVolume;
 
-      /** 当日运量-重量(吨) */
-      dayGoodsWeight: number;
+      /**
+       * 当日运量-重量(吨)
+       * @type {number}
+       */
+      dayGoodsWeight;
 
-      /** 当日订单数 */
-      dayOrderNum: number;
+      /**
+       * 当日订单数
+       * @type {number}
+       */
+      dayOrderNum;
 
-      /** 飞线图数据 */
-      flyLineData: Array<object>;
+      /**
+       * 飞线图数据
+       * @type {Array<object>}
+       */
+      flyLineData;
 
-      /** 在途订车次 */
-      inTransitCarNum: number;
+      /**
+       * 在途订车次
+       * @type {number}
+       */
+      inTransitCarNum;
 
-      /** 在途订单数 */
-      inTransitOrderNum: number;
+      /**
+       * 在途订单数
+       * @type {number}
+       */
+      inTransitOrderNum;
 
-      /** 实时消息内容 */
-      orderMsgList: Array<string>;
+      /**
+       * 实时消息内容
+       * @type {Array<string>}
+       */
+      orderMsgList;
 
-      /** 回单待确认 */
-      receiptedWaitConfirmOrderNum: number;
+      /**
+       * 回单待确认
+       * @type {number}
+       */
+      receiptedWaitConfirmOrderNum;
 
-      /** 超时未送达 */
-      unArrivedNum: number;
+      /**
+       * 超时未送达
+       * @type {number}
+       */
+      unArrivedNum;
 
-      /** 超时未提货 */
-      unPickUpNum: number;
+      /**
+       * 超时未提货
+       * @type {number}
+       */
+      unPickUpNum;
 
-      /** 待派单数量 */
-      waitSendOrderNum: number;
+      /**
+       * 待派单数量
+       * @type {number}
+       */
+      waitSendOrderNum;
     }
 
     export class RemarkDateVO {
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** mobile */
-      mobile: string;
+      /**
+       * mobile
+       * @type {string}
+       */
+      mobile;
 
-      /** remark */
-      remark: string;
+      /**
+       * remark
+       * @type {string}
+       */
+      remark;
     }
 
     export class ReportedVO {
-      /** 当前位置 */
-      address: string;
+      /**
+       * 当前位置
+       * @type {string}
+       */
+      address;
 
-      /** attachmentName */
-      attachmentName: string;
+      /**
+       * attachmentName
+       * @type {string}
+       */
+      attachmentName;
 
-      /** attachmentType */
-      attachmentType: string;
+      /**
+       * attachmentType
+       * @type {string}
+       */
+      attachmentType;
 
-      /** attachmentUrl */
-      attachmentUrl: string;
+      /**
+       * attachmentUrl
+       * @type {string}
+       */
+      attachmentUrl;
 
-      /** 附件url */
-      attachmentUrls: Array<string>;
+      /**
+       * 附件url
+       * @type {Array<string>}
+       */
+      attachmentUrls;
 
-      /** businessKey */
-      businessKey: number;
+      /**
+       * businessKey
+       * @type {number}
+       */
+      businessKey;
 
-      /** 市 */
-      city: string;
+      /**
+       * 市
+       * @type {string}
+       */
+      city;
 
-      /** 市编码 */
-      cityCode: string;
+      /**
+       * 市编码
+       * @type {string}
+       */
+      cityCode;
 
-      /** 业务单号 */
-      clientOrderNo: string;
+      /**
+       * 业务单号
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** 识别二维码标识 */
-      identifierCode: string;
+      /**
+       * 识别二维码标识
+       * @type {string}
+       */
+      identifierCode;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isAbnormity */
-      isAbnormity: string;
+      /**
+       * isAbnormity
+       * @type {string}
+       */
+      isAbnormity;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** 纬度 */
-      lat: string;
+      /**
+       * 纬度
+       * @type {string}
+       */
+      lat;
 
-      /** 经度 */
-      lng: string;
+      /**
+       * 经度
+       * @type {string}
+       */
+      lng;
 
-      /** operateType */
-      operateType: string;
+      /**
+       * operateType
+       * @type {string}
+       */
+      operateType;
 
-      /** 省 */
-      province: string;
+      /**
+       * 省
+       * @type {string}
+       */
+      province;
 
-      /** 省编码 */
-      provinceCode: string;
+      /**
+       * 省编码
+       * @type {string}
+       */
+      provinceCode;
 
-      /** 回单类型。正常签收，异常签收 */
-      receiptType: string;
+      /**
+       * 回单类型。正常签收，异常签收
+       * @type {string}
+       */
+      receiptType;
 
-      /** 区 */
-      region: string;
+      /**
+       * 区
+       * @type {string}
+       */
+      region;
 
-      /** 区编码 */
-      regionCode: string;
+      /**
+       * 区编码
+       * @type {string}
+       */
+      regionCode;
 
-      /** remark */
-      remark: string;
+      /**
+       * remark
+       * @type {string}
+       */
+      remark;
 
-      /** 上报事件:车辆故障，堵车，事故，货物损坏 */
-      reportEvent: string;
+      /**
+       * 上报事件:车辆故障，堵车，事故，货物损坏
+       * @type {string}
+       */
+      reportEvent;
     }
 
     export class RequestOrderParam {
-      /** agentsNo */
-      agentsNo: string;
+      /**
+       * agentsNo
+       * @type {string}
+       */
+      agentsNo;
 
-      /** 业务员 */
-      businessMan: string;
+      /**
+       * 业务员
+       * @type {string}
+       */
+      businessMan;
 
-      /** 承运商 */
-      carriersName: string;
+      /**
+       * 承运商
+       * @type {string}
+       */
+      carriersName;
 
-      /** 业务单号 */
-      clientOrderNo: string;
+      /**
+       * 业务单号
+       * @type {string}
+       */
+      clientOrderNo;
 
-      /** 企业id集合 */
-      companyIds: Array<number>;
+      /**
+       * 企业id集合
+       * @type {Array<number>}
+       */
+      companyIds;
 
-      /** 企业名称 */
-      companyName: string;
+      /**
+       * 企业名称
+       * @type {string}
+       */
+      companyName;
 
-      /** 下单日期开始时间  */
-      dateCreatedEnd: string;
+      /**
+       * 下单日期开始时间
+       * @type {string}
+       */
+      dateCreatedEnd;
 
-      /** 下单日期开始时间 */
-      dateCreatedStart: string;
+      /**
+       * 下单日期开始时间
+       * @type {string}
+       */
+      dateCreatedStart;
 
-      /** 提货结束时间 */
-      deliveryDateEnd: string;
+      /**
+       * 提货结束时间
+       * @type {string}
+       */
+      deliveryDateEnd;
 
-      /** 提货开始时间 */
-      deliveryDateStart: string;
+      /**
+       * 提货开始时间
+       * @type {string}
+       */
+      deliveryDateStart;
 
-      /** 设备状态 */
-      deviceStatus: string;
+      /**
+       * 设备状态
+       * @type {string}
+       */
+      deviceStatus;
 
-      /** 司机手机号 */
-      driverPhone: string;
+      /**
+       * 司机手机号
+       * @type {string}
+       */
+      driverPhone;
 
-      /** GCJ02,WGS84,BD09 */
-      gpsType: string;
+      /**
+       * GCJ02,WGS84,BD09
+       * @type {string}
+       */
+      gpsType;
 
-      /** 订单id */
-      id: number;
+      /**
+       * 订单id
+       * @type {number}
+       */
+      id;
 
-      /** 当前单据：回单未接受，2、历史单据：回单已接受 */
-      isCurrent: string;
+      /**
+       * 当前单据：回单未接受，2、历史单据：回单已接受
+       * @type {string}
+       */
+      isCurrent;
 
-      /** 执行中，近期签收，历史签收 */
-      isDataSign: string;
+      /**
+       * 执行中，近期签收，历史签收
+       * @type {string}
+       */
+      isDataSign;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** 是否扫码查询0否，1是 */
-      isScanCode: string;
+      /**
+       * 是否扫码查询0否，1是
+       * @type {string}
+       */
+      isScanCode;
 
-      /** 业务单号喝设备号组合查询 */
-      keyWord: string;
+      /**
+       * 业务单号喝设备号组合查询
+       * @type {string}
+       */
+      keyWord;
 
-      /** 订单状态组合查询 */
-      keyWordStatus: string;
+      /**
+       * 订单状态组合查询
+       * @type {string}
+       */
+      keyWordStatus;
 
-      /** 订单状态组合查询,冗余字段 */
-      keyWordStatusList: Array<string>;
+      /**
+       * 订单状态组合查询,冗余字段
+       * @type {Array<string>}
+       */
+      keyWordStatusList;
 
-      /** 小程序登陆手机号 */
-      mobileNumber: string;
+      /**
+       * 小程序登陆手机号
+       * @type {string}
+       */
+      mobileNumber;
 
-      /** 排除节点状态 */
-      noLogisticsStatusList: Array<string>;
+      /**
+       * 排除节点状态
+       * @type {Array<string>}
+       */
+      noLogisticsStatusList;
 
-      /** 小程序排除的状态 */
-      noStatus: string;
+      /**
+       * 小程序排除的状态
+       * @type {string}
+       */
+      noStatus;
 
-      /** 组织名称 */
-      organizationName: string;
+      /**
+       * 组织名称
+       * @type {string}
+       */
+      organizationName;
 
-      /** pageSize */
-      pageSize: number;
+      /**
+       * pageSize
+       * @type {number}
+       */
+      pageSize;
 
-      /** 回单状态状态 */
-      receiptStatus: string;
+      /**
+       * 回单状态状态
+       * @type {string}
+       */
+      receiptStatus;
 
-      /** 近期签收和历史签收状态 */
-      recenStatus: string;
+      /**
+       * 近期签收和历史签收状态
+       * @type {string}
+       */
+      recenStatus;
 
-      /** 小程序近期签收时间 */
-      recentDateEnd: string;
+      /**
+       * 小程序近期签收时间
+       * @type {string}
+       */
+      recentDateEnd;
 
-      /** 小程序近期签收时间 */
-      recentDateStart: string;
+      /**
+       * 小程序近期签收时间
+       * @type {string}
+       */
+      recentDateStart;
 
-      /** 设备序列号 */
-      serialNo: string;
+      /**
+       * 设备序列号
+       * @type {string}
+       */
+      serialNo;
 
-      /** 发货单位 */
-      shipmentCompanyName: string;
+      /**
+       * 发货单位
+       * @type {string}
+       */
+      shipmentCompanyName;
 
-      /** 发货人 */
-      shipmentConsignor: string;
+      /**
+       * 发货人
+       * @type {string}
+       */
+      shipmentConsignor;
 
-      /** start */
-      start: number;
+      /**
+       * start
+       * @type {number}
+       */
+      start;
 
-      /** 订单状态 */
-      status: string;
+      /**
+       * 订单状态
+       * @type {string}
+       */
+      status;
 
-      /** 收货单位 */
-      unloadingCompanyName: string;
+      /**
+       * 收货单位
+       * @type {string}
+       */
+      unloadingCompanyName;
 
-      /** 收货人 */
-      unloadingConsignor: string;
+      /**
+       * 收货人
+       * @type {string}
+       */
+      unloadingConsignor;
 
-      /** 获取表头参数 */
-      userGridQueryParam: defs.api1.UserGridQueryParam;
+      /**
+       * 获取表头参数
+       * @type {defs.api1.UserGridQueryParam}
+       */
+      userGridQueryParam;
     }
 
     export class RequestOrderTotals {
-      /** 已送达总数 */
-      arrivedTotal: number;
+      /**
+       * 已送达总数
+       * @type {number}
+       */
+      arrivedTotal;
 
-      /** 已派单总数 */
-      assignTotal: number;
+      /**
+       * 已派单总数
+       * @type {number}
+       */
+      assignTotal;
 
-      /** 新建总数 */
-      newOrderTotal: number;
+      /**
+       * 新建总数
+       * @type {number}
+       */
+      newOrderTotal;
 
-      /** 已提货总数 */
-      pickTotal: number;
+      /**
+       * 已提货总数
+       * @type {number}
+       */
+      pickTotal;
 
-      /** 回单待确认总数 */
-      receiptTotal: number;
+      /**
+       * 回单待确认总数
+       * @type {number}
+       */
+      receiptTotal;
 
-      /** 订单列表 */
-      rows: defs.api1.Page<defs.api1.RequestOrderVO>;
+      /**
+       * 订单列表
+       * @type {defs.api1.Page<defs.api1.RequestOrderVO>}
+       */
+      rows;
 
-      /** 运输中总数 */
-      transportTotal: number;
+      /**
+       * 运输中总数
+       * @type {number}
+       */
+      transportTotal;
     }
 
     export class RequestOrderVO {
-      /** 地址 */
-      address: string;
-
-      /** 要求送达时间 */
-      arrivalDate: string;
-
-      /** 回单url */
-      attachmentUrls: Array<string>;
-
-      /** 业务员id */
-      businessId: number;
-
-      /** 业务员(来自用户) */
-      businessMan: string;
-
-      /** 业务员手机(来自用户) */
-      businessPhone: string;
-
-      /** 车辆id */
-      carId: number;
-
-      /** 承运商id */
-      carrierInfoId: number;
-
-      /** 承运商名称 */
-      carrierName: string;
-
-      /** 销售单号 */
-      clientOrderNo: string;
-
-      /** 企业id */
-      companyInfoId: number;
-
-      /** 企业名称 */
-      companyName: string;
-
-      /** createDate */
-      createDate: string;
-
-      /** createMan */
-      createMan: string;
-
-      /** 数据来源 */
-      dataSource: string;
-
-      /** 订单列表type:我收的，我发的 */
-      dataType: string;
-
-      /** 要求提货时间  */
-      deliveryDate: string;
-
-      /** 司机id */
-      driverId: string;
-
-      /** 司机名称 */
-      driverName: string;
-
-      /** 司机联系方式 */
-      driverPhone: string;
-
-      /** 订单导入字段错误说明 */
-      errorMsg: string;
-
-      /** 货物名称 */
-      goodsName: string;
-
-      /** 货物状态 */
-      goodsStatus: string;
-
-      /** id */
-      id: number;
-
-      /** 二维码标识 */
-      identifierCode: string;
-
-      /** inputDate */
-      inputDate: string;
-
-      /** inputMan */
-      inputMan: string;
-
-      /** isDeleted */
-      isDeleted: string;
-
-      /** 纬度 */
-      loclat: string;
-
-      /** 经度 */
-      loclng: string;
-
-      /** omsRequestOrderId */
-      omsRequestOrderId: number;
-
-      /** 节点最新时间 */
-      operateRecordDate: string;
-
-      /** 节点最新状态 */
-      operateRecordStatus: string;
-
-      /** 组织名称 */
-      organizationName: string;
-
-      /** 车牌号 */
-      plateNumber: string;
-
-      /** 数量单位 */
-      quantityUnit: string;
-
-      /** 实际送达时间 */
-      realityArrivalDate: string;
-
-      /** 实际提货时间  */
-      realityDeliveryDate: string;
-
-      /** 回单备注 */
-      receiptRemark: string;
-
-      /** 回单状态 */
-      receiptStatus: string;
-
-      /** 签收类型，差异签收，正常签收 */
-      receiptType: string;
-
-      /** 收货状态 */
-      receivedStatus: string;
-
-      /** 物流订单备注 */
-      remark: string;
-
-      /** 设备序列号 */
-      serialNo: string;
-
-      /** 发货人详细地址  */
-      shipmentAddress: string;
-
-      /** 发货市 */
-      shipmentCity: string;
-
-      /** 发卸货市编码 */
-      shipmentCityNo: string;
-
-      /** 发货单位 */
-      shipmentCompanyName: string;
-
-      /** 发货单位编码 */
-      shipmentCompanyNo: string;
-
-      /** 发货人 */
-      shipmentConsignor: string;
-
-      /** 发货人联系电话  */
-      shipmentContacts: string;
-
-      /**  发货省 */
-      shipmentProvince: string;
-
-      /** 发货省代码 */
-      shipmentProvinceNo: string;
-
-      /** 发货区  */
-      shipmentRegion: string;
-
-      /** 发货区代码 */
-      shipmentRegionNo: string;
-
-      /** 货物信息 */
-      shippingOrderVOs: Array<defs.api1.ShippingOrderVO>;
-
-      /** 显示时间 */
-      showTime: string;
-
-      /**  订单状态  */
-      status: string;
-
-      /** 总费用 */
-      totalCost: number;
-
-      /** 总数量 */
-      totalQuantity: number;
-
-      /** 总体积 */
-      totalVolume: number;
-
-      /** 总重量 */
-      totalWeight: number;
-
-      /** 收货人详细地址 */
-      unloadingAddress: string;
-
-      /** 收货市 */
-      unloadingCity: string;
-
-      /** 收货市编码 */
-      unloadingCityNo: string;
-
-      /** 收货单位 */
-      unloadingCompanyName: string;
-
-      /** 收货单位编码 */
-      unloadingCompanyNo: string;
-
-      /** 收货人 */
-      unloadingConsignor: string;
-
-      /** 收货人联系电话 */
-      unloadingContacts: string;
-
-      /**  收货省 */
-      unloadingProvince: string;
-
-      /** 收货省代码  */
-      unloadingProvinceNo: string;
-
-      /** 收货区  */
-      unloadingRegion: string;
-
-      /** 收货区代码 */
-      unloadingRegionNo: string;
-
-      /** 体积单位 */
-      volumeUnit: string;
-
-      /** 重量单位 */
-      weightUnit: string;
+      /**
+       * 地址
+       * @type {string}
+       */
+      address;
+
+      /**
+       * 要求送达时间
+       * @type {string}
+       */
+      arrivalDate;
+
+      /**
+       * 回单url
+       * @type {Array<string>}
+       */
+      attachmentUrls;
+
+      /**
+       * 业务员id
+       * @type {number}
+       */
+      businessId;
+
+      /**
+       * 业务员(来自用户)
+       * @type {string}
+       */
+      businessMan;
+
+      /**
+       * 业务员手机(来自用户)
+       * @type {string}
+       */
+      businessPhone;
+
+      /**
+       * 车辆id
+       * @type {number}
+       */
+      carId;
+
+      /**
+       * 承运商id
+       * @type {number}
+       */
+      carrierInfoId;
+
+      /**
+       * 承运商名称
+       * @type {string}
+       */
+      carrierName;
+
+      /**
+       * 销售单号
+       * @type {string}
+       */
+      clientOrderNo;
+
+      /**
+       * 企业id
+       * @type {number}
+       */
+      companyInfoId;
+
+      /**
+       * 企业名称
+       * @type {string}
+       */
+      companyName;
+
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
+
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
+
+      /**
+       * 数据来源
+       * @type {string}
+       */
+      dataSource;
+
+      /**
+       * 订单列表type:我收的，我发的
+       * @type {string}
+       */
+      dataType;
+
+      /**
+       * 要求提货时间
+       * @type {string}
+       */
+      deliveryDate;
+
+      /**
+       * 司机id
+       * @type {string}
+       */
+      driverId;
+
+      /**
+       * 司机名称
+       * @type {string}
+       */
+      driverName;
+
+      /**
+       * 司机联系方式
+       * @type {string}
+       */
+      driverPhone;
+
+      /**
+       * 订单导入字段错误说明
+       * @type {string}
+       */
+      errorMsg;
+
+      /**
+       * 货物名称
+       * @type {string}
+       */
+      goodsName;
+
+      /**
+       * 货物状态
+       * @type {string}
+       */
+      goodsStatus;
+
+      /**
+       * id
+       * @type {number}
+       */
+      id;
+
+      /**
+       * 二维码标识
+       * @type {string}
+       */
+      identifierCode;
+
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
+
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
+
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
+
+      /**
+       * 纬度
+       * @type {string}
+       */
+      loclat;
+
+      /**
+       * 经度
+       * @type {string}
+       */
+      loclng;
+
+      /**
+       * omsRequestOrderId
+       * @type {number}
+       */
+      omsRequestOrderId;
+
+      /**
+       * 节点最新时间
+       * @type {string}
+       */
+      operateRecordDate;
+
+      /**
+       * 节点最新状态
+       * @type {string}
+       */
+      operateRecordStatus;
+
+      /**
+       * 组织名称
+       * @type {string}
+       */
+      organizationName;
+
+      /**
+       * 车牌号
+       * @type {string}
+       */
+      plateNumber;
+
+      /**
+       * 数量单位
+       * @type {string}
+       */
+      quantityUnit;
+
+      /**
+       * 实际送达时间
+       * @type {string}
+       */
+      realityArrivalDate;
+
+      /**
+       * 实际提货时间
+       * @type {string}
+       */
+      realityDeliveryDate;
+
+      /**
+       * 回单备注
+       * @type {string}
+       */
+      receiptRemark;
+
+      /**
+       * 回单状态
+       * @type {string}
+       */
+      receiptStatus;
+
+      /**
+       * 签收类型，差异签收，正常签收
+       * @type {string}
+       */
+      receiptType;
+
+      /**
+       * 收货状态
+       * @type {string}
+       */
+      receivedStatus;
+
+      /**
+       * 物流订单备注
+       * @type {string}
+       */
+      remark;
+
+      /**
+       * 设备序列号
+       * @type {string}
+       */
+      serialNo;
+
+      /**
+       * 发货人详细地址
+       * @type {string}
+       */
+      shipmentAddress;
+
+      /**
+       * 发货市
+       * @type {string}
+       */
+      shipmentCity;
+
+      /**
+       * 发卸货市编码
+       * @type {string}
+       */
+      shipmentCityNo;
+
+      /**
+       * 发货单位
+       * @type {string}
+       */
+      shipmentCompanyName;
+
+      /**
+       * 发货单位编码
+       * @type {string}
+       */
+      shipmentCompanyNo;
+
+      /**
+       * 发货人
+       * @type {string}
+       */
+      shipmentConsignor;
+
+      /**
+       * 发货人联系电话
+       * @type {string}
+       */
+      shipmentContacts;
+
+      /**
+       *  发货省
+       * @type {string}
+       */
+      shipmentProvince;
+
+      /**
+       * 发货省代码
+       * @type {string}
+       */
+      shipmentProvinceNo;
+
+      /**
+       * 发货区
+       * @type {string}
+       */
+      shipmentRegion;
+
+      /**
+       * 发货区代码
+       * @type {string}
+       */
+      shipmentRegionNo;
+
+      /**
+       * 货物信息
+       * @type {Array<defs.api1.ShippingOrderVO>}
+       */
+      shippingOrderVOs;
+
+      /**
+       * 显示时间
+       * @type {string}
+       */
+      showTime;
+
+      /**
+       *  订单状态
+       * @type {string}
+       */
+      status;
+
+      /**
+       * 总费用
+       * @type {number}
+       */
+      totalCost;
+
+      /**
+       * 总数量
+       * @type {number}
+       */
+      totalQuantity;
+
+      /**
+       * 总体积
+       * @type {number}
+       */
+      totalVolume;
+
+      /**
+       * 总重量
+       * @type {number}
+       */
+      totalWeight;
+
+      /**
+       * 收货人详细地址
+       * @type {string}
+       */
+      unloadingAddress;
+
+      /**
+       * 收货市
+       * @type {string}
+       */
+      unloadingCity;
+
+      /**
+       * 收货市编码
+       * @type {string}
+       */
+      unloadingCityNo;
+
+      /**
+       * 收货单位
+       * @type {string}
+       */
+      unloadingCompanyName;
+
+      /**
+       * 收货单位编码
+       * @type {string}
+       */
+      unloadingCompanyNo;
+
+      /**
+       * 收货人
+       * @type {string}
+       */
+      unloadingConsignor;
+
+      /**
+       * 收货人联系电话
+       * @type {string}
+       */
+      unloadingContacts;
+
+      /**
+       *  收货省
+       * @type {string}
+       */
+      unloadingProvince;
+
+      /**
+       * 收货省代码
+       * @type {string}
+       */
+      unloadingProvinceNo;
+
+      /**
+       * 收货区
+       * @type {string}
+       */
+      unloadingRegion;
+
+      /**
+       * 收货区代码
+       * @type {string}
+       */
+      unloadingRegionNo;
+
+      /**
+       * 体积单位
+       * @type {string}
+       */
+      volumeUnit;
+
+      /**
+       * 重量单位
+       * @type {string}
+       */
+      weightUnit;
     }
 
     export class ShippingOrderVO {
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** 货物型号 */
-      goodsModel: string;
+      /**
+       * 货物型号
+       * @type {string}
+       */
+      goodsModel;
 
-      /** 货物名称 */
-      goodsName: string;
+      /**
+       * 货物名称
+       * @type {string}
+       */
+      goodsName;
 
-      /** id */
-      id: number;
+      /**
+       * id
+       * @type {number}
+       */
+      id;
 
-      /** inputDate */
-      inputDate: string;
+      /**
+       * inputDate
+       * @type {string}
+       */
+      inputDate;
 
-      /** inputMan */
-      inputMan: string;
+      /**
+       * inputMan
+       * @type {string}
+       */
+      inputMan;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** 物流订单ID */
-      omsRequestOrderId: number;
+      /**
+       * 物流订单ID
+       * @type {number}
+       */
+      omsRequestOrderId;
 
-      /** 数量 */
-      quantity: number;
+      /**
+       * 数量
+       * @type {number}
+       */
+      quantity;
 
-      /** 数量单位 */
-      quantityUnit: string;
+      /**
+       * 数量单位
+       * @type {string}
+       */
+      quantityUnit;
 
-      /** 体积 */
-      volume: number;
+      /**
+       * 体积
+       * @type {number}
+       */
+      volume;
 
-      /** 体积单位 */
-      volumeUnit: string;
+      /**
+       * 体积单位
+       * @type {string}
+       */
+      volumeUnit;
 
-      /** 重量 */
-      weight: number;
+      /**
+       * 重量
+       * @type {number}
+       */
+      weight;
 
-      /** 重量单位 */
-      weightUnit: string;
+      /**
+       * 重量单位
+       * @type {string}
+       */
+      weightUnit;
     }
 
     export class TransportRequirementVO {
-      /** detail */
-      detail: Array<string>;
+      /**
+       * detail
+       * @type {Array<string>}
+       */
+      detail;
 
-      /** type */
-      type: string;
+      /**
+       * type
+       * @type {string}
+       */
+      type;
 
-      /** typeName */
-      typeName: string;
+      /**
+       * typeName
+       * @type {string}
+       */
+      typeName;
     }
 
     export class TransportStatusVO {
-      /** address */
-      address: string;
+      /**
+       * address
+       * @type {string}
+       */
+      address;
 
-      /** afterDriverPhone */
-      afterDriverPhone: string;
+      /**
+       * afterDriverPhone
+       * @type {string}
+       */
+      afterDriverPhone;
 
-      /** afterLicensePlate */
-      afterLicensePlate: string;
+      /**
+       * afterLicensePlate
+       * @type {string}
+       */
+      afterLicensePlate;
 
-      /** city */
-      city: string;
+      /**
+       * city
+       * @type {string}
+       */
+      city;
 
-      /** cityCode */
-      cityCode: string;
+      /**
+       * cityCode
+       * @type {string}
+       */
+      cityCode;
 
-      /** createDate */
-      createDate: string;
+      /**
+       * createDate
+       * @type {string}
+       */
+      createDate;
 
-      /** createMan */
-      createMan: string;
+      /**
+       * createMan
+       * @type {string}
+       */
+      createMan;
 
-      /** lat */
-      lat: string;
+      /**
+       * lat
+       * @type {string}
+       */
+      lat;
 
-      /** lng */
-      lng: string;
+      /**
+       * lng
+       * @type {string}
+       */
+      lng;
 
-      /** orderStatus */
-      orderStatus: string;
+      /**
+       * orderStatus
+       * @type {string}
+       */
+      orderStatus;
 
-      /** province */
-      province: string;
+      /**
+       * province
+       * @type {string}
+       */
+      province;
 
-      /** provinceCode */
-      provinceCode: string;
+      /**
+       * provinceCode
+       * @type {string}
+       */
+      provinceCode;
 
-      /** region */
-      region: string;
+      /**
+       * region
+       * @type {string}
+       */
+      region;
 
-      /** regionCode */
-      regionCode: string;
+      /**
+       * regionCode
+       * @type {string}
+       */
+      regionCode;
     }
 
     export class UpdateEnableStatusParam {
-      /** 代操作的承运商id列表 */
-      carrierIds: Array<number>;
+      /**
+       * 代操作的承运商id列表
+       * @type {Array<number>}
+       */
+      carrierIds;
 
-      /** 操作的状态 0启用 1禁用 */
-      enableStatus: string;
+      /**
+       * 操作的状态 0启用 1禁用
+       * @type {string}
+       */
+      enableStatus;
     }
 
     export class UserGridQueryParam {
-      /** canSort */
-      canSort: boolean;
+      /**
+       * canSort
+       * @type {boolean}
+       */
+      canSort;
 
-      /** gridName */
-      gridName: string;
+      /**
+       * gridName
+       * @type {string}
+       */
+      gridName;
 
-      /** isDeleted */
-      isDeleted: string;
+      /**
+       * isDeleted
+       * @type {string}
+       */
+      isDeleted;
 
-      /** operatorId */
-      operatorId: string;
+      /**
+       * operatorId
+       * @type {string}
+       */
+      operatorId;
 
-      /** pageSize */
-      pageSize: number;
+      /**
+       * pageSize
+       * @type {number}
+       */
+      pageSize;
 
-      /** partyId */
-      partyId: string;
+      /**
+       * partyId
+       * @type {string}
+       */
+      partyId;
 
-      /** pinned */
-      pinned: string;
+      /**
+       * pinned
+       * @type {string}
+       */
+      pinned;
 
-      /** start */
-      start: number;
+      /**
+       * start
+       * @type {number}
+       */
+      start;
 
-      /** version */
-      version: string;
+      /**
+       * version
+       * @type {string}
+       */
+      version;
 
-      /** visibleFlag */
-      visibleFlag: boolean;
+      /**
+       * visibleFlag
+       * @type {boolean}
+       */
+      visibleFlag;
     }
 
     export class YesterdayDataDTO {
-      /** 送达订单日环比 */
-      arrivedOrderDayRate: number;
+      /**
+       * 送达订单日环比
+       * @type {number}
+       */
+      arrivedOrderDayRate;
 
-      /** 实际送达的订单量 */
-      arrivedOrderNum: number;
+      /**
+       * 实际送达的订单量
+       * @type {number}
+       */
+      arrivedOrderNum;
 
-      /** 送达订单周同比 */
-      arrivedOrderWeekRate: number;
+      /**
+       * 送达订单周同比
+       * @type {number}
+       */
+      arrivedOrderWeekRate;
 
-      /** 总费用日环比 */
-      costDayRate: number;
+      /**
+       * 总费用日环比
+       * @type {number}
+       */
+      costDayRate;
 
-      /** 总费用周同比 */
-      costWeekRate: number;
+      /**
+       * 总费用周同比
+       * @type {number}
+       */
+      costWeekRate;
 
-      /** 准点率日环比 */
-      onTimeDayRate: number;
+      /**
+       * 准点率日环比
+       * @type {number}
+       */
+      onTimeDayRate;
 
-      /** 送达准点率 */
-      onTimeRate: number;
+      /**
+       * 送达准点率
+       * @type {number}
+       */
+      onTimeRate;
 
-      /** 准点率周同比 */
-      onTimeWeekRate: number;
+      /**
+       * 准点率周同比
+       * @type {number}
+       */
+      onTimeWeekRate;
 
-      /** 订单量日环比 */
-      orderDayRate: number;
+      /**
+       * 订单量日环比
+       * @type {number}
+       */
+      orderDayRate;
 
-      /** 订单量 */
-      orderNum: number;
+      /**
+       * 订单量
+       * @type {number}
+       */
+      orderNum;
 
-      /** 订单量周同比 */
-      orderWeekRate: number;
+      /**
+       * 订单量周同比
+       * @type {number}
+       */
+      orderWeekRate;
 
-      /** 总费用 */
-      totalCost: number;
+      /**
+       * 总费用
+       * @type {number}
+       */
+      totalCost;
 
-      /** 总体积(立方) */
-      totalVolume: number;
+      /**
+       * 总体积(立方)
+       * @type {number}
+       */
+      totalVolume;
 
-      /** 总重量(吨) */
-      totalWeight: number;
+      /**
+       * 总重量(吨)
+       * @type {number}
+       */
+      totalWeight;
 
-      /** 总体积日环比 */
-      volumeDayRate: number;
+      /**
+       * 总体积日环比
+       * @type {number}
+       */
+      volumeDayRate;
 
-      /** 总体积周同比 */
-      volumeWeekRate: number;
+      /**
+       * 总体积周同比
+       * @type {number}
+       */
+      volumeWeekRate;
 
-      /** 总重量日环比 */
-      weightDayRate: number;
+      /**
+       * 总重量日环比
+       * @type {number}
+       */
+      weightDayRate;
 
-      /** 总重量周同比 */
-      weightWeekRate: number;
+      /**
+       * 总重量周同比
+       * @type {number}
+       */
+      weightWeekRate;
     }
   }
 }
@@ -3038,8 +5669,11 @@ declare namespace API {
        */
       export namespace getDelete {
         export class Params {
-          /** 车辆id */
-          carId: number;
+          /**
+           * 车辆id
+           * @type {number}
+           */
+          carId;
         }
 
         export type Response = number;
@@ -3133,8 +5767,11 @@ declare namespace API {
        */
       export namespace deleteDelete {
         export class Params {
-          /** 车辆id */
-          carId: number;
+          /**
+           * 车辆id
+           * @type {number}
+           */
+          carId;
         }
 
         export type Response = number;
@@ -3178,8 +5815,11 @@ declare namespace API {
        */
       export namespace getInfo {
         export class Params {
-          /** carId */
-          '车辆id': number;
+          /**
+           * carId
+           * @type {number}
+           */
+          '车辆id';
         }
 
         export type Response = defs.api1.CarDTO;
@@ -3193,8 +5833,11 @@ declare namespace API {
        */
       export namespace getLatestLocation {
         export class Params {
-          /** 车牌号 */
-          plateNumber: string;
+          /**
+           * 车牌号
+           * @type {string}
+           */
+          plateNumber;
         }
 
         export type Response = defs.api1.IotGpsVO;
@@ -3273,48 +5916,111 @@ declare namespace API {
        */
       export namespace postExport {
         export class Params {
-          /** address */
-          address: string;
-          /** carrierName */
-          carrierName: string;
-          /** carrierNo */
-          carrierNo: string;
-          /** city */
-          city: string;
-          /** cityNo */
-          cityNo: string;
-          /** companyInfoId */
-          companyInfoId: number;
-          /** enableStatus */
-          enableStatus: string;
-          /** identityNumber */
-          identityNumber: string;
-          /** isDeleted */
-          isDeleted: string;
-          /** keyWord */
-          keyWord: string;
-          /** linkMan */
-          linkMan: string;
-          /** pageSize */
-          pageSize: number;
-          /** partyId */
-          partyId: number;
-          /** phone */
-          phone: string;
-          /** province */
-          province: string;
-          /** provinceNo */
-          provinceNo: string;
-          /** realName */
-          realName: string;
-          /** region */
-          region: string;
-          /** regionNo */
-          regionNo: string;
-          /** start */
-          start: number;
-          /** tel */
-          tel: string;
+          /**
+           * address
+           * @type {string}
+           */
+          address;
+          /**
+           * carrierName
+           * @type {string}
+           */
+          carrierName;
+          /**
+           * carrierNo
+           * @type {string}
+           */
+          carrierNo;
+          /**
+           * city
+           * @type {string}
+           */
+          city;
+          /**
+           * cityNo
+           * @type {string}
+           */
+          cityNo;
+          /**
+           * companyInfoId
+           * @type {number}
+           */
+          companyInfoId;
+          /**
+           * enableStatus
+           * @type {string}
+           */
+          enableStatus;
+          /**
+           * identityNumber
+           * @type {string}
+           */
+          identityNumber;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * keyWord
+           * @type {string}
+           */
+          keyWord;
+          /**
+           * linkMan
+           * @type {string}
+           */
+          linkMan;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * partyId
+           * @type {number}
+           */
+          partyId;
+          /**
+           * phone
+           * @type {string}
+           */
+          phone;
+          /**
+           * province
+           * @type {string}
+           */
+          province;
+          /**
+           * provinceNo
+           * @type {string}
+           */
+          provinceNo;
+          /**
+           * realName
+           * @type {string}
+           */
+          realName;
+          /**
+           * region
+           * @type {string}
+           */
+          region;
+          /**
+           * regionNo
+           * @type {string}
+           */
+          regionNo;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
+          /**
+           * tel
+           * @type {string}
+           */
+          tel;
         }
 
         export type Response = object;
@@ -3557,8 +6263,11 @@ declare namespace API {
         */
       export namespace getDelete {
         export class Params {
-          /** 设备ID */
-          id: number;
+          /**
+           * 设备ID
+           * @type {number}
+           */
+          id;
         }
 
         export type Response = defs.api1.BaseRes<int>;
@@ -3575,8 +6284,11 @@ declare namespace API {
         */
       export namespace postDetail {
         export class Params {
-          /** 设备ID */
-          id: number;
+          /**
+           * 设备ID
+           * @type {number}
+           */
+          id;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.DeviceDo>;
@@ -3645,30 +6357,66 @@ declare namespace API {
        */
       export namespace postCreate {
         export class Params {
-          /** code */
-          code: string;
-          /** createDate */
-          createDate: string;
-          /** createMan */
-          createMan: string;
-          /** description */
-          description: string;
-          /** id */
-          id: number;
-          /** inputDate */
-          inputDate: string;
-          /** inputMan */
-          inputMan: string;
-          /** isDeleted */
-          isDeleted: string;
-          /** partyId */
-          partyId: number;
-          /** realName */
-          realName: string;
-          /** type */
-          type: string;
-          /** typeName */
-          typeName: string;
+          /**
+           * code
+           * @type {string}
+           */
+          code;
+          /**
+           * createDate
+           * @type {string}
+           */
+          createDate;
+          /**
+           * createMan
+           * @type {string}
+           */
+          createMan;
+          /**
+           * description
+           * @type {string}
+           */
+          description;
+          /**
+           * id
+           * @type {number}
+           */
+          id;
+          /**
+           * inputDate
+           * @type {string}
+           */
+          inputDate;
+          /**
+           * inputMan
+           * @type {string}
+           */
+          inputMan;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * partyId
+           * @type {number}
+           */
+          partyId;
+          /**
+           * realName
+           * @type {string}
+           */
+          realName;
+          /**
+           * type
+           * @type {string}
+           */
+          type;
+          /**
+           * typeName
+           * @type {string}
+           */
+          typeName;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.OmsDictionaryDO>;
@@ -3684,8 +6432,11 @@ declare namespace API {
        */
       export namespace postDelete {
         export class Params {
-          /** id */
-          id: number;
+          /**
+           * id
+           * @type {number}
+           */
+          id;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.OmsDictionaryDO>;
@@ -3749,8 +6500,11 @@ declare namespace API {
        */
       export namespace getListPlatformDataByType {
         export class Params {
-          /** PLATFORM_CAR_LENGTH_TYPE=车型;PLATFORM_CAR_TYPE=车长 */
-          type: string;
+          /**
+           * PLATFORM_CAR_LENGTH_TYPE=车型;PLATFORM_CAR_TYPE=车长
+           * @type {string}
+           */
+          type;
         }
 
         export type Response = string;
@@ -3837,8 +6591,11 @@ declare namespace API {
        */
       export namespace getDelete {
         export class Params {
-          /** fileName */
-          fileName: string;
+          /**
+           * fileName
+           * @type {string}
+           */
+          fileName;
         }
 
         export type Response = defs.api1.BaseRes<string>;
@@ -3854,8 +6611,11 @@ declare namespace API {
        */
       export namespace headDelete {
         export class Params {
-          /** fileName */
-          fileName: string;
+          /**
+           * fileName
+           * @type {string}
+           */
+          fileName;
         }
 
         export type Response = defs.api1.BaseRes<string>;
@@ -3871,8 +6631,11 @@ declare namespace API {
        */
       export namespace postDelete {
         export class Params {
-          /** fileName */
-          fileName: string;
+          /**
+           * fileName
+           * @type {string}
+           */
+          fileName;
         }
 
         export type Response = defs.api1.BaseRes<string>;
@@ -3888,8 +6651,11 @@ declare namespace API {
        */
       export namespace putDelete {
         export class Params {
-          /** fileName */
-          fileName: string;
+          /**
+           * fileName
+           * @type {string}
+           */
+          fileName;
         }
 
         export type Response = defs.api1.BaseRes<string>;
@@ -3905,8 +6671,11 @@ declare namespace API {
        */
       export namespace deleteDelete {
         export class Params {
-          /** fileName */
-          fileName: string;
+          /**
+           * fileName
+           * @type {string}
+           */
+          fileName;
         }
 
         export type Response = defs.api1.BaseRes<string>;
@@ -3922,8 +6691,11 @@ declare namespace API {
        */
       export namespace optionsDelete {
         export class Params {
-          /** fileName */
-          fileName: string;
+          /**
+           * fileName
+           * @type {string}
+           */
+          fileName;
         }
 
         export type Response = defs.api1.BaseRes<string>;
@@ -3939,8 +6711,11 @@ declare namespace API {
        */
       export namespace patchDelete {
         export class Params {
-          /** fileName */
-          fileName: string;
+          /**
+           * fileName
+           * @type {string}
+           */
+          fileName;
         }
 
         export type Response = defs.api1.BaseRes<string>;
@@ -3955,10 +6730,7 @@ declare namespace API {
        * /file/upload
        */
       export namespace postUpload {
-        export class Params {
-          /** file */
-          file: File;
-        }
+        export class Params {}
 
         export type Response = defs.api1.BaseRes<defs.api1.JSONObject>;
         export const init: Response;
@@ -4008,36 +6780,81 @@ declare namespace API {
        */
       export namespace postExport {
         export class Params {
-          /** goodsModelNo */
-          goodsModelNo: string;
-          /** goodsName */
-          goodsName: string;
-          /** goodsNo */
-          goodsNo: string;
-          /** goodsPackage */
-          goodsPackage: string;
-          /** goodsType */
-          goodsType: string;
-          /** goodsUnit */
-          goodsUnit: string;
-          /** id */
-          id: number;
-          /** isDeleted */
-          isDeleted: string;
-          /** keyWord */
-          keyWord: string;
-          /** packingType */
-          packingType: string;
-          /** pageSize */
-          pageSize: number;
-          /** partyId */
-          partyId: number;
-          /** realName */
-          realName: string;
-          /** remark */
-          remark: string;
-          /** start */
-          start: number;
+          /**
+           * goodsModelNo
+           * @type {string}
+           */
+          goodsModelNo;
+          /**
+           * goodsName
+           * @type {string}
+           */
+          goodsName;
+          /**
+           * goodsNo
+           * @type {string}
+           */
+          goodsNo;
+          /**
+           * goodsPackage
+           * @type {string}
+           */
+          goodsPackage;
+          /**
+           * goodsType
+           * @type {string}
+           */
+          goodsType;
+          /**
+           * goodsUnit
+           * @type {string}
+           */
+          goodsUnit;
+          /**
+           * id
+           * @type {number}
+           */
+          id;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * keyWord
+           * @type {string}
+           */
+          keyWord;
+          /**
+           * packingType
+           * @type {string}
+           */
+          packingType;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * partyId
+           * @type {number}
+           */
+          partyId;
+          /**
+           * realName
+           * @type {string}
+           */
+          realName;
+          /**
+           * remark
+           * @type {string}
+           */
+          remark;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
         }
 
         export type Response = object;
@@ -4133,8 +6950,11 @@ declare namespace API {
        */
       export namespace getGetOrderCost {
         export class Params {
-          /** clientOrderNo */
-          clientOrderNo: string;
+          /**
+           * clientOrderNo
+           * @type {string}
+           */
+          clientOrderNo;
         }
 
         export type Response = defs.api1.OrderCostInfo;
@@ -4212,12 +7032,21 @@ declare namespace API {
        */
       export namespace postBindTrack {
         export class Params {
-          /** remark */
-          remark: string;
-          /** serialNo */
-          serialNo: string;
-          /** trackName */
-          trackName: string;
+          /**
+           * remark
+           * @type {string}
+           */
+          remark;
+          /**
+           * serialNo
+           * @type {string}
+           */
+          serialNo;
+          /**
+           * trackName
+           * @type {string}
+           */
+          trackName;
         }
 
         export type Response = defs.api1.BaseRes<int>;
@@ -4233,8 +7062,11 @@ declare namespace API {
        */
       export namespace getCheckBound {
         export class Params {
-          /** serialNo */
-          serialNo: string;
+          /**
+           * serialNo
+           * @type {string}
+           */
+          serialNo;
         }
 
         export type Response = defs.api1.BaseRes<boolean>;
@@ -4250,40 +7082,91 @@ declare namespace API {
        */
       export namespace postQuery {
         export class Params {
-          /** affiliatedCompany */
-          affiliatedCompany: string;
-          /** bindingTimeEnd */
-          bindingTimeEnd: string;
-          /** bindingTimeStart */
-          bindingTimeStart: string;
-          /** clientOrderNo */
-          clientOrderNo: string;
-          /** comyIds */
-          comyIds: Array<number>;
-          /** isDeleted */
-          isDeleted: string;
-          /** omsDeviceId */
-          omsDeviceId: number;
-          /** omsRequestOrderId */
-          omsRequestOrderId: number;
-          /** pageSize */
-          pageSize: number;
-          /** partyId */
-          partyId: number;
-          /** requestOrderNo */
-          requestOrderNo: string;
-          /** serialNo */
-          serialNo: string;
-          /** start */
-          start: number;
-          /** trackName */
-          trackName: string;
-          /** type */
-          type: string;
-          /** unBindingTimeEnd */
-          unBindingTimeEnd: string;
-          /** unBindingTimeStart */
-          unBindingTimeStart: string;
+          /**
+           * affiliatedCompany
+           * @type {string}
+           */
+          affiliatedCompany;
+          /**
+           * bindingTimeEnd
+           * @type {string}
+           */
+          bindingTimeEnd;
+          /**
+           * bindingTimeStart
+           * @type {string}
+           */
+          bindingTimeStart;
+          /**
+           * clientOrderNo
+           * @type {string}
+           */
+          clientOrderNo;
+          /**
+           * comyIds
+           * @type {Array<number>}
+           */
+          comyIds;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * omsDeviceId
+           * @type {number}
+           */
+          omsDeviceId;
+          /**
+           * omsRequestOrderId
+           * @type {number}
+           */
+          omsRequestOrderId;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * partyId
+           * @type {number}
+           */
+          partyId;
+          /**
+           * requestOrderNo
+           * @type {string}
+           */
+          requestOrderNo;
+          /**
+           * serialNo
+           * @type {string}
+           */
+          serialNo;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
+          /**
+           * trackName
+           * @type {string}
+           */
+          trackName;
+          /**
+           * type
+           * @type {string}
+           */
+          type;
+          /**
+           * unBindingTimeEnd
+           * @type {string}
+           */
+          unBindingTimeEnd;
+          /**
+           * unBindingTimeStart
+           * @type {string}
+           */
+          unBindingTimeStart;
         }
 
         export type Response = defs.api1.BaseRes<
@@ -4301,40 +7184,91 @@ declare namespace API {
        */
       export namespace getQueryBind {
         export class Params {
-          /** affiliatedCompany */
-          affiliatedCompany: string;
-          /** bindingTimeEnd */
-          bindingTimeEnd: string;
-          /** bindingTimeStart */
-          bindingTimeStart: string;
-          /** clientOrderNo */
-          clientOrderNo: string;
-          /** comyIds */
-          comyIds: Array<number>;
-          /** isDeleted */
-          isDeleted: string;
-          /** omsDeviceId */
-          omsDeviceId: number;
-          /** omsRequestOrderId */
-          omsRequestOrderId: number;
-          /** pageSize */
-          pageSize: number;
-          /** partyId */
-          partyId: number;
-          /** requestOrderNo */
-          requestOrderNo: string;
-          /** serialNo */
-          serialNo: string;
-          /** start */
-          start: number;
-          /** trackName */
-          trackName: string;
-          /** type */
-          type: string;
-          /** unBindingTimeEnd */
-          unBindingTimeEnd: string;
-          /** unBindingTimeStart */
-          unBindingTimeStart: string;
+          /**
+           * affiliatedCompany
+           * @type {string}
+           */
+          affiliatedCompany;
+          /**
+           * bindingTimeEnd
+           * @type {string}
+           */
+          bindingTimeEnd;
+          /**
+           * bindingTimeStart
+           * @type {string}
+           */
+          bindingTimeStart;
+          /**
+           * clientOrderNo
+           * @type {string}
+           */
+          clientOrderNo;
+          /**
+           * comyIds
+           * @type {Array<number>}
+           */
+          comyIds;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * omsDeviceId
+           * @type {number}
+           */
+          omsDeviceId;
+          /**
+           * omsRequestOrderId
+           * @type {number}
+           */
+          omsRequestOrderId;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * partyId
+           * @type {number}
+           */
+          partyId;
+          /**
+           * requestOrderNo
+           * @type {string}
+           */
+          requestOrderNo;
+          /**
+           * serialNo
+           * @type {string}
+           */
+          serialNo;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
+          /**
+           * trackName
+           * @type {string}
+           */
+          trackName;
+          /**
+           * type
+           * @type {string}
+           */
+          type;
+          /**
+           * unBindingTimeEnd
+           * @type {string}
+           */
+          unBindingTimeEnd;
+          /**
+           * unBindingTimeStart
+           * @type {string}
+           */
+          unBindingTimeStart;
         }
 
         export type Response = defs.api1.BaseRes<
@@ -4352,40 +7286,91 @@ declare namespace API {
        */
       export namespace headQueryBind {
         export class Params {
-          /** affiliatedCompany */
-          affiliatedCompany: string;
-          /** bindingTimeEnd */
-          bindingTimeEnd: string;
-          /** bindingTimeStart */
-          bindingTimeStart: string;
-          /** clientOrderNo */
-          clientOrderNo: string;
-          /** comyIds */
-          comyIds: Array<number>;
-          /** isDeleted */
-          isDeleted: string;
-          /** omsDeviceId */
-          omsDeviceId: number;
-          /** omsRequestOrderId */
-          omsRequestOrderId: number;
-          /** pageSize */
-          pageSize: number;
-          /** partyId */
-          partyId: number;
-          /** requestOrderNo */
-          requestOrderNo: string;
-          /** serialNo */
-          serialNo: string;
-          /** start */
-          start: number;
-          /** trackName */
-          trackName: string;
-          /** type */
-          type: string;
-          /** unBindingTimeEnd */
-          unBindingTimeEnd: string;
-          /** unBindingTimeStart */
-          unBindingTimeStart: string;
+          /**
+           * affiliatedCompany
+           * @type {string}
+           */
+          affiliatedCompany;
+          /**
+           * bindingTimeEnd
+           * @type {string}
+           */
+          bindingTimeEnd;
+          /**
+           * bindingTimeStart
+           * @type {string}
+           */
+          bindingTimeStart;
+          /**
+           * clientOrderNo
+           * @type {string}
+           */
+          clientOrderNo;
+          /**
+           * comyIds
+           * @type {Array<number>}
+           */
+          comyIds;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * omsDeviceId
+           * @type {number}
+           */
+          omsDeviceId;
+          /**
+           * omsRequestOrderId
+           * @type {number}
+           */
+          omsRequestOrderId;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * partyId
+           * @type {number}
+           */
+          partyId;
+          /**
+           * requestOrderNo
+           * @type {string}
+           */
+          requestOrderNo;
+          /**
+           * serialNo
+           * @type {string}
+           */
+          serialNo;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
+          /**
+           * trackName
+           * @type {string}
+           */
+          trackName;
+          /**
+           * type
+           * @type {string}
+           */
+          type;
+          /**
+           * unBindingTimeEnd
+           * @type {string}
+           */
+          unBindingTimeEnd;
+          /**
+           * unBindingTimeStart
+           * @type {string}
+           */
+          unBindingTimeStart;
         }
 
         export type Response = defs.api1.BaseRes<
@@ -4403,40 +7388,91 @@ declare namespace API {
        */
       export namespace postQueryBind {
         export class Params {
-          /** affiliatedCompany */
-          affiliatedCompany: string;
-          /** bindingTimeEnd */
-          bindingTimeEnd: string;
-          /** bindingTimeStart */
-          bindingTimeStart: string;
-          /** clientOrderNo */
-          clientOrderNo: string;
-          /** comyIds */
-          comyIds: Array<number>;
-          /** isDeleted */
-          isDeleted: string;
-          /** omsDeviceId */
-          omsDeviceId: number;
-          /** omsRequestOrderId */
-          omsRequestOrderId: number;
-          /** pageSize */
-          pageSize: number;
-          /** partyId */
-          partyId: number;
-          /** requestOrderNo */
-          requestOrderNo: string;
-          /** serialNo */
-          serialNo: string;
-          /** start */
-          start: number;
-          /** trackName */
-          trackName: string;
-          /** type */
-          type: string;
-          /** unBindingTimeEnd */
-          unBindingTimeEnd: string;
-          /** unBindingTimeStart */
-          unBindingTimeStart: string;
+          /**
+           * affiliatedCompany
+           * @type {string}
+           */
+          affiliatedCompany;
+          /**
+           * bindingTimeEnd
+           * @type {string}
+           */
+          bindingTimeEnd;
+          /**
+           * bindingTimeStart
+           * @type {string}
+           */
+          bindingTimeStart;
+          /**
+           * clientOrderNo
+           * @type {string}
+           */
+          clientOrderNo;
+          /**
+           * comyIds
+           * @type {Array<number>}
+           */
+          comyIds;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * omsDeviceId
+           * @type {number}
+           */
+          omsDeviceId;
+          /**
+           * omsRequestOrderId
+           * @type {number}
+           */
+          omsRequestOrderId;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * partyId
+           * @type {number}
+           */
+          partyId;
+          /**
+           * requestOrderNo
+           * @type {string}
+           */
+          requestOrderNo;
+          /**
+           * serialNo
+           * @type {string}
+           */
+          serialNo;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
+          /**
+           * trackName
+           * @type {string}
+           */
+          trackName;
+          /**
+           * type
+           * @type {string}
+           */
+          type;
+          /**
+           * unBindingTimeEnd
+           * @type {string}
+           */
+          unBindingTimeEnd;
+          /**
+           * unBindingTimeStart
+           * @type {string}
+           */
+          unBindingTimeStart;
         }
 
         export type Response = defs.api1.BaseRes<
@@ -4454,40 +7490,91 @@ declare namespace API {
        */
       export namespace putQueryBind {
         export class Params {
-          /** affiliatedCompany */
-          affiliatedCompany: string;
-          /** bindingTimeEnd */
-          bindingTimeEnd: string;
-          /** bindingTimeStart */
-          bindingTimeStart: string;
-          /** clientOrderNo */
-          clientOrderNo: string;
-          /** comyIds */
-          comyIds: Array<number>;
-          /** isDeleted */
-          isDeleted: string;
-          /** omsDeviceId */
-          omsDeviceId: number;
-          /** omsRequestOrderId */
-          omsRequestOrderId: number;
-          /** pageSize */
-          pageSize: number;
-          /** partyId */
-          partyId: number;
-          /** requestOrderNo */
-          requestOrderNo: string;
-          /** serialNo */
-          serialNo: string;
-          /** start */
-          start: number;
-          /** trackName */
-          trackName: string;
-          /** type */
-          type: string;
-          /** unBindingTimeEnd */
-          unBindingTimeEnd: string;
-          /** unBindingTimeStart */
-          unBindingTimeStart: string;
+          /**
+           * affiliatedCompany
+           * @type {string}
+           */
+          affiliatedCompany;
+          /**
+           * bindingTimeEnd
+           * @type {string}
+           */
+          bindingTimeEnd;
+          /**
+           * bindingTimeStart
+           * @type {string}
+           */
+          bindingTimeStart;
+          /**
+           * clientOrderNo
+           * @type {string}
+           */
+          clientOrderNo;
+          /**
+           * comyIds
+           * @type {Array<number>}
+           */
+          comyIds;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * omsDeviceId
+           * @type {number}
+           */
+          omsDeviceId;
+          /**
+           * omsRequestOrderId
+           * @type {number}
+           */
+          omsRequestOrderId;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * partyId
+           * @type {number}
+           */
+          partyId;
+          /**
+           * requestOrderNo
+           * @type {string}
+           */
+          requestOrderNo;
+          /**
+           * serialNo
+           * @type {string}
+           */
+          serialNo;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
+          /**
+           * trackName
+           * @type {string}
+           */
+          trackName;
+          /**
+           * type
+           * @type {string}
+           */
+          type;
+          /**
+           * unBindingTimeEnd
+           * @type {string}
+           */
+          unBindingTimeEnd;
+          /**
+           * unBindingTimeStart
+           * @type {string}
+           */
+          unBindingTimeStart;
         }
 
         export type Response = defs.api1.BaseRes<
@@ -4505,40 +7592,91 @@ declare namespace API {
        */
       export namespace deleteQueryBind {
         export class Params {
-          /** affiliatedCompany */
-          affiliatedCompany: string;
-          /** bindingTimeEnd */
-          bindingTimeEnd: string;
-          /** bindingTimeStart */
-          bindingTimeStart: string;
-          /** clientOrderNo */
-          clientOrderNo: string;
-          /** comyIds */
-          comyIds: Array<number>;
-          /** isDeleted */
-          isDeleted: string;
-          /** omsDeviceId */
-          omsDeviceId: number;
-          /** omsRequestOrderId */
-          omsRequestOrderId: number;
-          /** pageSize */
-          pageSize: number;
-          /** partyId */
-          partyId: number;
-          /** requestOrderNo */
-          requestOrderNo: string;
-          /** serialNo */
-          serialNo: string;
-          /** start */
-          start: number;
-          /** trackName */
-          trackName: string;
-          /** type */
-          type: string;
-          /** unBindingTimeEnd */
-          unBindingTimeEnd: string;
-          /** unBindingTimeStart */
-          unBindingTimeStart: string;
+          /**
+           * affiliatedCompany
+           * @type {string}
+           */
+          affiliatedCompany;
+          /**
+           * bindingTimeEnd
+           * @type {string}
+           */
+          bindingTimeEnd;
+          /**
+           * bindingTimeStart
+           * @type {string}
+           */
+          bindingTimeStart;
+          /**
+           * clientOrderNo
+           * @type {string}
+           */
+          clientOrderNo;
+          /**
+           * comyIds
+           * @type {Array<number>}
+           */
+          comyIds;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * omsDeviceId
+           * @type {number}
+           */
+          omsDeviceId;
+          /**
+           * omsRequestOrderId
+           * @type {number}
+           */
+          omsRequestOrderId;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * partyId
+           * @type {number}
+           */
+          partyId;
+          /**
+           * requestOrderNo
+           * @type {string}
+           */
+          requestOrderNo;
+          /**
+           * serialNo
+           * @type {string}
+           */
+          serialNo;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
+          /**
+           * trackName
+           * @type {string}
+           */
+          trackName;
+          /**
+           * type
+           * @type {string}
+           */
+          type;
+          /**
+           * unBindingTimeEnd
+           * @type {string}
+           */
+          unBindingTimeEnd;
+          /**
+           * unBindingTimeStart
+           * @type {string}
+           */
+          unBindingTimeStart;
         }
 
         export type Response = defs.api1.BaseRes<
@@ -4556,40 +7694,91 @@ declare namespace API {
        */
       export namespace optionsQueryBind {
         export class Params {
-          /** affiliatedCompany */
-          affiliatedCompany: string;
-          /** bindingTimeEnd */
-          bindingTimeEnd: string;
-          /** bindingTimeStart */
-          bindingTimeStart: string;
-          /** clientOrderNo */
-          clientOrderNo: string;
-          /** comyIds */
-          comyIds: Array<number>;
-          /** isDeleted */
-          isDeleted: string;
-          /** omsDeviceId */
-          omsDeviceId: number;
-          /** omsRequestOrderId */
-          omsRequestOrderId: number;
-          /** pageSize */
-          pageSize: number;
-          /** partyId */
-          partyId: number;
-          /** requestOrderNo */
-          requestOrderNo: string;
-          /** serialNo */
-          serialNo: string;
-          /** start */
-          start: number;
-          /** trackName */
-          trackName: string;
-          /** type */
-          type: string;
-          /** unBindingTimeEnd */
-          unBindingTimeEnd: string;
-          /** unBindingTimeStart */
-          unBindingTimeStart: string;
+          /**
+           * affiliatedCompany
+           * @type {string}
+           */
+          affiliatedCompany;
+          /**
+           * bindingTimeEnd
+           * @type {string}
+           */
+          bindingTimeEnd;
+          /**
+           * bindingTimeStart
+           * @type {string}
+           */
+          bindingTimeStart;
+          /**
+           * clientOrderNo
+           * @type {string}
+           */
+          clientOrderNo;
+          /**
+           * comyIds
+           * @type {Array<number>}
+           */
+          comyIds;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * omsDeviceId
+           * @type {number}
+           */
+          omsDeviceId;
+          /**
+           * omsRequestOrderId
+           * @type {number}
+           */
+          omsRequestOrderId;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * partyId
+           * @type {number}
+           */
+          partyId;
+          /**
+           * requestOrderNo
+           * @type {string}
+           */
+          requestOrderNo;
+          /**
+           * serialNo
+           * @type {string}
+           */
+          serialNo;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
+          /**
+           * trackName
+           * @type {string}
+           */
+          trackName;
+          /**
+           * type
+           * @type {string}
+           */
+          type;
+          /**
+           * unBindingTimeEnd
+           * @type {string}
+           */
+          unBindingTimeEnd;
+          /**
+           * unBindingTimeStart
+           * @type {string}
+           */
+          unBindingTimeStart;
         }
 
         export type Response = defs.api1.BaseRes<
@@ -4607,40 +7796,91 @@ declare namespace API {
        */
       export namespace patchQueryBind {
         export class Params {
-          /** affiliatedCompany */
-          affiliatedCompany: string;
-          /** bindingTimeEnd */
-          bindingTimeEnd: string;
-          /** bindingTimeStart */
-          bindingTimeStart: string;
-          /** clientOrderNo */
-          clientOrderNo: string;
-          /** comyIds */
-          comyIds: Array<number>;
-          /** isDeleted */
-          isDeleted: string;
-          /** omsDeviceId */
-          omsDeviceId: number;
-          /** omsRequestOrderId */
-          omsRequestOrderId: number;
-          /** pageSize */
-          pageSize: number;
-          /** partyId */
-          partyId: number;
-          /** requestOrderNo */
-          requestOrderNo: string;
-          /** serialNo */
-          serialNo: string;
-          /** start */
-          start: number;
-          /** trackName */
-          trackName: string;
-          /** type */
-          type: string;
-          /** unBindingTimeEnd */
-          unBindingTimeEnd: string;
-          /** unBindingTimeStart */
-          unBindingTimeStart: string;
+          /**
+           * affiliatedCompany
+           * @type {string}
+           */
+          affiliatedCompany;
+          /**
+           * bindingTimeEnd
+           * @type {string}
+           */
+          bindingTimeEnd;
+          /**
+           * bindingTimeStart
+           * @type {string}
+           */
+          bindingTimeStart;
+          /**
+           * clientOrderNo
+           * @type {string}
+           */
+          clientOrderNo;
+          /**
+           * comyIds
+           * @type {Array<number>}
+           */
+          comyIds;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * omsDeviceId
+           * @type {number}
+           */
+          omsDeviceId;
+          /**
+           * omsRequestOrderId
+           * @type {number}
+           */
+          omsRequestOrderId;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * partyId
+           * @type {number}
+           */
+          partyId;
+          /**
+           * requestOrderNo
+           * @type {string}
+           */
+          requestOrderNo;
+          /**
+           * serialNo
+           * @type {string}
+           */
+          serialNo;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
+          /**
+           * trackName
+           * @type {string}
+           */
+          trackName;
+          /**
+           * type
+           * @type {string}
+           */
+          type;
+          /**
+           * unBindingTimeEnd
+           * @type {string}
+           */
+          unBindingTimeEnd;
+          /**
+           * unBindingTimeStart
+           * @type {string}
+           */
+          unBindingTimeStart;
         }
 
         export type Response = defs.api1.BaseRes<
@@ -4678,22 +7918,46 @@ declare namespace API {
        */
       export namespace postDevicesData {
         export class Params {
-          /** 绑定状态 */
-          bindingStatus: string;
-          /** 所属企业 */
-          companyIds: Array<number>;
-          /** isDeleted */
-          isDeleted: string;
-          /** 精确查询：1，模糊查询：0 */
-          isExact: number;
-          /** pageSize */
-          pageSize: number;
-          /** 会员id */
-          partyId: string;
-          /** 查询的号码 */
-          queryNo: string;
-          /** start */
-          start: number;
+          /**
+           * 绑定状态
+           * @type {string}
+           */
+          bindingStatus;
+          /**
+           * 所属企业
+           * @type {Array<number>}
+           */
+          companyIds;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * 精确查询：1，模糊查询：0
+           * @type {number}
+           */
+          isExact;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * 会员id
+           * @type {string}
+           */
+          partyId;
+          /**
+           * 查询的号码
+           * @type {string}
+           */
+          queryNo;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.DevicesInfoVO>;
@@ -4709,22 +7973,46 @@ declare namespace API {
        */
       export namespace postDevicesDetails {
         export class Params {
-          /** 绑定状态 */
-          bindingStatus: string;
-          /** 所属企业 */
-          companyIds: Array<number>;
-          /** isDeleted */
-          isDeleted: string;
-          /** 精确查询：1，模糊查询：0 */
-          isExact: number;
-          /** pageSize */
-          pageSize: number;
-          /** 会员id */
-          partyId: string;
-          /** 查询的号码 */
-          queryNo: string;
-          /** start */
-          start: number;
+          /**
+           * 绑定状态
+           * @type {string}
+           */
+          bindingStatus;
+          /**
+           * 所属企业
+           * @type {Array<number>}
+           */
+          companyIds;
+          /**
+           * isDeleted
+           * @type {string}
+           */
+          isDeleted;
+          /**
+           * 精确查询：1，模糊查询：0
+           * @type {number}
+           */
+          isExact;
+          /**
+           * pageSize
+           * @type {number}
+           */
+          pageSize;
+          /**
+           * 会员id
+           * @type {string}
+           */
+          partyId;
+          /**
+           * 查询的号码
+           * @type {string}
+           */
+          queryNo;
+          /**
+           * start
+           * @type {number}
+           */
+          start;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.DevicesInfoVO>;
@@ -4740,8 +8028,11 @@ declare namespace API {
        */
       export namespace postDevicesLocation {
         export class Params {
-          /** devicesNo */
-          devicesNo: string;
+          /**
+           * devicesNo
+           * @type {string}
+           */
+          devicesNo;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.OrderDevicesInfoVO>;
@@ -4772,14 +8063,26 @@ declare namespace API {
        */
       export namespace getOrderTrack {
         export class Params {
-          /** endCreateDate */
-          endCreateDate: string;
-          /** gpsType */
-          gpsType: string;
-          /** orderNo */
-          orderNo: string;
-          /** startCreateDate */
-          startCreateDate: string;
+          /**
+           * endCreateDate
+           * @type {string}
+           */
+          endCreateDate;
+          /**
+           * gpsType
+           * @type {string}
+           */
+          gpsType;
+          /**
+           * orderNo
+           * @type {string}
+           */
+          orderNo;
+          /**
+           * startCreateDate
+           * @type {string}
+           */
+          startCreateDate;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.OrderDevicesInfoVO>;
@@ -4795,14 +8098,26 @@ declare namespace API {
        */
       export namespace headOrderTrack {
         export class Params {
-          /** endCreateDate */
-          endCreateDate: string;
-          /** gpsType */
-          gpsType: string;
-          /** orderNo */
-          orderNo: string;
-          /** startCreateDate */
-          startCreateDate: string;
+          /**
+           * endCreateDate
+           * @type {string}
+           */
+          endCreateDate;
+          /**
+           * gpsType
+           * @type {string}
+           */
+          gpsType;
+          /**
+           * orderNo
+           * @type {string}
+           */
+          orderNo;
+          /**
+           * startCreateDate
+           * @type {string}
+           */
+          startCreateDate;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.OrderDevicesInfoVO>;
@@ -4818,14 +8133,26 @@ declare namespace API {
        */
       export namespace postOrderTrack {
         export class Params {
-          /** endCreateDate */
-          endCreateDate: string;
-          /** gpsType */
-          gpsType: string;
-          /** orderNo */
-          orderNo: string;
-          /** startCreateDate */
-          startCreateDate: string;
+          /**
+           * endCreateDate
+           * @type {string}
+           */
+          endCreateDate;
+          /**
+           * gpsType
+           * @type {string}
+           */
+          gpsType;
+          /**
+           * orderNo
+           * @type {string}
+           */
+          orderNo;
+          /**
+           * startCreateDate
+           * @type {string}
+           */
+          startCreateDate;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.OrderDevicesInfoVO>;
@@ -4841,14 +8168,26 @@ declare namespace API {
        */
       export namespace putOrderTrack {
         export class Params {
-          /** endCreateDate */
-          endCreateDate: string;
-          /** gpsType */
-          gpsType: string;
-          /** orderNo */
-          orderNo: string;
-          /** startCreateDate */
-          startCreateDate: string;
+          /**
+           * endCreateDate
+           * @type {string}
+           */
+          endCreateDate;
+          /**
+           * gpsType
+           * @type {string}
+           */
+          gpsType;
+          /**
+           * orderNo
+           * @type {string}
+           */
+          orderNo;
+          /**
+           * startCreateDate
+           * @type {string}
+           */
+          startCreateDate;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.OrderDevicesInfoVO>;
@@ -4864,14 +8203,26 @@ declare namespace API {
        */
       export namespace deleteOrderTrack {
         export class Params {
-          /** endCreateDate */
-          endCreateDate: string;
-          /** gpsType */
-          gpsType: string;
-          /** orderNo */
-          orderNo: string;
-          /** startCreateDate */
-          startCreateDate: string;
+          /**
+           * endCreateDate
+           * @type {string}
+           */
+          endCreateDate;
+          /**
+           * gpsType
+           * @type {string}
+           */
+          gpsType;
+          /**
+           * orderNo
+           * @type {string}
+           */
+          orderNo;
+          /**
+           * startCreateDate
+           * @type {string}
+           */
+          startCreateDate;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.OrderDevicesInfoVO>;
@@ -4887,14 +8238,26 @@ declare namespace API {
        */
       export namespace optionsOrderTrack {
         export class Params {
-          /** endCreateDate */
-          endCreateDate: string;
-          /** gpsType */
-          gpsType: string;
-          /** orderNo */
-          orderNo: string;
-          /** startCreateDate */
-          startCreateDate: string;
+          /**
+           * endCreateDate
+           * @type {string}
+           */
+          endCreateDate;
+          /**
+           * gpsType
+           * @type {string}
+           */
+          gpsType;
+          /**
+           * orderNo
+           * @type {string}
+           */
+          orderNo;
+          /**
+           * startCreateDate
+           * @type {string}
+           */
+          startCreateDate;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.OrderDevicesInfoVO>;
@@ -4910,14 +8273,26 @@ declare namespace API {
        */
       export namespace patchOrderTrack {
         export class Params {
-          /** endCreateDate */
-          endCreateDate: string;
-          /** gpsType */
-          gpsType: string;
-          /** orderNo */
-          orderNo: string;
-          /** startCreateDate */
-          startCreateDate: string;
+          /**
+           * endCreateDate
+           * @type {string}
+           */
+          endCreateDate;
+          /**
+           * gpsType
+           * @type {string}
+           */
+          gpsType;
+          /**
+           * orderNo
+           * @type {string}
+           */
+          orderNo;
+          /**
+           * startCreateDate
+           * @type {string}
+           */
+          startCreateDate;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.OrderDevicesInfoVO>;
@@ -4949,8 +8324,11 @@ declare namespace API {
        */
       export namespace postQueryBySerialNo {
         export class Params {
-          /** serialNo */
-          serialNo: string;
+          /**
+           * serialNo
+           * @type {string}
+           */
+          serialNo;
         }
 
         export type Response = defs.api1.BaseRes<defs.api1.OrderDevicesInfoVO>;
@@ -4966,8 +8344,11 @@ declare namespace API {
        */
       export namespace getQueryFuzzyNo {
         export class Params {
-          /** queryNo */
-          queryNo: string;
+          /**
+           * queryNo
+           * @type {string}
+           */
+          queryNo;
         }
 
         export type Response = defs.api1.BaseRes<Array<string>>;
@@ -4983,8 +8364,11 @@ declare namespace API {
        */
       export namespace postQueryFuzzyNo {
         export class Params {
-          /** queryNo */
-          queryNo: string;
+          /**
+           * queryNo
+           * @type {string}
+           */
+          queryNo;
         }
 
         export type Response = defs.api1.BaseRes<Array<string>>;
@@ -5110,8 +8494,11 @@ declare namespace API {
        */
       export namespace getGetOrderEvaluate {
         export class Params {
-          /** clientOrderNo */
-          clientOrderNo: string;
+          /**
+           * clientOrderNo
+           * @type {string}
+           */
+          clientOrderNo;
         }
 
         export type Response = defs.api1.OrderEvaluate;
@@ -5141,10 +8528,7 @@ declare namespace API {
        * /requestOrder/importExcel
        */
       export namespace postImportExcel {
-        export class Params {
-          /** file */
-          file: File;
-        }
+        export class Params {}
 
         export type Response = any;
         export const init: Response;

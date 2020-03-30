@@ -325,10 +325,11 @@ class Property extends Contextable {
         }
 
         return `
-      /** ${this.description || this.name} */
-      ${name}${optionalSignal}: ${this.dataType.generateCode(
-            this.getDsName()
-        )};`;
+      /** 
+       * ${this.description || this.name} 
+       * @type {${this.dataType.generateCode(this.getDsName())}}
+      */
+      ${name}`;
     }
 
     toPropertyCodeWithInitValue(baseName = "") {
@@ -368,7 +369,7 @@ class Interface extends Contextable {
         return `
       class ${className} {
         ${this.parameters
-            .filter(param => param.in !== "body")
+            .filter(param => param.in === "path" || param.in === "query")
             .map(param => param.toPropertyCode(true))
             .join("")}
       }

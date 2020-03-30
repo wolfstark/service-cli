@@ -13,6 +13,6 @@ export async function fetch(params) {
   return request({
     url: '/user/userName',
     params,
-    method: 'delete',
+    method: 'DELETE',
   });
 }

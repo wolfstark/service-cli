@@ -13,6 +13,6 @@ export async function fetch(params, bodyParams) {
   return request({
     url: '/goodsInfo/list',
     params: bodyParams,
-    method: 'post',
+    method: 'POST',
   });
 }

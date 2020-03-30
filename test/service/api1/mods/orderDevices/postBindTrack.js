@@ -6,12 +6,21 @@ import * as defs from '../../baseClass';
 import request from 'src/utils/request';
 
 export class Params {
-  /** remark */
-  remark: string;
-  /** serialNo */
-  serialNo: string;
-  /** trackName */
-  trackName: string;
+  /**
+   * remark
+   * @type {string}
+   */
+  remark;
+  /**
+   * serialNo
+   * @type {string}
+   */
+  serialNo;
+  /**
+   * trackName
+   * @type {string}
+   */
+  trackName;
 }
 
 export const init = new defs.api1.BaseRes();
@@ -20,6 +29,6 @@ export async function fetch(params) {
   return request({
     url: '/orderDevices/bindTrack',
     params,
-    method: 'post',
+    method: 'POST',
   });
 }

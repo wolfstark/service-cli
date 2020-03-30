@@ -13,6 +13,6 @@ export async function fetch(params) {
   return request({
     url: '/shippingPerson/info',
     params,
-    method: 'post',
+    method: 'POST',
   });
 }

@@ -13,6 +13,6 @@ export async function fetch(params, bodyParams) {
   return request({
     url: '/appletCar/update',
     params: bodyParams,
-    method: 'put',
+    method: 'PUT',
   });
 }
