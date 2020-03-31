@@ -291,10 +291,6 @@ class CodeGenerator {
             : `params: Params`;
 
         return `
-      export ${inter.getParamsCode()}
-
-      export type Response = ${inter.responseType};
-      export const init: Response;
       export function request(${requestParams}): Promise<${inter.responseType}>;
     `;
     }
@@ -443,8 +439,6 @@ class CodeGenerator {
     import * as defs from '../../baseClass';
     import request from 'src/utils/request';
 
-    export ${inter.getParamsCode()}
-    export const init = ${inter.response.getInitialValue()};
 
     export async function fetch(${requestParams}) {
       return request({
