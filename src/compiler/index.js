@@ -7,7 +7,7 @@
 // const { StandardDataType } = require("../standard");
 const Parser = require("./Parser");
 const Token = require("./Token");
-
+const { TypeMap } = require("./TypeMap");
 // const { StandardDataType } = standard;
 // console.log(JSON.stringify(standard), 99999);
 /**
@@ -22,23 +22,8 @@ const Token = require("./Token");
  */
 function parseAst2StandardDataType(ast, defNames, classTemplateArgs = []) {
     const { name, templateArgs } = ast;
-    let typeName = name;
-
-    if (["List", "Collection"].includes(name)) {
-        typeName = "Array";
-    }
-
-    if (["long", "double"].includes(name)) {
-        typeName = "number";
-    }
-
-    if (["void", "Void"].includes(name)) {
-        typeName = "void";
-    }
-
-    if (["object", "Object", "Map"].includes(name)) {
-        typeName = "ObjectMap";
-    }
+    // 怪异类型兼容
+    const typeName = TypeMap[name] || name;
 
     const isDefsType = defNames.includes(name);
     const typeArgs = templateArgs.map(arg => {

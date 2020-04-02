@@ -82,7 +82,7 @@ class Schema {
     }
 
     /**
-     * 处理入餐Prop和Respon
+     * 处理入参Prop和Respon
      *
      * @static
      * @param {Schema} schema prop
@@ -98,14 +98,113 @@ class Schema {
         classTemplateArgs = [], // as StandardDataType[],
         compileTemplateKeyword // string
     ) {
+        //     const { items, $ref, type, additionalProperties } = schema;
+        //     let typeName = type;
+        //     // let primitiveType = schema.type as string;
+        //     // 转义基础类型
+        //     if (typeName === "array") {
+        //         // 基础类型或者是引用类型
+        //         let itemsType = _.get(items, "type", "");
+        //         const itemsRef = _.get(items, "$ref", "");
+        //         if (itemsType) {
+        //             if (itemsType === "integer") {
+        //                 itemsType = "number";
+        //             }
+
+        //             if (itemsType === "int") {
+        //                 itemsType = "number";
+        //             }
+
+        //             if (itemsType === "file") {
+        //                 itemsType = "File";
+        //             }
+
+        //             let contentType = new StandardDataType(
+        //                 [],
+        //                 itemsType,
+        //                 false,
+        //                 -1
+        //             );
+
+        //             if (itemsType === "array") {
+        //                 contentType = new StandardDataType(
+        //                     [new StandardDataType()],
+        //                     "Array",
+        //                     false,
+        //                     -1
+        //                 );
+        //             }
+
+        //             return new StandardDataType([contentType], "Array", false, -1);
+        //         }
+
+        //         if (itemsRef) {
+        //             const ast = compileTemplate(itemsRef, compileTemplateKeyword);
+        //             const contentType = parseAst2StandardDataType(
+        //                 ast,
+        //                 defNames,
+        //                 classTemplateArgs
+        //             );
+
+        //             return new StandardDataType([contentType], "Array", false, -1);
+        //         }
+        //     }
+
+        //     if (typeName === "integer") {
+        //         typeName = "number";
+        //     }
+
+        //     // if (typeName === "int") {
+        //     //     typeName = "number";
+        //     // }
+        //     if (typeName.startsWith("int")) {
+        //         typeName = "number";
+        //     }
+        //     if (typeName === "file") {
+        //         typeName = "File";
+        //     }
+        //     // 解析自定义类型
+        //     if ($ref) {
+        //         const ast = compileTemplate($ref, compileTemplateKeyword);
+
+        //         if (!ast) {
+        //             return new StandardDataType();
+        //         }
+
+        //         return parseAst2StandardDataType(ast, defNames, classTemplateArgs);
+        //     }
+        //     // 暂时没用
+        //     if (schema.enum) {
+        //         return StandardDataType.constructorWithEnum(
+        //             parseSwaggerEnumType(schema.enum)
+        //         );
+        //     }
+        //     // 特殊扩展类型 additionalProperties 作为value的map
+        //     if (type === "object") {
+        //         if (additionalProperties) {
+        //             const typeArgs = [
+        //                 new StandardDataType(),
+        //                 Schema.parseSwaggerSchema2StandardDataType(
+        //                     additionalProperties,
+        //                     defNames,
+        //                     classTemplateArgs,
+        //                     compileTemplateKeyword
+        //                 )
+        //             ];
+        //             return new StandardDataType(typeArgs, "ObjectMap", false);
+        //         }
+        //     }
+
+        //     return new StandardDataType([], typeName, false);
+        // }
         const { items, $ref, type, additionalProperties } = schema;
-        let typeName = type;
+        let typeName = schema.type;
         // let primitiveType = schema.type as string;
-        // 转义基础类型
-        if (typeName === "array") {
-            // 基础类型或者是引用类型
+
+        if (type === "array") {
             let itemsType = _.get(items, "type", "");
             const itemsRef = _.get(items, "$ref", "");
+
             if (itemsType) {
                 if (itemsType === "integer") {
                     itemsType = "number";
@@ -153,7 +252,7 @@ class Schema {
         if (typeName === "file") {
             typeName = "File";
         }
-        // 解析自定义类型
+
         if ($ref) {
             const ast = compileTemplate($ref, compileTemplateKeyword);
 
@@ -163,13 +262,13 @@ class Schema {
 
             return parseAst2StandardDataType(ast, defNames, classTemplateArgs);
         }
-        // 暂时没用
+
         if (schema.enum) {
             return StandardDataType.constructorWithEnum(
                 parseSwaggerEnumType(schema.enum)
             );
         }
-        // 特殊扩展类型 additionalProperties 作为value的map
+
         if (type === "object") {
             if (additionalProperties) {
                 const typeArgs = [

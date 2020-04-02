@@ -346,6 +346,11 @@ function getDuplicateById(arr, idKey = "name") {
     return result;
 }
 
+const Surrounding = {
+    typeScript: "typeScript",
+    javaScript: "javaScript"
+};
+
 module.exports = {
     lookForFiles,
     createManager,
@@ -359,7 +364,8 @@ module.exports = {
     getTemplate,
     defaultTransformCode,
     format,
-    getDuplicateById
+    getDuplicateById,
+    Surrounding
 };
 
 exports.lookForFiles = lookForFiles;
@@ -375,3 +381,4 @@ exports.getTemplate = getTemplate;
 exports.defaultTransformCode = defaultTransformCode;
 exports.format = format;
 exports.getDuplicateById = getDuplicateById;
+exports.Surrounding = Surrounding;

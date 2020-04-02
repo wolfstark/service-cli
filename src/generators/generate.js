@@ -229,17 +229,24 @@ class CodeGenerator {
     getBaseClassInDeclaration(base) {
         if (base.templateArgs && base.templateArgs.length) {
             return `class ${base.name}<${base.templateArgs
-                // eslint-disable-next-line no-shadow
                 .map((_, index) => `T${index} = any`)
                 .join(", ")}> {
-        ${base.properties.map(prop => prop.toPropertyCode(true)).join("\n")}
-      }
-      `;
+              ${base.properties
+                  .map(prop =>
+                      prop.toPropertyCode(utils.Surrounding.typeScript, true)
+                  )
+                  .join("\n")}
+            }
+            `;
         }
         return `class ${base.name} {
-      ${base.properties.map(prop => prop.toPropertyCode(true)).join("\n")}
-    }
-    `;
+            ${base.properties
+                .map(prop =>
+                    prop.toPropertyCode(utils.Surrounding.typeScript, true)
+                )
+                .join("\n")}
+          }
+          `;
     }
 
     /**

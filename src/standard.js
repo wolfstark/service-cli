@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file */
 const _ = require("lodash");
-const { getDuplicateById } = require("./utils");
+const utils = require("./utils");
 const { compileTemplate, parseAst2StandardDataType } = require("./compiler");
 
 // primitive type
@@ -118,6 +118,7 @@ class StandardDataType extends Contextable {
         this.templateIndex = templateIndex;
         this.compileTemplateKeyword = compileTemplateKeyword;
         this.enum = []; // : Array<string | number>
+        this.typeProperties = []; // : Property[]
     }
 
     /**
@@ -155,7 +156,13 @@ class StandardDataType extends Contextable {
             );
         }
 
-        const { isDefsType, templateIndex, typeArgs = [], typeName } = dataType;
+        const {
+            isDefsType,
+            templateIndex,
+            typeArgs = [],
+            typeName,
+            typeProperties
+        } = dataType;
 
         if (typeArgs.length) {
             const instance = new StandardDataType(
@@ -181,6 +188,9 @@ class StandardDataType extends Contextable {
             templateIndex
         );
         result.setEnum(dataType.enum);
+        result.typeProperties = (typeProperties || []).map(
+            prop => new Property(prop)
+        );
 
         return result;
     }
@@ -221,6 +231,23 @@ class StandardDataType extends Contextable {
 
     /** 生成 Typescript 类型定义的代码 */
     generateCode(originName = "") {
+        // if (this.templateIndex !== -1) {
+        //     return `T${this.templateIndex}`;
+        // }
+
+        // if (this.enum.length) {
+        //     return this.getEnumType();
+        // }
+
+        // const name = this.getDefName(originName);
+
+        // if (this.typeArgs.length) {
+        //     return `${name}<${this.typeArgs
+        //         .map(arg => arg.generateCode(originName))
+        //         .join(", ")}>`;
+        // }
+
+        // return name || "any";
         if (this.templateIndex !== -1) {
             return `T${this.templateIndex}`;
         }
@@ -235,6 +262,19 @@ class StandardDataType extends Contextable {
             return `${name}<${this.typeArgs
                 .map(arg => arg.generateCode(originName))
                 .join(", ")}>`;
+        }
+
+        if (this.typeProperties.length) {
+            const interfaceCode = `{${this.typeProperties.map(property =>
+                property.toPropertyCode()
+            )}
+            }`;
+
+            if (name) {
+                return `${name}<${interfaceCode}>`;
+            }
+
+            return interfaceCode;
         }
 
         return name || "any";
@@ -312,24 +352,47 @@ class Property extends Contextable {
         }
     }
 
-    toPropertyCode(hasRequired = false, optional = false) {
-        const optionalSignal = hasRequired && optional ? "?" : "";
+    toPropertyCode(
+        surrounding = utils.Surrounding.typeScript,
+        hasRequired = false,
+        optional = false
+    ) {
+        //     const optionalSignal = hasRequired && optional ? "?" : "";
 
-        // if (hasRequired && !this.required) {
-        //     optionalSignal = "?";
-        // }
+        //     // if (hasRequired && !this.required) {
+        //     //     optionalSignal = "?";
+        //     // }
 
+        //     let { name } = this;
+        //     if (!name.match(/^[a-zA-Z_$][a-zA-Z0-9_$]*$/)) {
+        //         name = `'${name}'`;
+        //     }
+
+        //     return `
+        //   /**
+        //    * ${this.description || this.name}
+        //    * @type {${this.dataType.generateCode(this.getDsName())}}
+        //   */
+        //   ${name}`;
+        let optionalSignal = hasRequired && optional ? "?" : "";
+
+        if (hasRequired && !this.required) {
+            optionalSignal = "?";
+        }
         let { name } = this;
         if (!name.match(/^[a-zA-Z_$][a-zA-Z0-9_$]*$/)) {
             name = `'${name}'`;
         }
+        const fieldTypeDeclaration =
+            surrounding === utils.Surrounding.javaScript
+                ? ""
+                : `${optionalSignal}: ${this.dataType.generateCode(
+                      this.getDsName()
+                  )}`;
 
         return `
-      /** 
-       * ${this.description || this.name} 
-       * @type {${this.dataType.generateCode(this.getDsName())}}
-      */
-      ${name}`;
+      /** ${this.description || this.name} */
+      ${name}${fieldTypeDeclaration};`;
     }
 
     toPropertyCodeWithInitValue(baseName = "") {
@@ -472,8 +535,8 @@ class StandardDataSource {
             }
         });
 
-        const dupMod = getDuplicateById(this.mods, "name");
-        const dupBase = getDuplicateById(this.baseClasses, "name");
+        const dupMod = utils.getDuplicateById(this.mods, "name");
+        const dupBase = utils.getDuplicateById(this.baseClasses, "name");
 
         if (dupMod) {
             errors.push(`模块 ${dupMod.name} 重复了。`);
