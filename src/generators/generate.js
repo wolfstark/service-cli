@@ -285,13 +285,12 @@ class CodeGenerator {
      * @memberof CodeGenerator
      */
     getInterfaceContentInDeclaration(inter) {
-        const bodyParams = inter.getBodyParamsCode();
-        const requestParams = bodyParams
-            ? `params: Params, bodyParams: ${bodyParams}`
-            : `params: Params`;
+        const dataMethod = ["put", "post"];
+        const { method } = inter;
+        const requestParams = dataMethod.includes(method) ? `data` : `params`;
 
         return `
-      export function request(${requestParams}): Promise<${inter.responseType}>;
+      export function request(${requestParams}:any): Promise<${inter.responseType}>;
     `;
     }
 
@@ -427,9 +426,10 @@ class CodeGenerator {
      * @memberof CodeGenerator
      */
     getInterfaceContent(inter) {
-        const bodyParams = inter.getBodyParamsCode();
-        const requestParams = bodyParams ? `params, bodyParams` : `params`;
-        const method = inter.method.toUpperCase();
+        // const bodyParams = inter.getBodyParamsCode();
+        const dataMethod = ["put", "post"];
+        const { method } = inter;
+        const requestParams = dataMethod.includes(method) ? `data` : `params`;
 
         return `
     /**
@@ -442,8 +442,8 @@ class CodeGenerator {
 
     export async function fetch(${requestParams}) {
       return request({
-        url: '${inter.path}',
-        ${bodyParams ? "params: bodyParams" : "params"},
+        url: '${this.dataSource.basePath}${inter.path}',
+        ${requestParams},
         method: '${method}',
       });
     }

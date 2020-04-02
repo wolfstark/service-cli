@@ -545,7 +545,8 @@ function transformSwaggerData2Standard(swagger, originName = "") {
     return new StandardDataSource({
         baseClasses: _.uniqBy(baseClasses, base => base.name),
         mods: parseSwaggerMods(swagger, defNames),
-        name: originName
+        name: originName,
+        basePath: swagger.basePath
     });
 }
 

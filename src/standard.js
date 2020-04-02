@@ -517,7 +517,7 @@ class StandardDataSource {
             this.name = standard.name;
         }
         this.baseClasses = standard.baseClasses;
-
+        this.basePath = standard.basePath;
         this.reOrder();
         this.setContext();
     }
