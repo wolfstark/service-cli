@@ -6,4 +6,4 @@
  * @LastEditors: Wang Xiang
  */
 
-require("../src/index");
+require("../src/cmd");
