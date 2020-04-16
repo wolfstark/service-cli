@@ -19,7 +19,7 @@ class DataSourceConfig {
         this.usingMultipleOrigins = false;
         this.taggedByName = true;
         this.templatePath = "serviceTemplate";
-        this.outDir = "src/service";
+        this.output = "src/service";
         this.transformPath = "transformTemplate";
         this.fetchMethodPath = "fetchMethodTemplate";
         this.prettierConfig = {};

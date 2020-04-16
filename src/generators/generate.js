@@ -446,8 +446,7 @@ class CodeGenerator {
      */
 
     import * as defs from '../../baseClass';
-    import request from 'src/utils/request';
-
+    import request from '@/utils/request';
 
     export async function fetch(${requestParams}) {
       return request({

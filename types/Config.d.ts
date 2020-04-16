@@ -14,7 +14,7 @@ export declare class Config {
     originType: OriginType;
     usingOperationId: boolean;
     taggedByName: boolean;
-    outDir: string;
+    output: string;
     origins?: {
         originType: OriginType;
         url: string;

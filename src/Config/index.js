@@ -19,7 +19,7 @@ class Config {
         this.usingMultipleOrigins = true;
         this.templatePath = "serviceTemplate";
         this.originType = DocParser.OriginType.SwaggerV2;
-        this.outDir = "service";
+        this.output = "service";
         this.docs = [];
         Object.keys(config).forEach(key => {
             this[key] = config[key];
@@ -73,7 +73,7 @@ class Config {
         const commonConfig = {
             usingOperationId: this.usingOperationId,
             taggedByName: this.taggedByName,
-            outDir: path.join(configDir, this.outDir),
+            output: path.join(configDir, this.output),
             usingMultipleOrigins: this.usingMultipleOrigins,
             templatePath: path.join(configDir, this.templatePath),
             transformPath: this.transformPath

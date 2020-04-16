@@ -15,7 +15,7 @@ export default class DataSourceConfig {
     usingMultipleOrigins: boolean;
     taggedByName: boolean;
     templatePath: string;
-    outDir: string;
+    output: string;
     transformPath: string;
     fetchMethodPath: string;
     prettierConfig: ResolveConfigOptions;

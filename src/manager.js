@@ -75,7 +75,7 @@ class Manager {
                 generators,
                 this.currConfig.usingMultipleOrigins
             ),
-            this.currConfig.outDir
+            this.currConfig.output
         );
         this.fileManager.prettierConfig = this.currConfig.prettierConfig;
         this.report("文件生成器创建成功！");
