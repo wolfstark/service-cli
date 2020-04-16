@@ -171,12 +171,14 @@ class FileStructures {
           })
           .join("\n")}
 
-      window.defs = {
-        ${dsNames.map(name => `${name}: ${name}Defs,`).join("\n")}
-      };
-      window.API = {
-        ${dsNames.join(",\n")}
-      };
+     export default {
+        defs:{
+            ${dsNames.map(name => `${name}: ${name}Defs,`).join("\n")}
+        },
+        API:{
+            ${dsNames.join(",\n")}
+        }
+     }
     `;
     }
 
