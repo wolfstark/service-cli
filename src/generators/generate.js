@@ -61,7 +61,7 @@ class FileStructures {
     getBaseClassesInDeclaration(originCode, usingMultipleOrigins) {
         if (usingMultipleOrigins) {
             return `
-      declare namespace defs {
+      export declare namespace defs {
         export ${originCode}
       };
       `;
@@ -113,6 +113,10 @@ class FileStructures {
                 currMod[
                     `${inter.name}.js`
                 ] = generator.getInterfaceContent.bind(generator, inter);
+
+                currMod[
+                    `${inter.name}.d.ts`
+                ] = generator.getInterfaceContentTs.bind(generator, inter);
             });
             currMod["index.js"] = generator.getModIndex.bind(generator, mod);
             // .replace(/\//g, '.').replace(/^\./, '').replace(/\./g, '_') 转换 / .为下划线
@@ -140,7 +144,7 @@ class FileStructures {
         );
 
         const result = {
-            "baseClass.js": generator.getBaseClassesIndex.bind(generator),
+            "definitions.js": generator.getBaseClassesIndex.bind(generator),
             mods,
             "index.js": generator.getIndex.bind(generator),
             "api.d.ts": generator.getDeclaration.bind(generator)
@@ -274,7 +278,7 @@ class CodeGenerator {
 
     getBaseClassesInDeclarationWithMultipleOrigins() {
         return `
-      declare namespace defs {
+      export declare namespace defs {
         export ${this.getBaseClassesInDeclaration()}
       }
     `;
@@ -299,7 +303,7 @@ class CodeGenerator {
         const requestParams = dataMethod.includes(method) ? `data` : `params`;
 
         return `
-      export function request(${requestParams}:any): Promise<${inter.responseType}>;
+      export function fetch(${requestParams}:any): Promise<${inter.responseType}>;
     `;
     }
 
@@ -375,14 +379,13 @@ class CodeGenerator {
 
       ${this.getBaseClassesInDeclaration()}
 
-      ${this.getModsDeclaration()}
     `;
     }
 
     /** 获取接口类和基类的总的 index 入口文件代码 */
     getIndex() {
         let conclusion = `
-      import * as defs from './baseClass';
+      import * as defs from './definitions';
       import './mods/';
 
       window.defs = defs;
@@ -391,7 +394,7 @@ class CodeGenerator {
         // dataSource name means multiple dataSource
         if (this.dataSource.name) {
             conclusion = `
-        import { ${this.dataSource.name} as defs } from './baseClass';
+        import { ${this.dataSource.name} as defs } from './definitions';
         export { ${this.dataSource.name} } from './mods/';
         export { defs };
       `;
@@ -445,7 +448,7 @@ class CodeGenerator {
      * @desc ${inter.description}
      */
 
-    import * as defs from '../../baseClass';
+    import * as defs from '../../definitions';
     import request from '@/utils/request';
 
     export async function fetch(${requestParams}) {
@@ -455,6 +458,30 @@ class CodeGenerator {
         method: '${method}',
       });
     }
+   `;
+    }
+
+    /**
+     * 获取接口实现内容的代码
+     *
+     * @param {Interface} inter
+     * @returns
+     * @memberof CodeGenerator
+     */
+    getInterfaceContentTs(inter) {
+        // const bodyParams = inter.getBodyParamsCode();
+        const dataMethod = ["put", "post"];
+        const { method } = inter;
+        const requestParams = dataMethod.includes(method) ? `data` : `params`;
+
+        return `
+    /**
+     * @desc ${inter.description}
+     */
+
+    import { defs, ObjectMap } from "../../api";
+
+    ${this.getInterfaceContentInDeclaration(inter)}
    `;
     }
 
