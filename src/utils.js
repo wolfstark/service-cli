@@ -342,7 +342,6 @@ module.exports = {
     getIdentifierFromUrl,
     toUpperFirstLetter,
     getTemplate,
-    defaultTransformCode,
     format,
     getDuplicateById,
     Surrounding
@@ -358,7 +357,6 @@ exports.getMaxSamePath = getMaxSamePath;
 exports.getIdentifierFromUrl = getIdentifierFromUrl;
 exports.toUpperFirstLetter = toUpperFirstLetter;
 exports.getTemplate = getTemplate;
-exports.defaultTransformCode = defaultTransformCode;
 exports.format = format;
 exports.getDuplicateById = getDuplicateById;
 exports.Surrounding = Surrounding;

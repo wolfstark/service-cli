@@ -7,8 +7,8 @@
 const fs = require("fs-extra");
 const path = require("path");
 const DocParser = require("../DocParser");
-const DataSourceConfig = require("../Config/DataSourceConfig");
-const { getTemplate, defaultTransformCode } = require("../utils");
+const DataSourceConfig = require("./DataSourceConfig");
+const { getTemplate } = require("../utils");
 /**
  * 配置文件实体
  */
@@ -36,10 +36,7 @@ class Config {
      */
     static getTransformFromConfig(config) {
         if (config.transformPath) {
-            const moduleResult = getTemplate(
-                config.transformPath,
-                defaultTransformCode
-            );
+            const moduleResult = getTemplate(config.transformPath);
 
             if (moduleResult) {
                 return moduleResult.default;
