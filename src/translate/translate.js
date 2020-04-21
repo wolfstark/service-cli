@@ -7,27 +7,11 @@
 const _ = require("lodash");
 const assert = require("assert");
 const { youdao, baidu, google } = require("translation.js");
-const { PontDictManager } = require("./LocalDictManager");
-const debugLog = require("../logger");
 
 export class Translate {
-    constructor(dictName = "dict.json") {
+    constructor() {
         this.engines = [google, youdao, baidu];
         this.dict = {};
-        const localDict = PontDictManager.loadFileIfExistsSync(dictName);
-
-        if (localDict) {
-            const dictstr = localDict.slice(0, localDict.length - 2);
-
-            try {
-                this.dict = JSON.parse(`{${dictstr}}`);
-            } catch (err) {
-                debugLog.error(
-                    "[translate] local dict is invalid, attempting auto fix"
-                );
-                PontDictManager.removeFile(dictName);
-            }
-        }
     }
 
     /**
@@ -39,10 +23,6 @@ export class Translate {
     appendToDict(pairKey) {
         if (!this.dict[pairKey.cn]) {
             this.dict[pairKey.cn] = pairKey.en;
-            PontDictManager.appendFileSync(
-                this.dictName,
-                `"${pairKey.cn}": "${pairKey.en}",\n`
-            );
         }
     }
 

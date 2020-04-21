@@ -15,27 +15,7 @@ const Manager = require("./manager");
 const { Config } = require("./Config");
 const { error } = require("./logger");
 
-const defaultTemplateCode = `
-const Pont = require('pont-engine');
-
-class FileStructures extends Pont.FileStructures {
-}
-
-class MyGenerator extends Pont.CodeGenerator {
-}
-module.exports = {
-    FileStructures,
-    MyGenerator
-}
-`;
-
-const defaultTransformCode = `
-import { StandardDataSource } from "pont-engine";
-
-export default function(dataSource: StandardDataSource): StandardDataSource {
-  return dataSource;
-}
-`;
+const defaultTemplateCode = "";
 
 /**
  *

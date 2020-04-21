@@ -14,7 +14,7 @@ const TypeMap = {
     Void: "void",
     void: "void",
 
-    /* ObjectMap is defined by pont internal datatype just like object  */
+    /* ObjectMap is just like object  */
     object: "ObjectMap",
     Object: "ObjectMap",
     Map: "ObjectMap",

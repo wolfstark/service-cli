@@ -33,7 +33,6 @@ const {
     FilesManager
 } = require("./generators/generate");
 // const { diff, Model, removeCtx } = require("./diff");
-const { PontDictManager } = require("./translate/LocalDictManager");
 
 module.exports = {
     Manager,
@@ -63,6 +62,5 @@ module.exports = {
     Config,
     CodeGenerator,
     FileStructures,
-    FilesManager,
-    PontDictManager
+    FilesManager
 };

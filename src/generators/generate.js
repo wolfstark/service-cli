@@ -43,8 +43,8 @@ class FileStructures {
 
         return {
             ...files,
-            "index.js": this.getDataSourcesTs.bind(this),
-            "api.d.ts": this.getDataSourcesDeclarationTs.bind(this)
+            "index.js": this.getDataSourcesTs.bind(this)
+            // "api.d.ts": this.getDataSourcesDeclarationTs.bind(this)
             // "api-lock.json": this.getLockContent.bind(this)
         };
     }
@@ -145,9 +145,9 @@ class FileStructures {
 
         const result = {
             "definitions.js": generator.getBaseClassesIndex.bind(generator),
-            mods,
+            API: mods,
             "index.js": generator.getIndex.bind(generator),
-            "api.d.ts": generator.getDeclaration.bind(generator)
+            "defs.d.ts": generator.getDeclaration.bind(generator)
         };
 
         // if (!usingMultipleOrigins) {
@@ -168,12 +168,21 @@ class FileStructures {
         const dsNames = this.generators.map(ge => ge.dataSource.name);
 
         return `
+        import umiRequest from "umi-request";
       ${dsNames
           .map(name => {
               return `import { defs as ${name}Defs, ${name} } from './${name}';
           `;
           })
           .join("\n")}
+
+          let advanceFetch = umiRequest;
+
+          export let request = (...args) => advanceFetch(...args);
+
+        export const registerRequest = (method) => {
+            advanceFetch = method;
+        };
 
      export default {
         defs:{
@@ -192,7 +201,7 @@ class FileStructures {
         return `
     ${dsNames
         .map(name => {
-            return `/// <reference path="./${name}/api.d.ts" />`;
+            return `/// <reference path="./${name}/defs.d.ts" />`;
         })
         .join("\n")}
     `;
@@ -386,7 +395,7 @@ class CodeGenerator {
     getIndex() {
         let conclusion = `
       import * as defs from './definitions';
-      import './mods/';
+      import './API/';
 
       window.defs = defs;
     `;
@@ -395,7 +404,7 @@ class CodeGenerator {
         if (this.dataSource.name) {
             conclusion = `
         import { ${this.dataSource.name} as defs } from './definitions';
-        export { ${this.dataSource.name} } from './mods/';
+        export { ${this.dataSource.name} } from './API/';
         export { defs };
       `;
         }
@@ -448,8 +457,7 @@ class CodeGenerator {
      * @desc ${inter.description}
      */
 
-    import * as defs from '../../definitions';
-    import request from '@/utils/request';
+    import { request } from "../../../index";
 
     export async function fetch(${requestParams}) {
       return request({
@@ -479,7 +487,7 @@ class CodeGenerator {
      * @desc ${inter.description}
      */
 
-    import { defs, ObjectMap } from "../../api";
+    import { defs, ObjectMap } from "../../defs";
 
     ${this.getInterfaceContentInDeclaration(inter)}
    `;
