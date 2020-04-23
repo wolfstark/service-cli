@@ -22,8 +22,8 @@ const TypeMap = {
 
     /* Array */
     List: "Array",
-    Collection: "Array"
+    Collection: "Array",
 };
 module.exports = {
-    TypeMap
+    TypeMap,
 };
