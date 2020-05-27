@@ -70,7 +70,7 @@ function toDashCase(name) {
     const dashName = name
         .split(" ")
         .join("")
-        .replace(/[A-Z]/g, p => `-${p.toLowerCase()}`);
+        .replace(/[A-Z]/g, (p) => `-${p.toLowerCase()}`);
 
     if (dashName.startsWith("-")) {
         return dashName.slice(1);
@@ -85,7 +85,7 @@ function toDashCase(name) {
  * @returns
  */
 function transformDashCase(name) {
-    return name.replace(/[A-Z]/g, ch => `_${ch.toLowerCase()}`);
+    return name.replace(/[A-Z]/g, (ch) => `_${ch.toLowerCase()}`);
 }
 /**
  *
@@ -95,11 +95,11 @@ function transformDashCase(name) {
  */
 function transformModsName(mods) {
     // 检测所有接口是否存在接口名忽略大小写时重复，如果重复，以下划线命名
-    mods.forEach(mod => {
+    mods.forEach((mod) => {
         const currName = mod.name;
         const sameMods = mods.filter(
             // eslint-disable-next-line no-shadow
-            mod => mod.name.toLowerCase() === currName.toLowerCase()
+            (mod) => mod.name.toLowerCase() === currName.toLowerCase()
         );
 
         if (sameMods.length > 1) {
@@ -132,7 +132,7 @@ function transformCamelCase(name) {
 
     if (words && words.length) {
         result = words
-            .map(word => {
+            .map((word) => {
                 return (
                     word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
                 );
@@ -162,11 +162,11 @@ function getMaxSamePath(paths, samePath = "") {
         return samePath;
     }
 
-    if (paths.some(_path => !_path.includes("/"))) {
+    if (paths.some((_path) => !_path.includes("/"))) {
         return samePath;
     }
 
-    const segs = paths.map(_path => {
+    const segs = paths.map((_path) => {
         const [firstSeg, ...restSegs] = _path.split("/");
         return { firstSeg, restSegs };
     });
@@ -178,7 +178,7 @@ function getMaxSamePath(paths, samePath = "") {
         )
     ) {
         return getMaxSamePath(
-            segs.map(seg => seg.restSegs.join("/")),
+            segs.map((seg) => seg.restSegs.join("/")),
             `${samePath}/${segs[0].firstSeg}`
         );
     }
@@ -213,7 +213,7 @@ function getIdentifierFromUrl(url, requestType, samePath = "") {
         requestType +
         currUrl
             .split("/")
-            .map(str => {
+            .map((str) => {
                 if (str.includes("-")) {
                     // eslint-disable-next-line no-param-reassign,no-useless-escape
                     str = str.replace(/(\-\w)+/g, (_match, p1) => {
@@ -295,7 +295,7 @@ function format(fileContent, prettierOpts = {}) {
             parser: "typescript",
             trailingComma: "all",
             singleQuote: true,
-            ...prettierOpts
+            ...prettierOpts,
         });
     } catch (e) {
         error(`代码格式化报错！${e.toString()}\n代码为：${fileContent}`);
@@ -318,7 +318,7 @@ function getDuplicateById(arr, idKey = "name") {
     let result;
 
     arr.forEach((item, itemIndex) => {
-        if (arr.slice(0, itemIndex).find(o => o[idKey] === item[idKey])) {
+        if (arr.slice(0, itemIndex).find((o) => o[idKey] === item[idKey])) {
             result = item;
         }
     });
@@ -328,7 +328,7 @@ function getDuplicateById(arr, idKey = "name") {
 
 const Surrounding = {
     typeScript: "typeScript",
-    javaScript: "javaScript"
+    javaScript: "javaScript",
 };
 
 module.exports = {
@@ -344,7 +344,7 @@ module.exports = {
     getTemplate,
     format,
     getDuplicateById,
-    Surrounding
+    Surrounding,
 };
 
 exports.lookForFiles = lookForFiles;

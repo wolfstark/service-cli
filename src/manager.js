@@ -12,7 +12,7 @@ const { getTemplate } = require("./utils");
 const {
     FileStructures,
     FilesManager,
-    CodeGenerator
+    CodeGenerator,
 } = require("./generators/generate");
 
 class Manager {
@@ -25,7 +25,7 @@ class Manager {
         this.allLocalDataSources = [];
         this.diffs = {
             modDiffs: [],
-            boDiffs: []
+            boDiffs: [],
         };
         this.report = info;
         this.allConfigs = config.getDataSourcesConfig(configDir);
@@ -53,9 +53,9 @@ class Manager {
         // } = getTemplate(this.currConfig.templatePath);
         const { CodeGenerator: Generator, FileStructures: MyFileStructures } = {
             FileStructures,
-            CodeGenerator
+            CodeGenerator,
         };
-        const generators = this.allLocalDataSources.map(dataSource => {
+        const generators = this.allLocalDataSources.map((dataSource) => {
             const generator = new Generator();
             generator.setDataSource(dataSource);
             // 生命周期 目前无用
@@ -83,7 +83,7 @@ class Manager {
     }
 
     async ready() {
-        const promises = this.allConfigs.map(config => {
+        const promises = this.allConfigs.map((config) => {
             return this.readRemoteDataSource(config);
         });
         this.allLocalDataSources = await Promise.all(promises);

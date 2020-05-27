@@ -73,5 +73,5 @@ class Translate {
 const Translator = new Translate();
 module.exports = {
     Translate,
-    Translator
+    Translator,
 };

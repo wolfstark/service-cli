@@ -6,7 +6,7 @@ const {
     PrimitiveType,
     Property,
     StandardDataSource,
-    StandardDataType
+    StandardDataType,
 } = require("./standard");
 const {
     createManager,
@@ -23,14 +23,14 @@ const {
     toUpperFirstLetter,
     transformCamelCase,
     // transformDescription,
-    transformModsName
+    transformModsName,
 } = require("./utils");
 const { Config } = require("./Config");
 const DataSourceConfig = require("./Config/DataSourceConfig");
 const {
     CodeGenerator,
     FileStructures,
-    FilesManager
+    FilesManager,
 } = require("./generators/generate");
 // const { diff, Model, removeCtx } = require("./diff");
 
@@ -62,5 +62,5 @@ module.exports = {
     Config,
     CodeGenerator,
     FileStructures,
-    FilesManager
+    FilesManager,
 };

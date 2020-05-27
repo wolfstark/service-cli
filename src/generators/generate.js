@@ -15,7 +15,7 @@ const {
     StandardDataSource,
     Interface,
     Mod,
-    BaseClass
+    BaseClass,
 } = require("../standard");
 const utils = require("../utils");
 const { info } = require("../logger");
@@ -34,7 +34,7 @@ class FileStructures {
 
     getMultipleOriginsFileStructures() {
         const files = {};
-        this.generators.forEach(generator => {
+        this.generators.forEach((generator) => {
             const dsName = generator.dataSource.name;
             const dsFiles = this.getOriginFileStructures(generator, true);
 
@@ -43,7 +43,7 @@ class FileStructures {
 
         return {
             ...files,
-            "index.js": this.getDataSourcesTs.bind(this)
+            "index.js": this.getDataSourcesTs.bind(this),
             // "api.d.ts": this.getDataSourcesDeclarationTs.bind(this)
             // "api-lock.json": this.getLockContent.bind(this)
         };
@@ -106,10 +106,10 @@ class FileStructures {
         const mods = {};
         const { dataSource } = generator;
 
-        dataSource.mods.forEach(mod => {
+        dataSource.mods.forEach((mod) => {
             const currMod = {};
 
-            mod.interfaces.forEach(inter => {
+            mod.interfaces.forEach((inter) => {
                 currMod[
                     `${inter.name}.js`
                 ] = generator.getInterfaceContent.bind(generator, inter);
@@ -147,7 +147,7 @@ class FileStructures {
             "definitions.js": generator.getBaseClassesIndex.bind(generator),
             API: mods,
             "index.js": generator.getIndex.bind(generator),
-            "defs.d.ts": generator.getDeclaration.bind(generator)
+            "defs.d.ts": generator.getDeclaration.bind(generator),
         };
 
         // if (!usingMultipleOrigins) {
@@ -165,12 +165,12 @@ class FileStructures {
     }
 
     getDataSourcesTs() {
-        const dsNames = this.generators.map(ge => ge.dataSource.name);
+        const dsNames = this.generators.map((ge) => ge.dataSource.name);
 
         return `
         import umiRequest from "umi-request";
       ${dsNames
-          .map(name => {
+          .map((name) => {
               return `import { defs as ${name}Defs, ${name} } from './${name}';
           `;
           })
@@ -186,7 +186,7 @@ class FileStructures {
 
      export default {
         defs:{
-            ${dsNames.map(name => `${name}: ${name}Defs,`).join("\n")}
+            ${dsNames.map((name) => `${name}: ${name}Defs,`).join("\n")}
         },
         API:{
             ${dsNames.join(",\n")}
@@ -196,11 +196,11 @@ class FileStructures {
     }
 
     getDataSourcesDeclarationTs() {
-        const dsNames = this.generators.map(ge => ge.dataSource.name);
+        const dsNames = this.generators.map((ge) => ge.dataSource.name);
 
         return `
     ${dsNames
-        .map(name => {
+        .map((name) => {
             return `/// <reference path="./${name}/defs.d.ts" />`;
         })
         .join("\n")}
@@ -209,7 +209,7 @@ class FileStructures {
 
     getLockContent() {
         return JSON.stringify(
-            this.generators.map(ge => ge.dataSource),
+            this.generators.map((ge) => ge.dataSource),
             null,
             2
         );
@@ -247,7 +247,7 @@ class CodeGenerator {
                 .map((_, index) => `T${index} = any`)
                 .join(", ")}> {
               ${base.properties
-                  .map(prop =>
+                  .map((prop) =>
                       prop.toPropertyCode(utils.Surrounding.typeScript, true)
                   )
                   .join("\n")}
@@ -256,7 +256,7 @@ class CodeGenerator {
         }
         return `class ${base.name} {
             ${base.properties
-                .map(prop =>
+                .map((prop) =>
                     prop.toPropertyCode(utils.Surrounding.typeScript, true)
                 )
                 .join("\n")}
@@ -274,7 +274,7 @@ class CodeGenerator {
         const content = `namespace ${this.dataSource.name || "defs"} {
       ${this.dataSource.baseClasses
           .map(
-              base => `
+              (base) => `
         export ${this.getBaseClassInDeclaration(base)}
       `
           )
@@ -350,7 +350,7 @@ class CodeGenerator {
         const content = `namespace ${this.dataSource.name || "API"} {
         ${mods
             .map(
-                mod => `
+                (mod) => `
           /**
            * ${mod.description}
            */
@@ -415,13 +415,13 @@ class CodeGenerator {
     /** 获取所有JS基类文件代码 */
     getBaseClassesIndex() {
         const clsCodes = this.dataSource.baseClasses.map(
-            base => `
+            (base) => `
         class ${base.name} {
           ${base.properties
-              .map(prop => {
+              .map((prop) => {
                   return prop.toPropertyCodeWithInitValue(base.name);
               })
-              .filter(id => id)
+              .filter((id) => id)
               .join("\n")}
         }
       `
@@ -431,12 +431,12 @@ class CodeGenerator {
             return `
         ${clsCodes.join("\n")}
         export const ${this.dataSource.name} = {
-          ${this.dataSource.baseClasses.map(bs => bs.name).join(",\n")}
+          ${this.dataSource.baseClasses.map((bs) => bs.name).join(",\n")}
         }
       `;
         }
 
-        return clsCodes.map(cls => `export ${cls}`).join("\n");
+        return clsCodes.map((cls) => `export ${cls}`).join("\n");
     }
 
     /**
@@ -506,13 +506,13 @@ class CodeGenerator {
        * @description ${mod.description}
        */
       ${mod.interfaces
-          .map(inter => {
+          .map((inter) => {
               return `import * as ${inter.name} from './${inter.name}';`;
           })
           .join("\n")}
 
       export {
-        ${mod.interfaces.map(inter => inter.name).join(", \n")}
+        ${mod.interfaces.map((inter) => inter.name).join(", \n")}
       }
     `;
     }
@@ -565,7 +565,7 @@ class CodeGenerator {
         let conclusion = `
       const API = {};
       ${this.dataSource.mods
-          .map(mod => this.getModInitStatement("API", mod.name))
+          .map((mod) => this.getModInitStatement("API", mod.name))
           .join("\n")}
       window.API = API;
     `;
@@ -575,7 +575,7 @@ class CodeGenerator {
             conclusion = `
         export const ${this.dataSource.name} = {};
         ${this.dataSource.mods
-            .map(mod =>
+            .map((mod) =>
                 this.getModInitStatement(this.dataSource.name, mod.name)
             )
             .join("\n")}
@@ -584,7 +584,7 @@ class CodeGenerator {
 
         return `
       ${this.dataSource.mods
-          .map(mod => {
+          .map((mod) => {
               // .replace(/\//g, '.').replace(/^\./, '').replace(/\./g, '_') 转换 / .为下划线
               // exp: /api/v1/users  => api_v1_users
               // exp: api.v1.users => api_v1_users
@@ -648,7 +648,7 @@ class FilesManager {
 
             if (typeof value === "function") {
                 // eslint-disable-next-line no-param-reassign
-                files[name] = content =>
+                files[name] = (content) =>
                     utils.format(value(content), this.prettierConfig);
             }
 
@@ -731,5 +731,5 @@ class FilesManager {
 module.exports = {
     FileStructures,
     CodeGenerator,
-    FilesManager
+    FilesManager,
 };

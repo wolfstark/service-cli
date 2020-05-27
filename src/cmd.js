@@ -1,7 +1,7 @@
 const { createManager } = require("./utils");
 const logger = require("./logger");
 
-(async function() {
+(async function () {
     try {
         const manager = await createManager();
 

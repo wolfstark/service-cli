@@ -21,7 +21,7 @@ class Config {
         this.originType = DocParser.OriginType.SwaggerV2;
         this.output = "service";
         this.docs = [];
-        Object.keys(config).forEach(key => {
+        Object.keys(config).forEach((key) => {
             this[key] = config[key];
         });
     }
@@ -43,7 +43,7 @@ class Config {
             }
         }
 
-        return id => id;
+        return (id) => id;
     }
 
     /**
@@ -79,15 +79,15 @@ class Config {
             fetchMethodPath: this.fetchMethodPath
                 ? path.join(configDir, this.fetchMethodPath)
                 : undefined,
-            prettierConfig: this.prettierConfig
+            prettierConfig: this.prettierConfig,
         };
 
         // FIXME: docs中配的路径没有转换成绝对路径，找不到该模块
         if (this.docs && this.docs.length) {
-            return this.docs.map(origin => {
+            return this.docs.map((origin) => {
                 return new DataSourceConfig({
                     ...commonConfig,
-                    ...origin
+                    ...origin,
                 });
             });
         }
@@ -96,8 +96,8 @@ class Config {
             new DataSourceConfig({
                 ...commonConfig,
                 url: this.url,
-                originType: this.originType
-            })
+                originType: this.originType,
+            }),
         ];
     }
 }

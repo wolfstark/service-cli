@@ -75,7 +75,7 @@ class Parser {
         return {
             type: "Template",
             name,
-            templateArgs
+            templateArgs,
         };
     }
 }

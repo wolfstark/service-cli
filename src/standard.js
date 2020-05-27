@@ -7,7 +7,7 @@ const { compileTemplate, parseAst2StandardDataType } = require("./compiler");
 const PrimitiveType = {
     number: "number",
     string: "string",
-    boolean: "boolean"
+    boolean: "boolean",
 };
 
 class Contextable {
@@ -74,7 +74,7 @@ class StandardDataType extends Contextable {
      * @memberof StandardDataType
      */
     setEnum(enums = []) {
-        this.enum = enums.map(value => {
+        this.enum = enums.map((value) => {
             if (typeof value === "string") {
                 if (!value.startsWith("'")) {
                     // eslint-disable-next-line no-param-reassign
@@ -161,12 +161,12 @@ class StandardDataType extends Contextable {
             templateIndex,
             typeArgs = [],
             typeName,
-            typeProperties
+            typeProperties,
         } = dataType;
 
         if (typeArgs.length) {
             const instance = new StandardDataType(
-                typeArgs.map(arg =>
+                typeArgs.map((arg) =>
                     StandardDataType.constructorFromJSON(
                         arg,
                         originName,
@@ -189,7 +189,7 @@ class StandardDataType extends Contextable {
         );
         result.setEnum(dataType.enum);
         result.typeProperties = (typeProperties || []).map(
-            prop => new Property(prop)
+            (prop) => new Property(prop)
         );
 
         return result;
@@ -202,7 +202,7 @@ class StandardDataType extends Contextable {
      * @memberof StandardDataType
      */
     setTemplateIndex(classTemplateArgs) {
-        const codes = classTemplateArgs.map(arg => arg.generateCode());
+        const codes = classTemplateArgs.map((arg) => arg.generateCode());
         const index = codes.indexOf(this.generateCode());
 
         this.templateIndex = index;
@@ -260,12 +260,12 @@ class StandardDataType extends Contextable {
 
         if (this.typeArgs.length) {
             return `${name}<${this.typeArgs
-                .map(arg => arg.generateCode(originName))
+                .map((arg) => arg.generateCode(originName))
                 .join(", ")}>`;
         }
 
         if (this.typeProperties.length) {
-            const interfaceCode = `{${this.typeProperties.map(property =>
+            const interfaceCode = `{${this.typeProperties.map((property) =>
                 property.toPropertyCode()
             )}
             }`;
@@ -432,8 +432,8 @@ class Interface extends Contextable {
         return `
       class ${className} {
         ${this.parameters
-            .filter(param => param.in === "path" || param.in === "query")
-            .map(param => param.toPropertyCode(true))
+            .filter((param) => param.in === "path" || param.in === "query")
+            .map((param) => param.toPropertyCode(true))
             .join("")}
       }
     `;
@@ -441,7 +441,7 @@ class Interface extends Contextable {
 
     // body 类型 Array||Defs.Coustom
     getBodyParamsCode() {
-        const bodyParam = this.parameters.find(param => param.in === "body");
+        const bodyParam = this.parameters.find((param) => param.in === "body");
 
         return (
             (bodyParam && bodyParam.dataType.generateCode(this.getDsName())) ||
@@ -451,7 +451,7 @@ class Interface extends Contextable {
 
     setContext(context) {
         super.setContext(context);
-        this.parameters.forEach(param => param.setContext(context));
+        this.parameters.forEach((param) => param.setContext(context));
         // eslint-disable-next-line no-unused-expressions
         this.response && this.response.setContext(context);
     }
@@ -476,7 +476,7 @@ class Interface extends Contextable {
 class Mod extends Contextable {
     setContext(context) {
         super.setContext(context);
-        this.interfaces.forEach(inter => inter.setContext(context));
+        this.interfaces.forEach((inter) => inter.setContext(context));
     }
 
     /**
@@ -498,7 +498,7 @@ class BaseClass extends Contextable {
         // this.name = undefined;
         // this.description = undefined;
         // this.templateArgs = undefined;
-        this.properties.forEach(prop => prop.setContext(context));
+        this.properties.forEach((prop) => prop.setContext(context));
     }
 
     /**
@@ -523,13 +523,13 @@ class StandardDataSource {
     validate() {
         const errors = [];
 
-        this.mods.forEach(mod => {
+        this.mods.forEach((mod) => {
             if (!mod.name) {
                 errors.push(`lock 文件不合法，发现没有 name 属性的模块;`);
             }
         });
 
-        this.baseClasses.forEach(base => {
+        this.baseClasses.forEach((base) => {
             if (!base.name) {
                 errors.push(`lock 文件不合法，发现没有 name 属性的基类;`);
             }
@@ -556,7 +556,7 @@ class StandardDataSource {
         return JSON.stringify(
             {
                 mods: this.mods,
-                baseClasses: this.baseClasses
+                baseClasses: this.baseClasses,
             },
             null,
             2
@@ -564,8 +564,10 @@ class StandardDataSource {
     }
 
     setContext() {
-        this.baseClasses.forEach(base => base.setContext({ dataSource: this }));
-        this.mods.forEach(mod => mod.setContext({ dataSource: this }));
+        this.baseClasses.forEach((base) =>
+            base.setContext({ dataSource: this })
+        );
+        this.mods.forEach((mod) => mod.setContext({ dataSource: this }));
     }
 
     /**
@@ -597,21 +599,21 @@ class StandardDataSource {
     static constructorFromLock(localDataObject, originName) {
         try {
             // 兼容性代码，将老的数据结构转换为新的。
-            const defNames = localDataObject.baseClasses.map(base => {
+            const defNames = localDataObject.baseClasses.map((base) => {
                 if (base.name.includes("<")) {
                     return base.name.slice(0, base.name.indexOf("<"));
                 }
                 return base.name;
             });
-            const baseClasses = localDataObject.baseClasses.map(base => {
-                const props = base.properties.map(prop => {
+            const baseClasses = localDataObject.baseClasses.map((base) => {
+                const props = base.properties.map((prop) => {
                     return new Property({
                         ...prop,
                         dataType: StandardDataType.constructorFromJSON(
                             prop.dataType,
                             originName,
                             defNames
-                        )
+                        ),
                     });
                 });
                 let { templateArgs } = base;
@@ -637,11 +639,11 @@ class StandardDataSource {
                     description: base.description,
                     name,
                     templateArgs,
-                    properties: _.unionBy(props, "name")
+                    properties: _.unionBy(props, "name"),
                 });
             });
-            const mods = localDataObject.mods.map(mod => {
-                const interfaces = mod.interfaces.map(inter => {
+            const mods = localDataObject.mods.map((mod) => {
+                const interfaces = mod.interfaces.map((inter) => {
                     const response = StandardDataType.constructorFromJSON(
                         inter.response,
                         localDataObject.name,
@@ -649,7 +651,7 @@ class StandardDataSource {
                     );
 
                     const parameters = inter.parameters
-                        .map(param => {
+                        .map((param) => {
                             const dataType = StandardDataType.constructorFromJSON(
                                 param.dataType,
                                 localDataObject.name,
@@ -658,7 +660,7 @@ class StandardDataSource {
 
                             return new Property({
                                 ...param,
-                                dataType
+                                dataType,
                             });
                         })
                         .filter(_.identity);
@@ -666,21 +668,21 @@ class StandardDataSource {
                     return new Interface({
                         ...inter,
                         parameters,
-                        response
+                        response,
                     });
                 });
 
                 return new Mod({
                     description: mod.description,
                     name: mod.name,
-                    interfaces
+                    interfaces,
                 });
             });
 
             return new StandardDataSource({
                 baseClasses,
                 mods,
-                name: localDataObject.name
+                name: localDataObject.name,
             });
         } catch (e) {
             throw new Error(e);
@@ -779,7 +781,7 @@ module.exports = {
     Interface,
     Mod,
     BaseClass,
-    StandardDataSource
+    StandardDataSource,
 };
 
 exports.StandardDataType = StandardDataType;

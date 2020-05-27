@@ -7,7 +7,7 @@ const {
     Mod,
     BaseClass,
     Property,
-    StandardDataType
+    StandardDataType,
 } = require("../standard");
 const utils = require("../utils");
 const { compileTemplate, parseAst2StandardDataType } = require("../compiler");
@@ -20,7 +20,7 @@ const {
     transformCamelCase,
     toDashCase,
     hasChinese,
-    transformModsName
+    transformModsName,
 } = utils;
 
 // const SwaggerType = {
@@ -278,7 +278,7 @@ class Schema {
                         defNames,
                         classTemplateArgs,
                         compileTemplateKeyword
-                    )
+                    ),
                 ];
                 return new StandardDataType(typeArgs, "ObjectMap", false);
             }
@@ -297,18 +297,18 @@ class Schema {
 function parseSwaggerEnumType(enumStrs) {
     const enums = enumStrs; // as Array<string | number>;
 
-    enumStrs.forEach(str => {
+    enumStrs.forEach((str) => {
         if (!Number.isNaN(Number(str))) {
             enums.push(Number(str));
         }
     });
 
     return enums
-        .filter(str => {
+        .filter((str) => {
             // eslint-disable-next-line no-useless-escape
             return String(str).match(/^[0-9a-zA-Z\_\-\$]+$/);
         })
-        .map(numOrStr => {
+        .map((numOrStr) => {
             if (typeof numOrStr === "string") {
                 return `'${numOrStr}'`;
             }
@@ -378,7 +378,7 @@ class SwaggerInterface {
             compileTempateKeyword
         );
         // parameters通常长度为一
-        const parameters = (inter.parameters || []).map(param => {
+        const parameters = (inter.parameters || []).map((param) => {
             let paramSchema; // : Schema;
             const {
                 description,
@@ -386,7 +386,7 @@ class SwaggerInterface {
                 name,
                 type,
                 schema = {}, // as Schema,
-                required
+                required,
             } = param;
             // 如果请求参数在body中的话，处理方式与response保持一致，因为他们本身的结构是一样的
             if (param.in === "body") {
@@ -396,7 +396,7 @@ class SwaggerInterface {
                     enum: param.enum,
                     items,
                     type,
-                    $ref: _.get(schema, "$ref")
+                    $ref: _.get(schema, "$ref"),
                 };
             }
 
@@ -408,7 +408,7 @@ class SwaggerInterface {
                 dataType: Schema.parseSwaggerSchema2StandardDataType(
                     paramSchema,
                     defNames
-                )
+                ),
             });
         });
 
@@ -430,7 +430,7 @@ class SwaggerInterface {
             path: inter.path,
             response,
             /** 后端返回的参数可能重复 */
-            parameters: _.unionBy(parameters, "name")
+            parameters: _.unionBy(parameters, "name"),
         });
 
         return standardInterface;
@@ -467,7 +467,7 @@ function parseSwaggerMods(swagger, defNames, compileTempateKeyword) {
         const pathItemObject = _.cloneDeep(methodInters);
         // 特殊情况才会存在pathItemObject.parameters
         if (Array.isArray(pathItemObject.parameters)) {
-            ["get", "post", "patch", "delete", "put"].forEach(method => {
+            ["get", "post", "patch", "delete", "put"].forEach((method) => {
                 if (pathItemObject[method]) {
                     pathItemObject[method].parameters = (
                         pathItemObject[method].parameters || []
@@ -500,14 +500,14 @@ function parseSwaggerMods(swagger, defNames, compileTempateKeyword) {
 
     swagger.tags.push({
         name: "defaultModule",
-        description: "defaultModule"
+        description: "defaultModule",
     });
 
     // swagger 2.0 中 tags属性是可选的
     const mods = swagger.tags
-        .map(tag => {
+        .map((tag) => {
             // 过滤出使用当前 tag 的所有请求
-            const modInterfaces = allSwaggerInterfaces.filter(inter => {
+            const modInterfaces = allSwaggerInterfaces.filter((inter) => {
                 // swagger 3.0+ 中可能不存在 description 字段
                 if (tag.description === undefined || tag.description === null) {
                     tag.description = "";
@@ -522,10 +522,10 @@ function parseSwaggerMods(swagger, defNames, compileTempateKeyword) {
             });
 
             const samePath = utils.getMaxSamePath(
-                modInterfaces.map(inter => inter.path.slice(1))
+                modInterfaces.map((inter) => inter.path.slice(1))
             );
 
-            const standardInterfaces = modInterfaces.map(inter => {
+            const standardInterfaces = modInterfaces.map((inter) => {
                 return SwaggerInterface.transformSwaggerInterface2Standard(
                     inter,
                     samePath,
@@ -540,16 +540,16 @@ function parseSwaggerMods(swagger, defNames, compileTempateKeyword) {
                 return new Mod({
                     description: tag.name,
                     interfaces: _.uniqBy(standardInterfaces, "name"),
-                    name: utils.transformCamelCase(tag.description)
+                    name: utils.transformCamelCase(tag.description),
                 });
             }
             return new Mod({
                 description: tag.description,
                 interfaces: _.uniqBy(standardInterfaces, "name"),
-                name: utils.transformCamelCase(tag.name)
+                name: utils.transformCamelCase(tag.name),
             });
         })
-        .filter(mod => {
+        .filter((mod) => {
             return mod.interfaces.length;
         });
 
@@ -569,11 +569,11 @@ function transformSwaggerData2Standard(swagger, originName = "") {
         return {
             name: defNameAst.name,
             defNameAst,
-            def
+            def,
         };
     });
-    const defNames = draftClasses.map(clazz => clazz.name);
-    const baseClasses = draftClasses.map(clazz => {
+    const defNames = draftClasses.map((clazz) => clazz.name);
+    const baseClasses = draftClasses.map((clazz) => {
         // 将defName转换为标准类型
         const dataType = parseAst2StandardDataType(
             clazz.defNameAst,
@@ -590,7 +590,7 @@ function transformSwaggerData2Standard(swagger, originName = "") {
                 description,
                 items,
                 type,
-                additionalProperties
+                additionalProperties,
             } = prop;
             const required = requiredProps.includes(propName);
 
@@ -600,7 +600,7 @@ function transformSwaggerData2Standard(swagger, originName = "") {
                     enum: prop.enum,
                     items,
                     type,
-                    additionalProperties
+                    additionalProperties,
                 },
                 defNames,
                 templateArgs
@@ -610,7 +610,7 @@ function transformSwaggerData2Standard(swagger, originName = "") {
                 dataType,
                 name: propName,
                 description,
-                required
+                required,
             });
         });
 
@@ -618,7 +618,7 @@ function transformSwaggerData2Standard(swagger, originName = "") {
             description,
             name: clazz.name,
             properties: props,
-            templateArgs
+            templateArgs,
         });
     });
 
@@ -642,10 +642,10 @@ function transformSwaggerData2Standard(swagger, originName = "") {
     });
     // BaseRes<Order>,BaseRes<Good> 将会被去重复
     return new StandardDataSource({
-        baseClasses: _.uniqBy(baseClasses, base => base.name),
+        baseClasses: _.uniqBy(baseClasses, (base) => base.name),
         mods: parseSwaggerMods(swagger, defNames),
         name: originName,
-        basePath: swagger.basePath
+        basePath: swagger.basePath,
     });
 }
 
@@ -660,5 +660,5 @@ module.exports = {
     transformSwaggerData2Standard,
     parseSwaggerEnumType,
     parseSwaggerMods,
-    SwaggerDataSource
+    SwaggerDataSource,
 };

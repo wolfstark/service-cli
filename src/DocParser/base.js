@@ -37,13 +37,13 @@ class OriginBaseReader {
                 return retString;
             }
 
-            let chineseKeyCollect = matchItems.map(item =>
+            let chineseKeyCollect = matchItems.map((item) =>
                 item.replace(/["":]/g, "")
             );
 
             // 去重
             chineseKeyCollect = _.uniq(
-                chineseKeyCollect.map(item =>
+                chineseKeyCollect.map((item) =>
                     item.includes("«") ? item.split("«")[0] : item
                 )
             );
@@ -53,10 +53,10 @@ class OriginBaseReader {
             chineseKeyCollect.sort((pre, next) => next.length - pre.length);
 
             const result = await Promise.all(
-                chineseKeyCollect.map(text => Translator.translateAsync(text))
+                chineseKeyCollect.map((text) => Translator.translateAsync(text))
             );
             // const normalizeRegStr = (str: string) => str.replace(/(\W)/g, '$1');
-            const toRegStr = str => str.replace(/(\W)/g, "\\$1");
+            const toRegStr = (str) => str.replace(/(\W)/g, "\\$1");
             result.forEach((enKey, index) => {
                 const chineseKey = chineseKeyCollect[index];
                 info(`${chineseKey} ==> ${enKey}`);
@@ -95,7 +95,7 @@ class OriginBaseReader {
      * @memberof OriginBaseReader
      */
     static fetchMethod(url) {
-        return fetch(url).then(res => res.text());
+        return fetch(url).then((res) => res.text());
     }
 
     /**
@@ -171,13 +171,13 @@ class OriginBaseReader {
         const errorModNames = []; // as string[];
         const errorBaseNames = []; // as string[];
 
-        mods.forEach(mod => {
+        mods.forEach((mod) => {
             if (utils.hasChinese(mod.name)) {
                 errorModNames.push(mod.name);
             }
         });
 
-        baseClasses.forEach(base => {
+        baseClasses.forEach((base) => {
             if (utils.hasChinese(base.name)) {
                 errorBaseNames.push(base.name);
             }
@@ -185,10 +185,10 @@ class OriginBaseReader {
 
         if (errorBaseNames.length && errorModNames.length) {
             const errMsg = ["当前数据源有如下项不符合规范，需要后端修改"];
-            errorModNames.forEach(modName =>
+            errorModNames.forEach((modName) =>
                 errMsg.push(`模块名${modName}应该改为英文名！`)
             );
-            errorBaseNames.forEach(baseName =>
+            errorBaseNames.forEach((baseName) =>
                 errMsg.push(`基类名${baseName}应该改为英文名！`)
             );
 
@@ -197,5 +197,5 @@ class OriginBaseReader {
     }
 }
 module.exports = {
-    OriginBaseReader
+    OriginBaseReader,
 };

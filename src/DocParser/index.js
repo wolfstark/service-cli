@@ -9,7 +9,7 @@ const { SwaggerV2Reader } = require("./swagger");
 const OriginType = {
     SwaggerV3: "SwaggerV3",
     SwaggerV2: "SwaggerV2",
-    SwaggerV1: "SwaggerV1"
+    SwaggerV1: "SwaggerV1",
 };
 /**
  * 根据数据源对象 -> 获取远端数据并解析

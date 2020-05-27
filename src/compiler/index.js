@@ -26,7 +26,7 @@ function parseAst2StandardDataType(ast, defNames, classTemplateArgs = []) {
     const typeName = TypeMap[name] || name;
 
     const isDefsType = defNames.includes(name);
-    const typeArgs = templateArgs.map(arg => {
+    const typeArgs = templateArgs.map((arg) => {
         return parseAst2StandardDataType(arg, defNames, classTemplateArgs);
     });
     const { StandardDataType } = require("../standard");
@@ -90,5 +90,5 @@ function compileTemplate(template, keyword = "#/definitions/") {
 }
 module.exports = {
     compileTemplate,
-    parseAst2StandardDataType
+    parseAst2StandardDataType,
 };
